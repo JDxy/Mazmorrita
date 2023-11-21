@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="665.0" fitWidth="1055.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Image/maxmorritaImg.jpg" />
+            <Image url="@../../../Images/Backgrounds/maxmorritaImg.jpg" />
          </image>
       </ImageView>
       <Label layoutX="293.0" layoutY="256.0" style="text-shadow: Black 0 -2px;" text="Mazmorrita">

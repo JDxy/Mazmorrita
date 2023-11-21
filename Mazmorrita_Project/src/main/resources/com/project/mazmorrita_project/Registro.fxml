@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="702.0" fitWidth="1055.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Image/fondoRegistro.jpg" />
+            <Image url="@../../../Images/Backgrounds/fondoRegistro.jpg" />
          </image>
       </ImageView>
       <TextField layoutX="394.0" layoutY="283.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" />
@@ -81,12 +81,12 @@
       </Label>
       <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="295.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
-            <Image url="@../../../Image/flecha.png" />
+            <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="568.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
-            <Image url="@../../../Image/flecha.png" />
+            <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
    </children>
