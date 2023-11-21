@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -20,8 +21,11 @@
          <font>
             <Font name="Copperplate Gothic Bold" size="90.0" />
          </font>
+         <effect>
+            <Shadow radius="12.5" width="31.0" />
+         </effect>
       </Label>
-      <Label layoutX="300.0" layoutY="269.0" text="Mazmorrita">
+      <Label fx:id="mazmorritaTittle" layoutX="300.0" layoutY="269.0" text="Mazmorrita">
          <font>
             <Font name="Franklin Gothic Medium" size="90.0" />
          </font>
@@ -35,7 +39,7 @@
                   </Stop>
                   <Stop offset="0.5570469798657718">
                      <color>
-                        <Color red="0.8684210777282715" green="0.511135458946228" blue="0.17690058052539825" />
+                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">

@@ -70,10 +70,25 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="380.0" layoutY="521.0" onMouseClicked="#confirmar" text="Confirmar" textFill="RED">
+      <Label layoutX="394.0" layoutY="522.0" onMouseClicked="#confirmar" text="Confirmar" textFill="RED">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
+      <Label layoutX="662.0" layoutY="521.0" onMouseClicked="#cancelar" text="Cancelar" textFill="RED">
+         <font>
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="295.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../../Image/flecha.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="568.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../../Image/flecha.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
