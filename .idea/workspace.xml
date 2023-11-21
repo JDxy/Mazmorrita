@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bbec1db6-fffd-4b39-a4d9-6f1964221879" name="Changes" comment="Cambios en los view">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/Image/Enemigos/CaballeroEsqueleto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/Image/Enemigos/EnemigoEsqueleto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/Image/Fondos/BgCrearPersonaje.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/Image/Fondos/BgRegistro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/CreateCharacter.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/StartSession.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/IniciarSesion.fxml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2YUya8AD0p0QnWAjtZvmalTRDqM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Leo__añadido",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\2dam\Desktop\EXA\Mazmorrita\Mazmorrita_Project\src\main\resources\Image\Fondo" />
+      <recent name="C:\Users\2dam\Desktop\EXA\Mazmorrita\Mazmorrita_Project\src\main\resources\Image\Enemigos" />
+      <recent name="C:\Users\2dam\Desktop\EXA\Mazmorrita\Mazmorrita_Project\src\main\resources\Image\Fondos" />
+      <recent name="C:\Users\2dam\Desktop\EXA\Mazmorrita\Mazmorrita_Project\src\main\resources\com\project\mazmorrita_project" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bbec1db6-fffd-4b39-a4d9-6f1964221879" name="Changes" comment="" />
+      <created>1700594513785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700594513785</updated>
+      <workItem from="1700594516212" duration="985000" />
+      <workItem from="1700595533778" duration="199000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cambios en los view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en los view" />
+  </component>
+</project>

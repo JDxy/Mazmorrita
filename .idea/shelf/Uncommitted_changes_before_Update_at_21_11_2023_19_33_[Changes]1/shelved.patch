@@ -1,0 +1,410 @@
+Index: Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Login.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.effect.Shadow?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.paint.Color?>\r\n<?import javafx.scene.paint.LinearGradient?>\r\n<?import javafx.scene.paint.Stop?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<Pane prefHeight=\"646.0\" prefWidth=\"1055.0\" style=\"-fx-background-color: Black;\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.project.mazmorrita_project.controllers.LoginController\">\r\n   <children>\r\n      <ImageView fitHeight=\"665.0\" fitWidth=\"1055.0\" layoutX=\"2.0\" layoutY=\"2.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../../../Image/maxmorritaImg.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <Label layoutX=\"293.0\" layoutY=\"256.0\" style=\"text-shadow: Black 0 -2px;\" text=\"Mazmorrita\">\r\n         <font>\r\n            <Font name=\"Copperplate Gothic Bold\" size=\"90.0\" />\r\n         </font>\r\n         <effect>\r\n            <Shadow radius=\"12.5\" width=\"31.0\" />\r\n         </effect>\r\n      </Label>\r\n      <Label fx:id=\"mazmorritaTittle\" layoutX=\"300.0\" layoutY=\"269.0\" text=\"Mazmorrita\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"90.0\" />\r\n         </font>\r\n         <textFill>\r\n            <LinearGradient endX=\"1.0\" endY=\"1.0\" startX=\"1.0\">\r\n               <stops>\r\n                  <Stop>\r\n                     <color>\r\n                        <Color />\r\n                     </color>\r\n                  </Stop>\r\n                  <Stop offset=\"0.5570469798657718\">\r\n                     <color>\r\n                        <Color red=\"0.8666666746139526\" green=\"0.5098039507865906\" blue=\"0.1764705926179886\" />\r\n                     </color>\r\n                  </Stop>\r\n                  <Stop offset=\"1.0\">\r\n                     <color>\r\n                        <Color />\r\n                     </color>\r\n                  </Stop>\r\n               </stops>\r\n            </LinearGradient>\r\n         </textFill>\r\n      </Label>\r\n      <Label layoutX=\"14.0\" layoutY=\"609.0\" onMouseClicked=\"#iniciarSesion\" text=\"Iniciar Sesión\" textFill=\"RED\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"959.0\" layoutY=\"609.0\" onMouseClicked=\"#registrarse\" text=\"Registrarse\" textFill=\"RED\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n   </children>\r\n</Pane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Login.fxml b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Login.fxml
+--- a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Login.fxml	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Login.fxml	(date 1700595213443)
+@@ -1,65 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+ <?import javafx.scene.control.Label?>
+-<?import javafx.scene.effect.Shadow?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.paint.Color?>
+-<?import javafx.scene.paint.LinearGradient?>
+-<?import javafx.scene.paint.Stop?>
+-<?import javafx.scene.text.Font?>
++<?import javafx.scene.layout.AnchorPane?>
+ 
+-<Pane prefHeight="646.0" prefWidth="1055.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.LoginController">
++
++<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.StartSessionController">
+    <children>
+-      <ImageView fitHeight="665.0" fitWidth="1055.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@../../../Image/maxmorritaImg.jpg" />
+-         </image>
+-      </ImageView>
+-      <Label layoutX="293.0" layoutY="256.0" style="text-shadow: Black 0 -2px;" text="Mazmorrita">
+-         <font>
+-            <Font name="Copperplate Gothic Bold" size="90.0" />
+-         </font>
+-         <effect>
+-            <Shadow radius="12.5" width="31.0" />
+-         </effect>
+-      </Label>
+-      <Label fx:id="mazmorritaTittle" layoutX="300.0" layoutY="269.0" text="Mazmorrita">
+-         <font>
+-            <Font name="Franklin Gothic Medium" size="90.0" />
+-         </font>
+-         <textFill>
+-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+-               <stops>
+-                  <Stop>
+-                     <color>
+-                        <Color />
+-                     </color>
+-                  </Stop>
+-                  <Stop offset="0.5570469798657718">
+-                     <color>
+-                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
+-                     </color>
+-                  </Stop>
+-                  <Stop offset="1.0">
+-                     <color>
+-                        <Color />
+-                     </color>
+-                  </Stop>
+-               </stops>
+-            </LinearGradient>
+-         </textFill>
+-      </Label>
+-      <Label layoutX="14.0" layoutY="609.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="RED">
+-         <font>
+-            <Font name="Franklin Gothic Medium" size="18.0" />
+-         </font>
+-      </Label>
+-      <Label layoutX="959.0" layoutY="609.0" onMouseClicked="#registrarse" text="Registrarse" textFill="RED">
+-         <font>
+-            <Font name="Franklin Gothic Medium" size="18.0" />
+-         </font>
+-      </Label>
++      <Label layoutX="258.0" layoutY="192.0" text="Lo conseguistes" />
+    </children>
+-</Pane>
++</AnchorPane>
+Index: Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/IniciarSesion.fxml
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/IniciarSesion.fxml b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/IniciarSesion.fxml
+deleted file mode 100644
+--- a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/IniciarSesion.fxml	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ /dev/null	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.layout.AnchorPane?>
+-
+-
+-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.IniciarSesionController">
+-   <children>
+-      <Label layoutX="258.0" layoutY="192.0" text="Lo conseguistes" />
+-   </children>
+-</AnchorPane>
+Index: Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/LoginApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.project.mazmorrita_project;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class LoginApp extends Application {\r\n    @Override\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = new FXMLLoader(LoginApp.class.getResource(\"Login.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n        stage.setTitle(\"\");\r\n        stage.setScene(scene);\r\n        stage.setResizable(false);\r\n        stage.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/LoginApp.java b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/LoginApp.java
+--- a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/LoginApp.java	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/LoginApp.java	(date 1700595213432)
+@@ -10,7 +10,7 @@
+ public class LoginApp extends Application {
+     @Override
+     public void start(Stage stage) throws IOException {
+-        FXMLLoader fxmlLoader = new FXMLLoader(LoginApp.class.getResource("Login.fxml"));
++        FXMLLoader fxmlLoader = new FXMLLoader(LoginApp.class.getResource("StartSession.fxml"));
+         Scene scene = new Scene(fxmlLoader.load());
+         stage.setTitle("");
+         stage.setScene(scene);
+Index: Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/StartSession.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/StartSession.fxml b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/StartSession.fxml
+new file mode 100644
+--- /dev/null	(date 1700595124490)
++++ b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/StartSession.fxml	(date 1700595124490)
+@@ -0,0 +1,65 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.effect.Shadow?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.paint.Color?>
++<?import javafx.scene.paint.LinearGradient?>
++<?import javafx.scene.paint.Stop?>
++<?import javafx.scene.text.Font?>
++
++<Pane prefHeight="646.0" prefWidth="1055.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.LoginController">
++   <children>
++      <ImageView fitHeight="665.0" fitWidth="1055.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
++         <image>
++            <Image url="@../../../Image/Fondos/maxmorritaImg.jpg" />
++         </image>
++      </ImageView>
++      <Label layoutX="293.0" layoutY="256.0" style="text-shadow: Black 0 -2px;" text="Mazmorrita">
++         <font>
++            <Font name="Copperplate Gothic Bold" size="90.0" />
++         </font>
++         <effect>
++            <Shadow radius="12.5" width="31.0" />
++         </effect>
++      </Label>
++      <Label fx:id="mazmorritaTittle" layoutX="300.0" layoutY="269.0" text="Mazmorrita">
++         <font>
++            <Font name="Franklin Gothic Medium" size="90.0" />
++         </font>
++         <textFill>
++            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
++               <stops>
++                  <Stop>
++                     <color>
++                        <Color />
++                     </color>
++                  </Stop>
++                  <Stop offset="0.5570469798657718">
++                     <color>
++                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
++                     </color>
++                  </Stop>
++                  <Stop offset="1.0">
++                     <color>
++                        <Color />
++                     </color>
++                  </Stop>
++               </stops>
++            </LinearGradient>
++         </textFill>
++      </Label>
++      <Label layoutX="14.0" layoutY="609.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="RED">
++         <font>
++            <Font name="Franklin Gothic Medium" size="18.0" />
++         </font>
++      </Label>
++      <Label layoutX="959.0" layoutY="609.0" onMouseClicked="#registrarse" text="Registrarse" textFill="RED">
++         <font>
++            <Font name="Franklin Gothic Medium" size="18.0" />
++         </font>
++      </Label>
++   </children>
++</Pane>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/Mazmorrita_Project/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"openjdk-21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/.idea/misc.xml	(date 1700594542056)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Registro.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.effect.Shadow?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.paint.Color?>\r\n<?import javafx.scene.paint.LinearGradient?>\r\n<?import javafx.scene.paint.Stop?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n\r\n<AnchorPane prefHeight=\"643.0\" prefWidth=\"1055.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.project.mazmorrita_project.controllers.RegistroController\">\r\n   <children>\r\n      <ImageView fitHeight=\"702.0\" fitWidth=\"1055.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../../../Image/fondoRegistro.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <TextField layoutX=\"394.0\" layoutY=\"283.0\" opacity=\"0.5\" prefHeight=\"25.0\" prefWidth=\"268.0\" />\r\n      <Label layoutX=\"498.0\" layoutY=\"238.0\" text=\"Usuario\" textFill=\"RED\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"483.0\" layoutY=\"346.0\" text=\"Contraseña\" textFill=\"RED\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n      <PasswordField layoutX=\"394.0\" layoutY=\"394.0\" opacity=\"0.5\" prefHeight=\"25.0\" prefWidth=\"268.0\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"12.0\" />\r\n         </font>\r\n      </PasswordField>\r\n      <Label layoutX=\"399.0\" layoutY=\"89.0\" text=\"Registro\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"72.0\" />\r\n         </font>\r\n         <effect>\r\n            <Shadow height=\"10.0\" radius=\"18.2425\" width=\"64.97\" />\r\n         </effect>\r\n      </Label>\r\n      <Label layoutX=\"402.0\" layoutY=\"92.0\" text=\"Registro\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"72.0\" />\r\n         </font>\r\n         <textFill>\r\n            <LinearGradient endX=\"1.0\" endY=\"1.0\" startX=\"1.0\">\r\n               <stops>\r\n                  <Stop>\r\n                     <color>\r\n                        <Color />\r\n                     </color>\r\n                  </Stop>\r\n                  <Stop offset=\"0.47256097560975613\">\r\n                     <color>\r\n                        <Color red=\"0.8666666746139526\" green=\"0.5098039507865906\" blue=\"0.1764705926179886\" />\r\n                     </color>\r\n                  </Stop>\r\n                  <Stop offset=\"1.0\">\r\n                     <color>\r\n                        <Color />\r\n                     </color>\r\n                  </Stop>\r\n               </stops>\r\n            </LinearGradient>\r\n         </textFill>\r\n      </Label>\r\n      <Label layoutX=\"394.0\" layoutY=\"522.0\" onMouseClicked=\"#confirmar\" text=\"Confirmar\" textFill=\"RED\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"24.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"662.0\" layoutY=\"521.0\" onMouseClicked=\"#cancelar\" text=\"Cancelar\" textFill=\"RED\">\r\n         <font>\r\n            <Font name=\"Franklin Gothic Medium\" size=\"24.0\" />\r\n         </font>\r\n      </Label>\r\n      <ImageView fitHeight=\"73.0\" fitWidth=\"89.0\" layoutX=\"295.0\" layoutY=\"500.0\" pickOnBounds=\"true\" preserveRatio=\"true\" rotate=\"45.0\">\r\n         <image>\r\n            <Image url=\"@../../../Image/flecha.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <ImageView fitHeight=\"73.0\" fitWidth=\"89.0\" layoutX=\"568.0\" layoutY=\"499.0\" pickOnBounds=\"true\" preserveRatio=\"true\" rotate=\"45.0\">\r\n         <image>\r\n            <Image url=\"@../../../Image/flecha.png\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Registro.fxml b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Registro.fxml
+--- a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Registro.fxml	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/Registro.fxml	(date 1700595213415)
+@@ -13,11 +13,11 @@
+ <?import javafx.scene.text.Font?>
+ 
+ 
+-<AnchorPane prefHeight="643.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.RegistroController">
++<AnchorPane prefHeight="643.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.RegisterController">
+    <children>
+       <ImageView fitHeight="702.0" fitWidth="1055.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+-            <Image url="@../../../Image/fondoRegistro.jpg" />
++            <Image url="@../../../Image/Fondos/fondoRegistro.jpg" />
+          </image>
+       </ImageView>
+       <TextField layoutX="394.0" layoutY="283.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" />
+@@ -82,12 +82,12 @@
+       </Label>
+       <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="295.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+          <image>
+-            <Image url="@../../../Image/flecha.png" />
++            <Image url="@../../../Image/Fondos/flecha.png" />
+          </image>
+       </ImageView>
+       <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="568.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+          <image>
+-            <Image url="@../../../Image/flecha.png" />
++            <Image url="@../../../Image/Fondos/flecha.png" />
+          </image>
+       </ImageView>
+    </children>
+Index: Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.project.mazmorrita_project.controllers;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class LoginController {\r\n\r\n    @FXML\r\n    public Label MazmorritaTitle;\r\n\r\n    public void iniciarSesion(MouseEvent actionEvent) {\r\n        try {\r\n            Scene scene = new Scene(FXMLLoader.load(getClass().getResource(\"/com/project/mazmorrita_project/IniciarSesion.fxml\")));\r\n\r\n            Stage window= (Stage) MazmorritaTitle.getScene().getWindow();\r\n\r\n            window.setTitle(\"\");\r\n            window.setScene(scene);\r\n            window.show();\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public void registrarse(MouseEvent actionEvent) {\r\n        try {\r\n            Scene scene = new Scene(FXMLLoader.load(getClass().getResource(\"/com/project/mazmorrita_project/Registro.fxml\")));\r\n\r\n            Stage window= (Stage) MazmorritaTitle.getScene().getWindow();\r\n\r\n            window.setTitle(\"\");\r\n            window.setScene(scene);\r\n            window.show();\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/LoginController.java b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/LoginController.java
+--- a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/LoginController.java	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/LoginController.java	(date 1700595213427)
+@@ -16,7 +16,7 @@
+ 
+     public void iniciarSesion(MouseEvent actionEvent) {
+         try {
+-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/IniciarSesion.fxml")));
++            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+ 
+             Stage window= (Stage) MazmorritaTitle.getScene().getWindow();
+ 
+Index: Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/IniciarSesionController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/IniciarSesionController.java b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/StartSessionController.java
+rename from Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/IniciarSesionController.java
+rename to Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/StartSessionController.java
+--- a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/IniciarSesionController.java	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/StartSessionController.java	(date 1700595213422)
+@@ -1,4 +1,4 @@
+ package com.project.mazmorrita_project.controllers;
+ 
+-public class IniciarSesionController {
++public class StartSessionController {
+ }
+Index: Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/CreateCharacter.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/CreateCharacter.fxml b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/CreateCharacter.fxml
+new file mode 100644
+--- /dev/null	(date 1700588728096)
++++ b/Mazmorrita_Project/src/main/resources/com/project/mazmorrita_project/CreateCharacter.fxml	(date 1700588728096)
+@@ -0,0 +1,97 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.control.TextField?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.text.Font?>
++
++
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
++   <children>
++      <Pane prefHeight="772.0" prefWidth="1055.0">
++         <children>
++            <TextField layoutX="464.0" layoutY="118.0" prefHeight="25.0" prefWidth="203.0" />
++            <Label layoutX="389.0" layoutY="119.0" text="Nombre">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Button layoutX="449.0" layoutY="648.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" text="Crear personaje" />
++            <Label layoutX="389.0" layoutY="163.0" text="Defensa">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="390.0" layoutY="203.0" text="Fuerza">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="398.0" layoutY="243.0" text="Vida">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="391.0" layoutY="284.0" text="Magia">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="394.0" layoutY="327.0" text="Mana">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <ImageView fitHeight="260.0" fitWidth="98.0" layoutX="476.0" layoutY="377.0">
++               <image>
++                  <Image url="@../../../../../../../../Pictures/Mago.jpg" />
++               </image>
++            </ImageView>
++            <ImageView fitHeight="260.0" fitWidth="98.0" layoutX="355.0" layoutY="377.0">
++               <image>
++                  <Image url="@../../../../../../../../Pictures/Bandida.jpg" />
++               </image>
++            </ImageView>
++            <Label layoutX="522.0" layoutY="163.0" text="0">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="522.0" layoutY="203.0" prefHeight="19.0" prefWidth="9.0" text="0">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="522.0" layoutY="243.0" prefHeight="19.0" prefWidth="9.0" text="0">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="522.0" layoutY="284.0" prefHeight="19.0" prefWidth="9.0" text="0">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <Label layoutX="522.0" layoutY="328.0" prefHeight="19.0" prefWidth="9.0" text="0">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="18.0" />
++               </font>
++            </Label>
++            <ImageView fitHeight="260.0" fitWidth="98.0" layoutX="596.0" layoutY="377.0">
++               <image>
++                  <Image url="@../../../../../../../../Pictures/Guerrero.jpg" />
++               </image>
++            </ImageView>
++            <Label layoutX="201.0" layoutY="14.0" text="Creacion de personaje">
++               <font>
++                  <Font name="Franklin Gothic Medium" size="72.0" />
++               </font>
++            </Label>
++         </children>
++      </Pane>
++   </children>
++</AnchorPane>
+Index: Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegistroController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegistroController.java b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegisterController.java
+rename from Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegistroController.java
+rename to Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegisterController.java
+--- a/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegistroController.java	(revision a7d14958dc13c37202c3d1ff953c1b2afbba9def)
++++ b/Mazmorrita_Project/src/main/java/com/project/mazmorrita_project/controllers/RegisterController.java	(date 1700595213438)
+@@ -1,4 +1,4 @@
+ package com.project.mazmorrita_project.controllers;
+ 
+-public class RegistroController {
++public class RegisterController {
+ }
