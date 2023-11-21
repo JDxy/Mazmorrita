@@ -16,7 +16,7 @@ public class LoginController {
 
     public void iniciarSesion(MouseEvent actionEvent) {
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/IniciarSesion.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SignIn.fxml")));
 
             Stage window= (Stage) mazmorritaTitle.getScene().getWindow();
 
@@ -31,7 +31,7 @@ public class LoginController {
 
     public void registrarse(MouseEvent actionEvent) {
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Registro.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Register.fxml")));
 
             Stage window= (Stage) mazmorritaTitle.getScene().getWindow();
 

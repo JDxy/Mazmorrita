@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegistroController {
+public class RegisterController {
     @FXML
     public Label registroTitle;
 
