@@ -1,12 +1,12 @@
 package com.project.mazmorrita_project.controllers;
 
-import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 
 public class LoginController {
 
-    public void iniciarSesion(ActionEvent actionEvent) {
+    public void iniciarSesion(MouseEvent actionEvent) {
     }
 
-    public void registrarse(ActionEvent actionEvent) {
+    public void registrarse(MouseEvent actionEvent) {
     }
 }
