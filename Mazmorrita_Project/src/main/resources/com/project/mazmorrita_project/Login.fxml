@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,23 +9,19 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="519.0" prefWidth="846.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.LoginController">
+<Pane prefHeight="646.0" prefWidth="1055.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.LoginController">
    <children>
-      <ImageView fitHeight="519.0" fitWidth="873.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="646.0" fitWidth="1052.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Image/maxmorritaImg.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="3.0" layoutY="481.0" mnemonicParsing="false" onAction="#iniciarSesion" style="-fx-background-color: opacity;" text="Iniciar Sesión" textFill="RED">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font></Button>
-      <Label layoutX="192.0" layoutY="209.0" text="Mazmorrita">
+      <Label layoutX="225.0" layoutY="273.0" style="text-shadow: Black 0 -2px;" text="Mazmorrita">
          <font>
             <Font name="Copperplate Gothic Bold" size="90.0" />
          </font>
       </Label>
-      <Label layoutX="194.0" layoutY="209.0" text="Mazmorrita">
+      <Label layoutX="229.0" layoutY="275.0" text="Mazmorrita">
          <font>
             <Font name="Copperplate Gothic Bold" size="90.0" />
          </font>
@@ -40,7 +35,7 @@
                   </Stop>
                   <Stop offset="0.5570469798657718">
                      <color>
-                        <Color red="0.7215686440467834" green="0.41960784792900085" blue="0.10196078568696976" />
+                        <Color red="0.8684210777282715" green="0.511135458946228" blue="0.17690058052539825" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -52,10 +47,15 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button layoutX="729.0" layoutY="481.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: opacity;" text="Registrarse" textFill="RED">
+      <Label layoutX="14.0" layoutY="609.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="RED">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
-      </Button>
+      </Label>
+      <Label layoutX="947.0" layoutY="609.0" onMouseClicked="#registrarse" text="Registrarse" textFill="RED">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
