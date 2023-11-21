@@ -12,13 +12,13 @@ import java.io.IOException;
 public class LoginController {
 
     @FXML
-    public Label MazmorritaTitle;
+    public Label mazmorritaTitle;
 
     public void iniciarSesion(MouseEvent actionEvent) {
         try {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/IniciarSesion.fxml")));
 
-            Stage window= (Stage) MazmorritaTitle.getScene().getWindow();
+            Stage window= (Stage) mazmorritaTitle.getScene().getWindow();
 
             window.setTitle("");
             window.setScene(scene);
@@ -33,7 +33,7 @@ public class LoginController {
         try {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Registro.fxml")));
 
-            Stage window= (Stage) MazmorritaTitle.getScene().getWindow();
+            Stage window= (Stage) mazmorritaTitle.getScene().getWindow();
 
             window.setTitle("");
             window.setScene(scene);
