@@ -17,8 +17,7 @@ public class RegisterModel {
         listValues[2] = "contraseña";
 
 
-        LocalConnection.insertMethod("usuarios", listColumns ,listValues ,"?,?");
-
+        LocalConnection.deleteMethod("usuarios", "id", "1");
     }
 
 }
