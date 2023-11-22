@@ -1,6 +1,7 @@
 module com.project.mazmorrita_project {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.project.mazmorrita_project.controllers to javafx.fxml;
