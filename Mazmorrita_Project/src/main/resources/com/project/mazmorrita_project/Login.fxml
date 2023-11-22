@@ -44,7 +44,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="0.8078431487083435" />
+                        <Color red="1.0" green="0.6745098233222961" />
                      </color>
                   </Stop>
                </stops>
