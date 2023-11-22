@@ -22,6 +22,7 @@ public class CreateCharacterController {
     public Label labelMana;
 
     public void cancelar(MouseEvent mouseEvent) {
+        // TODO
     }
 
     public void crearPersonaje(MouseEvent mouseEvent) {
