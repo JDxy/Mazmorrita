@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class RegisterModel {
     public static void main(String[] args) {
 
-        String listColumns = "nombre, contraseña";
+        String listColumns = "nombre,contraseña";
 
         String[] listValues =  new String[3];
         listValues[0] = "";
@@ -17,7 +17,7 @@ public class RegisterModel {
         listValues[2] = "contraseña";
 
 
-        LocalConnection.insertMethod("usuarios",listColumns , listValues);
+        LocalConnection.insertMethod("usuarios", listColumns ,listValues ,"?,?");
 
     }
 

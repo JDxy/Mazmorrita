@@ -37,14 +37,12 @@ public class LocalConnection {
         }
     }
     
-    public static void insertMethod(String nombre_tabla, String list_columns, String[] list_values, ){
+    public static void insertMethod(String nombre_tabla, String list_columns, String[] list_values, String exclamations){
         Connection connect = LocalConnection.getConnection();
         if (connect != null) {
             try {
-                String sql = "INSERT INTO " + nombre_tabla + " (" + list_columns + ") VALUES (?, "+ " ?" +);
+                String sql = "INSERT INTO " + nombre_tabla + " (" + list_columns + ") VALUES ("+ exclamations +")";
                 PreparedStatement statement = connect.prepareStatement(sql);
-
-
                 for (int i = 1; i < list_values.length; i++){
                     statement.setString(i, list_values[i]);
                 }
