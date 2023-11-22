@@ -17,7 +17,7 @@ public class LoginApp extends Application {
         stage.setResizable(false);
         stage.show();
     }
-//Hola caracola
+
     public static void main(String[] args) {
         launch();
     }
