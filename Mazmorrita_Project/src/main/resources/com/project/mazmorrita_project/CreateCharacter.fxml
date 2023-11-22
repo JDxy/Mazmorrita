@@ -16,28 +16,28 @@
    <children>
       <Pane prefHeight="702.0" prefWidth="1055.0">
          <children>
-            <ImageView fitHeight="714.0" fitWidth="1055.0" layoutY="-1.0">
+            <ImageView fitHeight="714.0" fitWidth="1055.0" layoutX="17.0" layoutY="-11.0">
                <image>
                   <Image url="@../../../Images/Backgrounds/creacionPersonaje.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="52.0" layoutY="85.0" opacity="0.25" prefHeight="613.0" prefWidth="951.0" style="-fx-background-color: grey;" />
-            <Label layoutX="696.0" layoutY="553.0" onMouseClicked="#crearPersonaje" text="Crear Personaje">
+            <Pane layoutX="180.0" layoutY="-8.0" opacity="0.25" prefHeight="714.0" prefWidth="730.0" style="-fx-background-color: grey;" />
+            <Label layoutX="439.0" layoutY="632.0" onMouseClicked="#crearPersonaje" text="Crear Personaje">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="329.0" layoutY="446.0">
+            <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="495.0" layoutY="351.0">
                <image>
                   <Image url="@../../../Images/Characters/TarjetaGuerrero.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="205.0" layoutY="446.0">
+            <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="341.0" layoutY="351.0">
                <image>
                   <Image url="@../../../Images/Characters/TarjetaMago.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="447.0" layoutY="446.0">
+            <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="647.0" layoutY="351.0">
                <image>
                   <Image url="@../../../Images/Characters/TarjetaBandida.jpg" />
                </image>
@@ -50,7 +50,7 @@
                   <Shadow radius="15.0" width="41.0" />
                </effect>
             </Label>
-            <Label layoutX="201.0" layoutY="5.0" text="Creacion de personaje">
+            <Label layoutX="201.0" layoutY="-6.0" text="Creacion de personaje">
                <font>
                   <Font name="Franklin Gothic Medium" size="72.0" />
                </font>
@@ -81,63 +81,63 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <TextField layoutX="518.0" layoutY="120.0" opacity="0.5" prefHeight="25.0" prefWidth="279.0" />
-            <Label layoutX="293.0" layoutY="121.0" text="Nombre">
+            <TextField layoutX="522.0" layoutY="93.0" opacity="0.5" prefHeight="25.0" prefWidth="279.0" />
+            <Label layoutX="294.0" layoutY="91.0" text="Nombre">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="293.0" layoutY="164.0" text="Defensa">
+            <Label layoutX="292.0" layoutY="131.0" text="Defensa">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="164.0" text="0">
+            <Label layoutX="647.0" layoutY="131.0" text="0">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="212.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="164.0" prefHeight="19.0" prefWidth="9.0" text="0">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="263.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="198.0" prefHeight="19.0" prefWidth="9.0" text="0">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="318.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="240.0" prefHeight="19.0" prefWidth="9.0" text="0">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="363.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="280.0" prefHeight="19.0" prefWidth="9.0" text="0">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="293.0" layoutY="212.0" text="Fuerza">
+            <Label layoutX="295.0" layoutY="164.0" text="Fuerza">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="294.0" layoutY="260.0" text="Vida">
+            <Label layoutX="307.0" layoutY="198.0" text="Vida">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="293.0" layoutY="308.0" text="Magia">
+            <Label layoutX="297.0" layoutY="240.0" text="Magia">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="293.0" layoutY="363.0" text="Mana">
+            <Label layoutX="299.0" layoutY="280.0" text="Mana">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="606.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="625.0" layoutY="617.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
                <image>
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
