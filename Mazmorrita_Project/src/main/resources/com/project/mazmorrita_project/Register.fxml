@@ -12,30 +12,34 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="643.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.RegisterController">
+<AnchorPane prefHeight="616.0" prefWidth="1128.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.RegisterController">
    <children>
-      <ImageView fitHeight="702.0" fitWidth="1055.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="689.0" fitWidth="1152.0" layoutX="-3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Images/Backgrounds/fondoRegistro.jpg" />
+            <Image url="@../../../Images/Backgrounds/comienzo.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="394.0" layoutY="283.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" />
-      <Label layoutX="498.0" layoutY="238.0" text="Usuario" textFill="RED">
+      <TextField layoutX="448.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font>
-      </Label>
-      <Label layoutX="483.0" layoutY="346.0" text="Contraseña" textFill="RED">
+      </TextField>
+      <Label layoutX="538.0" layoutY="251.0" text="Usuario" textFill="RED">
          <font>
-            <Font name="Franklin Gothic Medium" size="18.0" />
+            <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <PasswordField layoutX="394.0" layoutY="394.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0">
+      <Label layoutX="523.0" layoutY="359.0" text="Contraseña" textFill="RED">
          <font>
-            <Font name="Franklin Gothic Medium" size="12.0" />
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="448.0" layoutY="405.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
+         <font>
+            <Font name="Franklin Gothic Medium" size="18.0" />
          </font>
       </PasswordField>
-      <Label layoutX="399.0" layoutY="89.0" text="Registro">
+      <Label layoutX="453.0" layoutY="111.0" text="Registro">
          <font>
             <Font name="Franklin Gothic Medium" size="72.0" />
          </font>
@@ -43,7 +47,7 @@
             <Shadow height="10.0" radius="18.2425" width="64.97" />
          </effect>
       </Label>
-      <Label fx:id="registroTitle" layoutX="402.0" layoutY="92.0" text="Registro">
+      <Label fx:id="registroTitle" layoutX="453.0" layoutY="111.0" text="Registro">
          <font>
             <Font name="Franklin Gothic Medium" size="72.0" />
          </font>
@@ -55,36 +59,36 @@
                         <Color />
                      </color>
                   </Stop>
-                  <Stop offset="0.47256097560975613">
+                  <Stop offset="0.46920527091176956">
                      <color>
                         <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color />
+                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="394.0" layoutY="522.0" onMouseClicked="#confirmar" text="Confirmar" textFill="RED">
+      <Label layoutX="106.0" layoutY="622.0" onMouseClicked="#confirmar" text="Confirmar" textFill="#ffce00">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="662.0" layoutY="521.0" onMouseClicked="#cancelar" text="Cancelar" textFill="RED">
+      <Label layoutX="1034.0" layoutY="623.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffce00">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="295.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="73.0" fitWidth="89.0" layoutX="568.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="950.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>

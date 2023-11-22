@@ -10,14 +10,14 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="646.0" prefWidth="1055.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.LoginController">
+<Pane prefHeight="665.0" prefWidth="1082.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.LoginController">
    <children>
-      <ImageView fitHeight="665.0" fitWidth="1055.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="665.0" fitWidth="1200.0" layoutX="-44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Backgrounds/maxmorritaImg.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="293.0" layoutY="256.0" style="text-shadow: Black 0 -2px;" text="Mazmorrita">
+      <Label layoutX="219.0" layoutY="271.0" style="text-shadow: Black 0 -2px;" text="Mazmorrita">
          <font>
             <Font name="Copperplate Gothic Bold" size="90.0" />
          </font>
@@ -37,29 +37,39 @@
                         <Color />
                      </color>
                   </Stop>
-                  <Stop offset="0.5570469798657718">
+                  <Stop offset="0.4847560975609756">
                      <color>
                         <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color />
+                        <Color red="1.0" green="0.8078431487083435" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="14.0" layoutY="609.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="RED">
+      <Label layoutX="103.0" layoutY="620.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="#ffac00">
          <font>
-            <Font name="Franklin Gothic Medium" size="18.0" />
+            <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="959.0" layoutY="609.0" onMouseClicked="#registrarse" text="Registrarse" textFill="RED">
+      <Label layoutX="950.0" layoutY="620.0" onMouseClicked="#registrarse" text="Registrarse" textFill="#ffac00">
          <font>
-            <Font name="Franklin Gothic Medium" size="18.0" />
+            <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
+      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="878.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="25.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
