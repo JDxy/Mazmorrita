@@ -21,8 +21,8 @@
                   <Image url="@../../../Images/Backgrounds/creacionPersonaje.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="180.0" layoutY="73.0" opacity="0.25" prefHeight="548.0" prefWidth="730.0" style="-fx-background-color: grey;" />
-            <Label layoutX="439.0" layoutY="632.0" onMouseClicked="#crearPersonaje" text="Crear Personaje">
+            <Pane layoutX="196.0" layoutY="75.0" opacity="0.25" prefHeight="548.0" prefWidth="687.0" style="-fx-background-color: grey;" />
+            <Label layoutX="794.0" layoutY="667.0" onMouseClicked="#crearPersonaje" text="Crear Personaje" textFill="#fcfcfc">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -50,7 +50,7 @@
                   <Shadow radius="15.0" width="41.0" />
                </effect>
             </Label>
-            <Label layoutX="201.0" layoutY="-4.0" prefHeight="82.0" prefWidth="687.0" text="Creacion de personaje">
+            <Label layoutX="196.0" prefHeight="84.0" prefWidth="697.0" text="Creacion de personaje">
                <font>
                   <Font name="Franklin Gothic Medium" size="72.0" />
                </font>
@@ -82,66 +82,78 @@
                </textFill>
             </Label>
             <TextField layoutX="522.0" layoutY="93.0" opacity="0.5" prefHeight="25.0" prefWidth="279.0" />
-            <Label layoutX="294.0" layoutY="91.0" text="Nombre">
+            <Label layoutX="294.0" layoutY="91.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="292.0" layoutY="131.0" text="Defensa">
+            <Label layoutX="292.0" layoutY="131.0" text="Defensa" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="131.0" text="0">
+            <Label layoutX="647.0" layoutY="131.0" text="0" textFill="#fcf6f6">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="164.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="164.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f2e8e8">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="198.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="198.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f5f5f5">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="240.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="240.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f5efef">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="647.0" layoutY="280.0" prefHeight="19.0" prefWidth="9.0" text="0">
+            <Label layoutX="647.0" layoutY="280.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f5eeee">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="295.0" layoutY="164.0" text="Fuerza">
+            <Label layoutX="295.0" layoutY="164.0" text="Fuerza" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="307.0" layoutY="198.0" text="Vida">
+            <Label layoutX="307.0" layoutY="198.0" text="Vida" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="297.0" layoutY="240.0" text="Magia">
+            <Label layoutX="297.0" layoutY="240.0" text="Magia" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="299.0" layoutY="280.0" text="Mana">
+            <Label layoutX="299.0" layoutY="280.0" text="Mana" textFill="#fffafa">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="625.0" layoutY="617.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="971.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
                <image>
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
+            <Label layoutX="96.0" layoutY="667.0" onMouseClicked="#crearPersonaje" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="26.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+               <image>
+                  <Image url="@../../../Images/Icons/flecha.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="14.0" layoutY="657.0" prefHeight="49.0" prefWidth="200.0" />
+            <Pane layoutX="792.0" layoutY="657.0" prefHeight="49.0" prefWidth="249.0" />
          </children>
       </Pane>
    </children>

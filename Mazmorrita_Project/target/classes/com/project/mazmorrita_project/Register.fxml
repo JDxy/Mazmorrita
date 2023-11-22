@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -78,20 +79,22 @@
             <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="1034.0" layoutY="623.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffce00">
+      <Label layoutX="953.0" layoutY="622.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="950.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="1064.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
+      <Pane layoutX="14.0" layoutY="615.0" onMouseClicked="#confirmar" prefHeight="44.0" prefWidth="200.0" />
+      <Pane layoutX="945.0" layoutY="614.0" onMouseClicked="#cancelar" prefHeight="44.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
