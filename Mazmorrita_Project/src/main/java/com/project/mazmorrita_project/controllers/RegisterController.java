@@ -1,6 +1,5 @@
 package com.project.mazmorrita_project.controllers;
 
-import com.project.mazmorrita_project.models.LocalConnection;
 import com.project.mazmorrita_project.models.RegisterModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,14 +16,25 @@ public class RegisterController {
     @FXML
     public Label registroTitle;
     @FXML
-    public PasswordField tFContraseña;
+    public PasswordField tFPassword;
     @FXML
     public TextField tFNombre;
 
     public void confirmar(MouseEvent mouseEvent) {
         String nombre= tFNombre.getText();
-        String password=tFContraseña.getText();
+        String password= tFPassword.getText();
         RegisterModel.crearUsuario(nombre,password);
+
+        Scene scene= null;
+        try {
+            scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage window= (Stage) registroTitle.getScene().getWindow();
+        window.setScene(scene);
+        window.setTitle("Login");
+        window.show();
     }
 
     public void cancelar(MouseEvent mouseEvent) {

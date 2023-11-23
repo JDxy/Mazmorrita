@@ -35,7 +35,7 @@
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <PasswordField id="TFPassword" fx:id="tFContraseña" layoutX="448.0" layoutY="405.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
+      <PasswordField id="TFPassword" fx:id="tFPassword" layoutX="448.0" layoutY="405.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font>

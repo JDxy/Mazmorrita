@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
-    private static final String password = "1234";
+    private static final String password = "12345";
     private static Connection connect = null;
 
     public static Connection getConnection() {
@@ -43,8 +43,8 @@ public class LocalConnection {
             try {
                 String sql = "INSERT INTO " + nombre_tabla + " (" + list_columns + ") VALUES ("+ exclamations +")";
                 PreparedStatement statement = connect.prepareStatement(sql);
-                for (int i = 1; i < list_values.length; i++){
-                    statement.setString(i, list_values[i]);
+                for (int i = 0; i < list_values.length; i++){
+                    statement.setString(i+1, list_values[i]);
                 }
                 int filasInsertadas = statement.executeUpdate();
                 System.out.println("Filas afectadas: " + filasInsertadas);
