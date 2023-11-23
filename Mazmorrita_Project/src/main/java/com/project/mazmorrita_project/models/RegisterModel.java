@@ -1,23 +1,33 @@
 package com.project.mazmorrita_project.models;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSql;
-import static com.project.mazmorrita_project.models.LocalConnection.getConnection;
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class RegisterModel {
-   /* public static void main(String[] args) {
-        String listColumns = "nombre,contraseña";
-        String[] listValues =  new String[2];
-        listValues[0] = "dddd";
-        listValues[1] = "contraseña";
-        ExecuteSql("INSERT INTO usuarios (nombre,contraseña) VALUES (?, ?)", listValues);
+public static void main(String[] args) throws SQLException {
+    String[] listValues =  new String[2];
+    listValues[0] = "dddd";
+    listValues[1] = "contraseña";
+
+
+    ArrayList<String> sql = null;
+
+    ExecuteChangesSql("INSERT INTO usuarios (nombre, contraseña) VALUES(?, ?)", listValues);
+    /*
+    ExecuteChangesSql("UPDATE usuarios set nombre = ?  WHERE id = ?", listValues);
+*/
+    sql = ExecuteSelectSql("SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?" , listValues);
+
+    for (String e: sql
+         ) {
+        System.out.println(e);
     }
-    */
+}
+
    public static void crearUsuario(String nombre, String password){
         String[] listValues = new String[2];
         listValues[0]=nombre;
