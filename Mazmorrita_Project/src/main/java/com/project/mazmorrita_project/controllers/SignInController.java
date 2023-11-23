@@ -25,8 +25,10 @@ public class SignInController {
 
     public void iniciarSesion(MouseEvent mouseEvent) {
         if (findUser(tFNombre.getText(), tFContraseña.getText())){
-
+            System.out.println("encontrao");
         }else {
+            System.out.println("false");
+
             showAlert("Error", "Introduzca un nombre de usuario", Alert.AlertType.ERROR);        }
     }
 

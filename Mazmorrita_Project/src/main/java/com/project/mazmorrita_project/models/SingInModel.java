@@ -13,8 +13,7 @@ public class SingInModel {
         listValues[0] = userName;
         listValues[1] = password;
         HashMap<String, String> sql = ExecuteSelectSql("SELECT id, nombre FROM usuarios WHERE nombre = ? AND contraseña = ?", listValues);
-        int count = 0;
-        if (sql != null ){
+        if (sql != null && !sql.isEmpty()) {
             return true;
         }
         return false;
