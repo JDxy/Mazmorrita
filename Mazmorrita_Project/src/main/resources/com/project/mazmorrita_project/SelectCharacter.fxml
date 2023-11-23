@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="714.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.SelectCharacter">
+<AnchorPane prefHeight="714.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.SelectCharacterController">
    <children>
       <ImageView fitHeight="714.0" fitWidth="1050.0" layoutX="-2.0" layoutY="-1.0">
          <image>
             <Image url="@../../../Images/Backgrounds/cavernaDelTiempo.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="175.0" layoutY="52.0" text="Seleccion de personaje" textFill="WHITE">
+      <Label layoutX="175.0" layoutY="52.0" text="Seleccion de personaje">
          <font>
             <Font name="Franklin Gothic Medium" size="72.0" />
          </font>
+         <effect>
+            <Shadow radius="12.5" width="31.0" />
+         </effect>
+      </Label>
+      <Label fx:id="seleccionPersonajeTitle" layoutX="181.0" layoutY="52.0" text="Seleccion de personaje">
+         <font>
+            <Font name="Franklin Gothic Medium" size="72.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5234899328859061">
+                     <color>
+                        <Color red="0.9607843160629272" green="0.5921568870544434" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.9333333373069763" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <Pane layoutX="169.0" layoutY="209.0" opacity="0.31" prefHeight="315.0" prefWidth="725.0" style="-fx-border-color: red;" />
-      <Label layoutX="96.0" layoutY="656.0" text="Volver atras" textFill="WHITE">
+      <Label layoutX="96.0" layoutY="656.0" text="Volver atras" textFill="#fff000">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
       <Label layoutX="674.0" layoutY="460.0" text="Label" />
-      <Label layoutX="784.0" layoutY="656.0" text="Crear personaje" textFill="WHITE">
+      <Label layoutX="784.0" layoutY="656.0" onMouseClicked="#crearPersonaje" text="Crear personaje" textFill="#ffee00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
@@ -41,5 +79,7 @@
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
+      <Pane layoutX="14.0" layoutY="646.0" onMouseClicked="#atras" prefHeight="49.0" prefWidth="215.0" />
+      <Pane layoutX="782.0" layoutY="646.0" onMouseClicked="#crearPersonaje" prefHeight="49.0" prefWidth="259.0" />
    </children>
 </AnchorPane>
