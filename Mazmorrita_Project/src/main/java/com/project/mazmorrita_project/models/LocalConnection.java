@@ -55,23 +55,6 @@ public class LocalConnection {
         }
     }
 
-    public static void deleteMethod(String nombre_tabla, String name_id, String value_id) {
-        Connection connect = LocalConnection.getConnection();
-        if (connect != null) {
-            try {
-                String sql = "DELETE FROM " + nombre_tabla + " WHERE " + name_id + "= ?" ;
-                PreparedStatement statement = connect.prepareStatement(sql);
-                statement.setString(1, value_id);
-                int filasInsertadas = statement.executeUpdate();
-                System.out.println("Filas afectadas: " + filasInsertadas);
-            } catch (SQLException e) {
-                System.out.println("Error al eliminar datos: " + e.getMessage());
-            } finally {
-                LocalConnection.closeConnection();
-            }
-        }
-    }
-
     public static HashMap<String, String> ExecuteSelectSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();
         ResultSet resultSet = null;
@@ -93,7 +76,7 @@ public class LocalConnection {
                         String columnName = metaData.getColumnName(i);
                         Object value = resultSet.getObject(columnName);
 
-                        result.put(columnName,  String.valueOf(value));
+                        result.put(columnName,  String.valueOf(value)          );
                     }
                 }
 
