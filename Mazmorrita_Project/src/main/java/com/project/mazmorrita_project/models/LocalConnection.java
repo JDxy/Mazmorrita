@@ -83,8 +83,8 @@ public class LocalConnection {
                 for (int i = 0; i < values.length; i++) {
                     statement.setString(i + 1, values[i]);
                 }
-                int filasInsertadas = statement.executeUpdate();
-                System.out.println("Filas afectadas: " + filasInsertadas);
+                int filasAfectadas = statement.executeUpdate();
+                System.out.println("Filas afectadas: " + filasAfectadas);
             } catch (SQLException e) {
                 System.out.println("Error: " + e.getMessage());
             } finally {
