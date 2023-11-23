@@ -10,7 +10,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="665.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.floorController">
    <children>
       <ImageView fitHeight="684.0" fitWidth="1208.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
@@ -54,7 +53,7 @@
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="454.0" layoutY="237.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="447.0" layoutY="237.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>

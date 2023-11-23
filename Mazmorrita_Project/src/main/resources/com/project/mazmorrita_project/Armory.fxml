@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="642.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="708.0" fitWidth="1232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Backgrounds/armeria.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="68.0" layoutY="97.0" opacity="0.25" prefHeight="476.0" prefWidth="1085.0" style="-fx-background-color: white;" />
+      <Label layoutX="471.0" layoutY="25.0" text="Armería">
+         <font>
+            <Font name="Franklin Gothic Medium" size="72.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.9715639810426541" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.5142857432365417" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ComboBox layoutX="858.0" layoutY="167.0" prefHeight="25.0" prefWidth="257.0" />
+      <ComboBox layoutX="858.0" layoutY="309.0" prefHeight="25.0" prefWidth="257.0" />
+      <Label layoutX="110.0" layoutY="161.0" text="Defensa">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="110.0" layoutY="229.0" text="Fuerza">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="112.0" layoutY="303.0" text="Vida">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="110.0" layoutY="372.0" text="Magia">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="110.0" layoutY="451.0" text="Mana">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="690.0" layoutY="161.0" text="Armas">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="690.0" layoutY="303.0" text="Ataques">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="313.0" layoutY="162.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="229.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="303.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="372.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="451.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="858.0" layoutY="347.0" prefHeight="25.0" prefWidth="257.0" />
+      <ComboBox layoutX="858.0" layoutY="383.0" prefHeight="25.0" prefWidth="257.0" />
+      <ImageView fitHeight="36.0" fitWidth="25.0" layoutX="364.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="25.0" layoutX="364.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="25.0" layoutX="364.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="25.0" layoutX="364.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="25.0" layoutX="364.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/mas.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="122.0" layoutY="594.0" text="Volver Atrás">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="75.0" fitWidth="106.0" layoutX="31.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="850.0" layoutY="594.0" text="Aceptar Cambios">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.7345971563981043">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="75.0" fitWidth="106.0" layoutX="1095.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="12.0" layoutY="594.0" opacity="0.25" prefHeight="36.0" prefWidth="268.0" />
+      <Pane layoutX="850.0" layoutY="594.0" opacity="0.25" prefHeight="36.0" prefWidth="337.0" />
+   </children>
+</Pane>
