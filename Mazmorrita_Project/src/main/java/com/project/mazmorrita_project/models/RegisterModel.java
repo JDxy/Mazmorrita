@@ -3,6 +3,8 @@ package com.project.mazmorrita_project.models;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
@@ -14,7 +16,7 @@ public static void main(String[] args) throws SQLException {
     listValues[1] = "contraseña";
 
 
-    ArrayList<String> sql = null;
+    HashMap<String, String> sql = null;
 
     ExecuteChangesSql("INSERT INTO usuarios (nombre, contraseña) VALUES(?, ?)", listValues);
     /*
@@ -22,7 +24,7 @@ public static void main(String[] args) throws SQLException {
 */
     sql = ExecuteSelectSql("SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?" , listValues);
 
-    for (String e: sql
+    for (Map.Entry e: sql.entrySet()
          ) {
         System.out.println(e);
     }

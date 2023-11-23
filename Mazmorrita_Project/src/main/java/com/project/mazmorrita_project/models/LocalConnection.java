@@ -2,6 +2,8 @@ package com.project.mazmorrita_project.models;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
@@ -70,10 +72,10 @@ public class LocalConnection {
         }
     }
 
-    public static ArrayList<String> ExecuteSelectSql(String sql, String[] values) {
+    public static HashMap<String, String> ExecuteSelectSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();
         ResultSet resultSet = null;
-        ArrayList<String> result = new ArrayList<>();
+        HashMap<String,String> result = new HashMap<>();
         if (connect != null) {
             try {
                 PreparedStatement statement = connect.prepareStatement(sql);
@@ -91,7 +93,7 @@ public class LocalConnection {
                         String columnName = metaData.getColumnName(i);
                         Object value = resultSet.getObject(columnName);
 
-                        result.add("Columna: " + columnName + ", Valor: " + value);
+                        result.put(columnName,  String.valueOf(value));
                     }
                 }
 
