@@ -25,16 +25,16 @@ public class RegisterController {
         String password= tFPassword.getText();
         RegisterModel.crearUsuario(nombre,password);
 
-        Scene scene= null;
         try {
-            scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/CreateCharacter.fxml")));
+            Stage window= (Stage) registroTitle.getScene().getWindow();
+            window.setScene(scene);
+            window.setTitle("Create Character");
+            window.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage window= (Stage) registroTitle.getScene().getWindow();
-        window.setScene(scene);
-        window.setTitle("Login");
-        window.show();
+
     }
 
     public void cancelar(MouseEvent mouseEvent) {
