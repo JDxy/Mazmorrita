@@ -44,32 +44,34 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="0.8078431487083435" />
+                        <Color red="1.0" green="0.6745098233222961" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="103.0" layoutY="620.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="#ffac00">
+      <Label layoutX="88.0" layoutY="620.0" text="Iniciar Sesión" textFill="#ffac00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="950.0" layoutY="620.0" onMouseClicked="#registrarse" text="Registrarse" textFill="#ffac00">
+      <Label layoutX="876.0" layoutY="620.0" text="Registrarse" textFill="#ffac00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="878.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="1005.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="25.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="25.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
+      <Pane layoutX="14.0" layoutY="609.0" onMouseClicked="#iniciarSesion" prefHeight="51.0" prefWidth="219.0" />
+      <Pane layoutX="863.0" layoutY="609.0" onMouseClicked="#registrarse" prefHeight="51.0" prefWidth="219.0" />
    </children>
 </Pane>

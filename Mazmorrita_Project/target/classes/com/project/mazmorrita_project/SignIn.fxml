@@ -14,12 +14,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.SignInController">
    <children>
-      <ImageView fitHeight="676.0" fitWidth="1279.0" layoutX="-121.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="672.0" fitWidth="1315.0" layoutX="-121.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Backgrounds/creacionPersonaje2.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="163.0" layoutY="180.0" opacity="0.25" prefHeight="217.0" prefWidth="729.0" style="-fx-background-color: white;" />
+      <Pane layoutX="163.0" layoutY="180.0" opacity="0.25" prefHeight="217.0" prefWidth="729.0" style="-fx-background-color: grey;" />
       <Label layoutX="312.0" layoutY="41.0" text="Iniciar Sesión">
          <font>
             <Font name="Franklin Gothic Medium" size="72.0" />
@@ -47,19 +47,19 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.8588235378265381" green="0.7686274647712708" blue="0.18039216101169586" />
+                        <Color red="1.0" green="0.6745098233222961" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="257.0" layoutY="232.0" text="Usuario" textFill="#070606">
+      <Label layoutX="257.0" layoutY="232.0" text="Usuario" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="309.0" text="Contraseña" textFill="#070606">
+      <Label layoutX="254.0" layoutY="309.0" text="Contraseña" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
@@ -72,25 +72,27 @@
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font></PasswordField>
-      <Label layoutX="116.0" layoutY="614.0" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" textFill="#ffe200">
+      <Label layoutX="89.0" layoutY="615.0" text="Iniciar Sesión" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="925.0" layoutY="615.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffe200">
+      <Label layoutX="875.0" layoutY="617.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="72.0" fitWidth="53.0" layoutX="39.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="72.0" fitWidth="53.0" layoutX="25.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="53.0" layoutX="845.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="72.0" fitWidth="53.0" layoutX="977.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
+      <Pane layoutX="14.0" layoutY="608.0" onMouseClicked="#iniciarSesion" prefHeight="42.0" prefWidth="241.0" />
+      <Pane layoutX="814.0" layoutY="610.0" onMouseClicked="#cancelar" prefHeight="42.0" prefWidth="241.0" />
    </children>
 </Pane>

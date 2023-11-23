@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Shadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="616.0" prefWidth="1128.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.RegisterController">
+<AnchorPane prefHeight="616.0" prefWidth="1128.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.RegisterController">
    <children>
       <ImageView fitHeight="689.0" fitWidth="1152.0" layoutX="-3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Backgrounds/comienzo.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="448.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
+      <TextField id="TFName" layoutX="448.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font>
@@ -34,7 +29,7 @@
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <PasswordField layoutX="448.0" layoutY="405.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
+      <PasswordField id="TFPassword" layoutX="448.0" layoutY="405.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font>
@@ -66,7 +61,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
+                        <Color red="1.0" green="0.6745098233222961" />
                      </color>
                   </Stop>
                </stops>
@@ -78,20 +73,22 @@
             <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="1034.0" layoutY="623.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffce00">
+      <Label layoutX="953.0" layoutY="622.0" onMouseClicked="#cancelar" text="Cancelar" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="950.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="1064.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
+      <Pane layoutX="14.0" layoutY="615.0" onMouseClicked="#confirmar" prefHeight="44.0" prefWidth="200.0" />
+      <Pane layoutX="945.0" layoutY="614.0" onMouseClicked="#cancelar" prefHeight="44.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
