@@ -1,17 +1,27 @@
 package com.project.mazmorrita_project.models;
 
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class SingInModel {
-    private static boolean findUser(String userName, String password) {
+
+
+    public static boolean findUser(String userName, String password) {
         String[] listValues = new String[2];
         listValues[0] = userName;
         listValues[1] = password;
-
-        if (ExecuteChangesSql("SELECT usuarios WHERE nombre = ? AND contraseña = ?", listValues)) {
-
-        };
+        HashMap<String, String> sql = ExecuteSelectSql("SELECT id, nombre FROM usuarios WHERE nombre = ? AND contraseña = ?", listValues);
+        if (sql != null && !sql.isEmpty()) {
+            return true;
+        }
         return false;
     }
+
+
 }
+
+
+
 
