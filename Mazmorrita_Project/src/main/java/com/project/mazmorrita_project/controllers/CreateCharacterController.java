@@ -1,12 +1,12 @@
 package com.project.mazmorrita_project.controllers;
 
-<<<<<<< HEAD
-public class CreateCharacterController {
-=======
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import org.w3c.dom.events.MouseEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class CreateCharacterController {
     @FXML
@@ -30,5 +30,4 @@ public class CreateCharacterController {
 
     public void crearPersonaje(MouseEvent mouseEvent) {
     }
->>>>>>> origin/main
 }

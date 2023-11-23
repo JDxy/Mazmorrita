@@ -6,18 +6,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSql;
+
 public class RegisterModel {
     public static void main(String[] args) {
 
         String listColumns = "nombre,contraseña";
 
-        String[] listValues =  new String[3];
-        listValues[0] = "";
-        listValues[1] = "dddd";
-        listValues[2] = "contraseña";
+        String[] listValues =  new String[2];
+
+        listValues[0] = "dddd";
+        listValues[1] = "contraseña";
 
 
-        LocalConnection.deleteMethod("usuarios", "id", "1");
+        ExecuteSql("INSERT INTO usuarios (nombre,contraseña) VALUES (?, ?)", listValues);
     }
 
 }

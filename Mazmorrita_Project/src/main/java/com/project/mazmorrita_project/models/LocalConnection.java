@@ -73,5 +73,24 @@ public class LocalConnection {
             }
         }
     }
+
+
+    public static void ExecuteSql(String sql, String[] values) {
+        Connection connect = LocalConnection.getConnection();
+        if (connect != null) {
+            try {
+                PreparedStatement statement = connect.prepareStatement(sql);
+                for (int i = 0; i < values.length; i++) {
+                    statement.setString(i + 1, values[i]);
+                }
+                int filasInsertadas = statement.executeUpdate();
+                System.out.println("Filas afectadas: " + filasInsertadas);
+            } catch (SQLException e) {
+                System.out.println("Error: " + e.getMessage());
+            } finally {
+                LocalConnection.closeConnection();
+            }
+        }
+    }
     
 }
