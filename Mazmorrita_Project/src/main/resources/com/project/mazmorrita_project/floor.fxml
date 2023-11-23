@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="665.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.floorController">
+   <children>
+      <ImageView fitHeight="684.0" fitWidth="1208.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Backgrounds/caminoFinal.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="141.0" layoutY="604.0" text="Salir">
+         <font>
+            <Font name="Franklin Gothic Medium" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.042682926829268296">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7382550335570469">
+                     <color>
+                        <Color red="1.0" green="0.6452381014823914" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.7809523940086365" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="179.0" layoutY="327.0" onMouseClicked="#bicho1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/espadas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="454.0" layoutY="237.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/espadas.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bossPisoUno" fitHeight="125.0" fitWidth="131.0" layoutX="950.0" layoutY="237.0" onMouseClicked="#boss" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/espadas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="45.0" layoutY="592.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="957.0" layoutY="604.0" text="Armería">
+         <font>
+            <Font name="Franklin Gothic Medium" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.042682926829268296">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7382550335570469">
+                     <color>
+                        <Color red="1.0" green="0.6452381014823914" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.7809523940086365" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="1102.0" layoutY="592.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="693.0" layoutY="330.0" onMouseClicked="#bicho3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/espadas.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="32.0" layoutY="609.0" onMouseClicked="#salir" prefHeight="32.0" prefWidth="185.0" />
+      <Pane layoutX="950.0" layoutY="609.0" onMouseClicked="#armeria" prefHeight="32.0" prefWidth="235.0" />
+   </children>
+</AnchorPane>
