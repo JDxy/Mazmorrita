@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
-    private static final String password = "1234";
+    private static final String password = "12345";
     private static Connection connect = null;
 
     public static Connection getConnection() {
@@ -65,7 +65,6 @@ public class LocalConnection {
                 for (int i = 0; i < values.length; i++) {
                     statement.setString(i + 1, values[i]);
                 }
-
                 resultSet = statement.executeQuery();
 
                 ResultSetMetaData metaData = resultSet.getMetaData();
@@ -76,10 +75,9 @@ public class LocalConnection {
                         String columnName = metaData.getColumnName(i);
                         Object value = resultSet.getObject(columnName);
 
-                        result.put(columnName,  String.valueOf(value)          );
+                        result.put(columnName, String.valueOf(value));
                     }
                 }
-
                 return result;
 
             } catch (SQLException e) {
@@ -91,9 +89,7 @@ public class LocalConnection {
         }else {
             return null;
         }
-
     }
-
 
     public static boolean ExecuteChangesSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();

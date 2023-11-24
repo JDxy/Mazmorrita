@@ -34,7 +34,6 @@ public class RegisterController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public void cancelar(MouseEvent mouseEvent) {

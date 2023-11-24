@@ -27,10 +27,10 @@ public class SignInController {
             System.out.println("encontrao");
             Scene scene= null;
             try {
-                scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Armery.fxml")));
+                scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
                 Stage window= (Stage) iniciarSesionTitle.getScene().getWindow();
                 window.setScene(scene);
-                window.setTitle("Armery");
+                window.setTitle("SelectCharacter");
                 window.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);
