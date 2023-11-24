@@ -68,7 +68,7 @@
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font></TextField>
-      <PasswordField fx:id="tFContraseña" layoutX="576.0" layoutY="308.0" opacity="0.5" prefHeight="25.0" prefWidth="266.0" style="-fx-border-color: black;">
+      <PasswordField fx:id="tFPassword" layoutX="576.0" layoutY="308.0" opacity="0.5" prefHeight="25.0" prefWidth="266.0" style="-fx-border-color: black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font></PasswordField>

@@ -17,9 +17,7 @@ public class LoginController {
     public void iniciarSesion(MouseEvent actionEvent) {
         try {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SignIn.fxml")));
-
             Stage window= (Stage) mazmorritaTitle.getScene().getWindow();
-
             window.setTitle("");
             window.setScene(scene);
             window.show();

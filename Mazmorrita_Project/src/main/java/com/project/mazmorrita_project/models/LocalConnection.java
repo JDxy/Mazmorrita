@@ -3,6 +3,7 @@ package com.project.mazmorrita_project.models;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
@@ -55,10 +56,11 @@ public class LocalConnection {
         }
     }
 
-    public static HashMap<String, String> ExecuteSelectSql(String sql, String[] values) {
+    public static List<HashMap<String, String>> ExecuteSelectSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();
         ResultSet resultSet = null;
-        HashMap<String,String> result = new HashMap<>();
+        List<HashMap<String, String>> resultList = new ArrayList<>();
+
         if (connect != null) {
             try {
                 PreparedStatement statement = connect.prepareStatement(sql);
@@ -72,15 +74,16 @@ public class LocalConnection {
                 int columnCount = metaData.getColumnCount();
 
                 while (resultSet.next()) {
+                    HashMap<String, String> row = new HashMap<>();
                     for (int i = 1; i <= columnCount; i++) {
                         String columnName = metaData.getColumnName(i);
                         Object value = resultSet.getObject(columnName);
-
-                        result.put(columnName,  String.valueOf(value)          );
+                        row.put(columnName, String.valueOf(value));
                     }
+                    resultList.add(row);
                 }
 
-                return result;
+                return resultList;
 
             } catch (SQLException e) {
                 System.out.println("Error: " + e.getMessage());
@@ -88,10 +91,9 @@ public class LocalConnection {
             } finally {
                 LocalConnection.closeConnection();
             }
-        }else {
+        } else {
             return null;
         }
-
     }
 
 

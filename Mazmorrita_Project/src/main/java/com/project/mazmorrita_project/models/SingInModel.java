@@ -9,6 +9,7 @@ public class SingInModel {
 
 
     public static boolean findUser(String userName, String password) {
+        /*
         String[] listValues = new String[2];
         listValues[0] = userName;
         listValues[1] = password;
@@ -17,8 +18,10 @@ public class SingInModel {
             return true;
         }
         return false;
-    }
 
+         */
+        return false;
+    }
 
 }
 
