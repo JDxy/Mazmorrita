@@ -9,7 +9,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert;
 
 import java.io.IOException;
 
@@ -21,15 +20,25 @@ public class SignInController {
     @FXML
     public TextField tFNombre;
     @FXML
-    public PasswordField tFContraseña;
+    public PasswordField tFPassword;
 
     public void iniciarSesion(MouseEvent mouseEvent) {
-        if (findUser(tFNombre.getText(), tFContraseña.getText())){
+        if (findUser(tFNombre.getText(), tFPassword.getText())){
             System.out.println("encontrao");
+            Scene scene= null;
+            try {
+                scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Armery.fxml")));
+                Stage window= (Stage) iniciarSesionTitle.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("Armery");
+                window.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }else {
             System.out.println("false");
-
-            showAlert("Error", "Introduzca un nombre de usuario", Alert.AlertType.ERROR);        }
+            showAlert("Error", "Nombre o contraseña no validos.", Alert.AlertType.ERROR);        }
     }
 
     public void cancelar(MouseEvent mouseEvent) {

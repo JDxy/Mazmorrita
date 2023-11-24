@@ -7,7 +7,6 @@ import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelec
 
 public class SingInModel {
 
-
     public static boolean findUser(String userName, String password) {
         String[] listValues = new String[2];
         listValues[0] = userName;
@@ -18,7 +17,6 @@ public class SingInModel {
         }
         return false;
     }
-
 
 }
 

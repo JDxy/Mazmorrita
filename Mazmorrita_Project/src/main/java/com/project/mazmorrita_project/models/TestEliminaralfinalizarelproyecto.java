@@ -8,9 +8,8 @@ import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelec
 import static com.project.mazmorrita_project.models.SingInModel.findUser;
 
 public class TestEliminaralfinalizarelproyecto {
-
-
     public static void main(String[] args)  {
+
         if(findUser("dddd","contraseña")){
             System.out.println("Todo chido");
         }else {
