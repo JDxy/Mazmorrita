@@ -1,15 +1,12 @@
 package com.project.mazmorrita_project.models;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class SingInModel {
 
-
     public static boolean findUser(String userName, String password) {
-        /*
         String[] listValues = new String[2];
         listValues[0] = userName;
         listValues[1] = password;
@@ -17,9 +14,6 @@ public class SingInModel {
         if (sql != null && !sql.isEmpty()) {
             return true;
         }
-        return false;
-
-         */
         return false;
     }
 

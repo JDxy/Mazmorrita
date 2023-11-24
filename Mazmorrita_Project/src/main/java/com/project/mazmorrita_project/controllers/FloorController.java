@@ -23,6 +23,15 @@ public class FloorController {
     public void boss(MouseEvent mouseEvent) {
     }
     public void armeria(MouseEvent mouseEvent) {
+        try {
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Armery.fxml")));
+            Stage window= (Stage) bossPisoUno.getScene().getWindow();
+            window.setScene(scene);
+            window.setTitle("Armery");
+            window.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void salir(MouseEvent mouseEvent) {
         try {

@@ -11,13 +11,11 @@ import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelec
 
 public class RegisterModel {
 
-
-
    public static void crearUsuario(String nombre, String password){
-        String[] listValues = new String[2];
-        listValues[0]=nombre;
-        listValues[1]=password;
-        LocalConnection.insertMethod("usuarios","Nombre, Contraseña",listValues, "?,?");
+       String[] listValues = new String[2];
+       listValues[0]=nombre;
+       listValues[1]=password;
+       LocalConnection.insertMethod("usuarios","Nombre, Contraseña",listValues, "?,?");
    }
 
 }

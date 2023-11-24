@@ -3,12 +3,11 @@ package com.project.mazmorrita_project.models;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
-    private static final String password = "1234";
+    private static final String password = "12345";
     private static Connection connect = null;
 
     public static Connection getConnection() {
@@ -56,34 +55,30 @@ public class LocalConnection {
         }
     }
 
-    public static List<HashMap<String, String>> ExecuteSelectSql(String sql, String[] values) {
+    public static HashMap<String, String> ExecuteSelectSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();
         ResultSet resultSet = null;
-        List<HashMap<String, String>> resultList = new ArrayList<>();
-
+        HashMap<String,String> result = new HashMap<>();
         if (connect != null) {
             try {
                 PreparedStatement statement = connect.prepareStatement(sql);
                 for (int i = 0; i < values.length; i++) {
                     statement.setString(i + 1, values[i]);
                 }
-
                 resultSet = statement.executeQuery();
 
                 ResultSetMetaData metaData = resultSet.getMetaData();
                 int columnCount = metaData.getColumnCount();
 
                 while (resultSet.next()) {
-                    HashMap<String, String> row = new HashMap<>();
                     for (int i = 1; i <= columnCount; i++) {
                         String columnName = metaData.getColumnName(i);
                         Object value = resultSet.getObject(columnName);
-                        row.put(columnName, String.valueOf(value));
-                    }
-                    resultList.add(row);
-                }
 
-                return resultList;
+                        result.put(columnName, String.valueOf(value));
+                    }
+                }
+                return result;
 
             } catch (SQLException e) {
                 System.out.println("Error: " + e.getMessage());
@@ -91,11 +86,10 @@ public class LocalConnection {
             } finally {
                 LocalConnection.closeConnection();
             }
-        } else {
+        }else {
             return null;
         }
     }
-
 
     public static boolean ExecuteChangesSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();
