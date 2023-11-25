@@ -35,26 +35,6 @@ public class LocalConnection {
             }
         }
     }
-    
-    public static void insertMethod(String nombre_tabla, String list_columns, String[] list_values, String exclamations){
-        Connection connect = LocalConnection.getConnection();
-        if (connect != null) {
-            try {
-                String sql = "INSERT INTO " + nombre_tabla + " (" + list_columns + ") VALUES ("+ exclamations +")";
-                PreparedStatement statement = connect.prepareStatement(sql);
-                for (int i = 0; i < list_values.length; i++){
-                    statement.setString(i+1, list_values[i]);
-                }
-                int filasInsertadas = statement.executeUpdate();
-                System.out.println("Filas afectadas: " + filasInsertadas);
-
-            } catch (SQLException e) {
-                System.out.println("Error al insertar datos: " + e.getMessage());
-            } finally {
-                LocalConnection.closeConnection();
-            }
-        }
-    }
 
     public static List<HashMap<String, String>> ExecuteSelectSql(String sql, String[] values) {
         Connection connect = LocalConnection.getConnection();
@@ -97,17 +77,26 @@ public class LocalConnection {
     }
 
 
-    public static boolean ExecuteChangesSql(String sql, String[] values) {
+    public static boolean ExecuteChangesSql(String sql, String[] values, byte[] imageBytes) {
         Connection connect = LocalConnection.getConnection();
         if (connect != null) {
             try {
                 PreparedStatement statement = connect.prepareStatement(sql);
-                for (int i = 0; i < values.length; i++) {
+                for (int i = 0; i < values.length-1; i++) {
+                    System.out.println(values[i]);
                     statement.setString(i + 1, values[i]);
                 }
+
+                if (imageBytes != null) {
+                    statement.setBytes(values.length, imageBytes);
+                }else {
+                    statement.setString(values.length, values[values.length-1]);
+                }
+
                 int filasAfectadas = statement.executeUpdate();
                 System.out.println("Filas afectadas: " + filasAfectadas);
                 return true;
+
             } catch (SQLException e) {
                 System.out.println("Error: " + e.getMessage());
                 return false;

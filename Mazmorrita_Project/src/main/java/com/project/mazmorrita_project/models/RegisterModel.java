@@ -15,7 +15,10 @@ public class RegisterModel {
        String[] listValues = new String[2];
        listValues[0]=nombre;
        listValues[1]=password;
+       /*
        LocalConnection.insertMethod("usuarios","Nombre, Contraseña",listValues, "?,?");
+   */
    }
+
 
 }
