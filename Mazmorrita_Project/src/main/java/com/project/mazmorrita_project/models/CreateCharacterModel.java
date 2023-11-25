@@ -2,11 +2,11 @@ package com.project.mazmorrita_project.models;
 
 import javafx.scene.image.Image;
 
-import java.io.*;
-
 public class CreateCharacterModel {
 
-    public static void crearPersonaje(String nombre, String avatar,  int idUsuario, int vida, int fuerza, int defensa, int magia, int mana, String clase, int piso, int experiencia) {
+    public static void crearPersonaje(String nombre,String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana,
+                                      String clase, int piso, int experiencia) {
+
         String[] listValues = new String[11];
         listValues[0] = nombre;
         listValues[1] = String.valueOf(idUsuario);

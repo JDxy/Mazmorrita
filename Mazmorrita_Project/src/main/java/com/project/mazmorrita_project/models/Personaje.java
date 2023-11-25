@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 public class Personaje {
     private String nombre;
     private int idUsuario;
-    private Image avatar;
+    private Imagenes avatar;
     private int vida;
     private int fuerza;
     private int defensa;
@@ -15,7 +15,7 @@ public class Personaje {
     private enum Clase  {Mago, Barbaro, Picaro};
     private Clase clase;
     private int idPiso;
-    public Personaje(String nombre, Image avatar, int vida, int fuerza, int defensa, int magia, int mana, Clase clase) {
+    public Personaje(String nombre, Imagenes avatar, int vida, int fuerza, int defensa, int magia, int mana, Clase clase) {
         this.nombre = nombre;
         //idUsuario=0;¿?
         this.avatar = avatar;
@@ -29,6 +29,7 @@ public class Personaje {
         this.idPiso=1;
     }
 
+
     public String getNombre() {
         return nombre;
     }
@@ -37,10 +38,9 @@ public class Personaje {
         return idUsuario;
     }
 
-    public Image getAvatar() {
+    public Imagenes getAvatar() {
         return avatar;
     }
-
     public int getVida() {
         return vida;
     }
@@ -81,10 +81,9 @@ public class Personaje {
         this.idUsuario = idUsuario;
     }
 
-    public void setAvatar(Image avatar) {
+    public void setAvatar(Imagenes avatar) {
         this.avatar = avatar;
     }
-
     public void setVida(int vida) {
         this.vida = vida;
     }
