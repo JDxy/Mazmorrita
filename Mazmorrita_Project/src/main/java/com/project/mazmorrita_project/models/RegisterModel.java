@@ -18,6 +18,7 @@ public class RegisterModel {
        /*
        LocalConnection.insertMethod("usuarios","Nombre, Contraseña",listValues, "?,?");
    */
+       LocalConnection.ExecuteChangesSql("INSERT INTO usuarios (Nombre, Contraseña) VALUES (?, ?)",listValues);
    }
 
 

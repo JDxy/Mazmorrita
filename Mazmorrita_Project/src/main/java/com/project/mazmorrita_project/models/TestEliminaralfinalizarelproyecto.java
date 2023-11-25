@@ -12,6 +12,9 @@ import static com.project.mazmorrita_project.models.SingInModel.findUser;
 public class TestEliminaralfinalizarelproyecto {
     public static void main(String[] args)  {
 
+        String[] listValues = new String[2];
+        listValues[0] = "Ana";
+        listValues[1] = "123";
 
             String nombre = "Personaje2";
             int idUsuario = 1;
@@ -35,6 +38,11 @@ public class TestEliminaralfinalizarelproyecto {
 
         ExecuteChangesSql("INSERT INTO usuarios(nombre, contraseña) values (?,?)", listValues, null);
 */
+        if(findUser("Ana","123")){
+            System.out.println("Todo chido");
+        }else {
+            System.out.println("No chido");
+        };
 
     }
 }
