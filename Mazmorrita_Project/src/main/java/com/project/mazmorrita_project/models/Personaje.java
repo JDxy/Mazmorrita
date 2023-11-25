@@ -15,15 +15,15 @@ public class Personaje {
     private enum Clase  {Mago, Barbaro, Picaro};
     private Clase clase;
     private int idPiso;
-    public Personaje(String nombre, Imagenes avatar, int vida, int fuerza, int defensa, int magia, int mana, Clase clase) {
+    public Personaje(String nombre, Imagenes avatar,Clase clase) {
         this.nombre = nombre;
         //idUsuario=0;¿?
         this.avatar = avatar;
-        this.vida = vida;
-        this.fuerza = fuerza;
-        this.defensa = defensa;
-        this.magia = magia;
-        this.mana = mana;
+        this.vida = 5;
+        this.fuerza = 5;
+        this.defensa = 5;
+        this.magia = 0;
+        this.mana = 0;
         experiencia=0;
         this.clase= clase;
         this.idPiso=1;
