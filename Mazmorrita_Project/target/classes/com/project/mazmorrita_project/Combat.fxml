@@ -185,17 +185,17 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="257.0" layoutY="447.0" text="0" textFill="WHITE">
+      <Label layoutX="257.0" layoutY="447.0" prefWidth="100.0" text="0" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="257.0" layoutY="491.0" text="0" textFill="WHITE">
+      <Label layoutX="257.0" layoutY="491.0" prefWidth="100.0" text="0" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="801.0" layoutY="399.0" text="0" textFill="WHITE">
+      <Label layoutX="801.0" layoutY="399.0" prefWidth="100.0" text="0" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
