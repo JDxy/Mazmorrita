@@ -1,8 +1,13 @@
 package com.project.mazmorrita_project.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ArmeryController {
     @FXML
@@ -19,9 +24,19 @@ public class ArmeryController {
     public Label labelMana;
 
     public void cancelar(MouseEvent mouseEvent) {
+        try {
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
+            Stage window= (Stage) armeriaTitle.getScene().getWindow();
+            window.setScene(scene);
+            window.setTitle("Select Character");
+            window.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void guardarCambios(MouseEvent mouseEvent) {
+
     }
 
     public void addMana(MouseEvent mouseEvent) {

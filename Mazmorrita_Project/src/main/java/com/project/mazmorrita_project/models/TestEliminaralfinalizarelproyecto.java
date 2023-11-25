@@ -12,8 +12,8 @@ public class TestEliminaralfinalizarelproyecto {
     public static void main(String[] args)  {
 
         String[] listValues = new String[2];
-        listValues[0] = "dd";
-        listValues[1] = "dd";
+        listValues[0] = "Ana";
+        listValues[1] = "123";
 
         List<HashMap<String, String>> sql = ExecuteSelectSql("SELECT id, nombre, contraseña FROM usuarios WHERE nombre = ? AND contraseña = ?", listValues);
 
@@ -26,7 +26,7 @@ public class TestEliminaralfinalizarelproyecto {
             System.out.println("---"); // Separador entre filas
         }
 
-        if(findUser("dddd","contraseña")){
+        if(findUser("Ana","123")){
             System.out.println("Todo chido");
         }else {
             System.out.println("No chido");

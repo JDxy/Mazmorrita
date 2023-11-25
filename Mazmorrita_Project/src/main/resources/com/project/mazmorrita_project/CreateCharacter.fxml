@@ -22,7 +22,7 @@
                </image>
             </ImageView>
             <Pane layoutX="204.0" layoutY="75.0" opacity="0.25" prefHeight="548.0" prefWidth="697.0" style="-fx-background-color: grey;" />
-            <Label layoutX="794.0" layoutY="667.0" text="Crear Personaje" textFill="RED">
+            <Label layoutX="849.0" layoutY="664.0" text="Comenzar" textFill="RED">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -153,7 +153,7 @@
                </image>
             </ImageView>
             <Pane layoutX="4.0" layoutY="653.0" onMouseClicked="#cancelar" prefHeight="49.0" prefWidth="200.0" />
-            <Pane layoutX="794.0" layoutY="653.0" onMouseClicked="#crearPersonaje" prefHeight="49.0" prefWidth="249.0" />
+            <Pane layoutX="841.0" layoutY="661.0" onMouseClicked="#comenzar" prefHeight="34.0" prefWidth="200.0" />
          </children>
       </Pane>
    </children>

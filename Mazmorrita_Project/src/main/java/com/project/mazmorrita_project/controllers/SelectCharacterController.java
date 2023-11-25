@@ -27,7 +27,7 @@ public class SelectCharacterController {
 
     public void atras(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/controllers/LoginController.java")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
             Stage window= (Stage) seleccionPersonajeTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Login");

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -35,7 +36,8 @@ public class CreateCharacterController {
             throw new RuntimeException(e);
         }
     }
-    public void crearPersonaje(javafx.scene.input.MouseEvent mouseEvent) {
+
+    public void comenzar(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
             Stage window= (Stage) crearPersonajeTitle.getScene().getWindow();
