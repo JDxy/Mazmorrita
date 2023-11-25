@@ -16,9 +16,8 @@ public class TESTcontroller {
     private ImageView imageView;
 
     public void initialize() {
-        String sql = "SELECT avatar FROM Personajes WHERE nombre = ?"; // Asegúrate de ajustar la consulta para obtener la imagen del personaje correcto
-        String[] values = { "personaje2" }; // Reemplaza ID_DEL_PERSONAJE con el ID real del personaje que deseas cargar
-
+        String sql = "SELECT avatar FROM Personajes WHERE nombre = ?";
+        String[] values = { "personaje2" };
         List<HashMap<String, String>> resultList = ExecuteSelectSql(sql, values);
 
         if (resultList != null && !resultList.isEmpty()) {
@@ -27,7 +26,7 @@ public class TESTcontroller {
 
             // Verifica si la ruta de la imagen no es nula o vacía
             if (imagePath != null && !imagePath.isEmpty()) {
-                // Cargar la imagen desde la ruta
+
                 Image image = new Image("file:" + imagePath);
                 System.out.println(imagePath);
                 // Establecer la imagen en el ImageView
