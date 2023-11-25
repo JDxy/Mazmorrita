@@ -8,7 +8,7 @@ import java.util.List;
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
-    private static final String password = "12345";
+    private static final String password = "1234";
     private static Connection connect = null;
 
     public static Connection getConnection() {
@@ -77,20 +77,21 @@ public class LocalConnection {
     }
 
 
-    public static boolean ExecuteChangesSql(String sql, String[] values, byte[] imageBytes) {
+    public static boolean ExecuteChangesSql(String sql, Object[] values) {
         Connection connect = LocalConnection.getConnection();
         if (connect != null) {
+            PreparedStatement statement = null;
             try {
-                PreparedStatement statement = connect.prepareStatement(sql);
-                for (int i = 0; i < values.length-1; i++) {
-                    System.out.println(values[i]);
-                    statement.setString(i + 1, values[i]);
-                }
+                statement = connect.prepareStatement(sql);
 
-                if (imageBytes != null) {
-                    statement.setBytes(values.length, imageBytes);
-                }else {
-                    statement.setString(values.length, values[values.length-1]);
+                for (int i = 0; i < values.length; i++) {
+                    Object value = values[i];
+
+                    if (value instanceof byte[]) {
+                        statement.setBytes(i + 1, (byte[]) value);
+                    } else {
+                        statement.setString(i + 1, String.valueOf(value));
+                    }
                 }
 
                 int filasAfectadas = statement.executeUpdate();
@@ -101,6 +102,13 @@ public class LocalConnection {
                 System.out.println("Error: " + e.getMessage());
                 return false;
             } finally {
+                if (statement != null) {
+                    try {
+                        statement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
                 LocalConnection.closeConnection();
             }
         }

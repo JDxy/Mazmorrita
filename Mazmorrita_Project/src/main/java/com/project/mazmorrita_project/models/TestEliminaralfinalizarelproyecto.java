@@ -26,7 +26,7 @@ public class TestEliminaralfinalizarelproyecto {
             int mana = 80;
             int piso = 1;
             String clase = "Barbaro";
-            String imagePath = "src/main/resources/Images/Characters/barbaro.jpg";
+            String imagePath = "C:\\Users\\josed\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\barbaro.jpg";
 
             CreateCharacterModel.crearPersonaje(nombre, imagePath,idUsuario, vida, fuerza, defensa, magia, mana, clase, piso, experiencia );
 
