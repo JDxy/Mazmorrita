@@ -21,7 +21,7 @@
                   <Image url="@../../../Images/Backgrounds/creacionPersonaje.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="204.0" layoutY="75.0" opacity="0.25" prefHeight="548.0" prefWidth="697.0" style="-fx-background-color: grey;" />
+            <Pane layoutX="204.0" layoutY="75.0" opacity="0.25" prefHeight="548.0" prefWidth="100.0" style="-fx-background-color: grey;" />
             <Label layoutX="849.0" layoutY="664.0" text="Comenzar" textFill="RED">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
@@ -92,27 +92,27 @@
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelDefensa" layoutX="676.0" layoutY="131.0" text="0" textFill="#fcf6f6">
+            <Label fx:id="labelDefensa" layoutX="676.0" layoutY="131.0" prefWidth="100.0" text="5" textFill="#fcf6f6">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelFuerza" layoutX="676.0" layoutY="170.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f2e8e8">
+            <Label fx:id="labelFuerza" layoutX="676.0" layoutY="170.0" prefHeight="19.0" prefWidth="100.0" text="5" textFill="#f2e8e8">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelVida" layoutX="676.0" layoutY="212.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f5f5f5">
+            <Label fx:id="labelVida" layoutX="676.0" layoutY="212.0" prefHeight="19.0" prefWidth="100.0" text="5" textFill="#f5f5f5">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelMagia" layoutX="676.0" layoutY="254.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f5efef">
+            <Label fx:id="labelMagia" layoutX="676.0" layoutY="254.0" prefHeight="19.0" prefWidth="100.0" text="0" textFill="#f5efef">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelMana" layoutX="676.0" layoutY="294.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="#f5eeee">
+            <Label fx:id="labelMana" layoutX="676.0" layoutY="294.0" prefHeight="19.0" prefWidth="100.0" text="0" textFill="#f5eeee">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
