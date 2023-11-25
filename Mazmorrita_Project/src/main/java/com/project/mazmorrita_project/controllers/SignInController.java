@@ -1,9 +1,10 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Alert;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -38,7 +39,7 @@ public class SignInController {
 
         }else {
             System.out.println("false");
-            showAlert("Error", "Nombre o contraseña no validos.", Alert.AlertType.ERROR);        }
+            Alert.showAlert("Error", "Nombre o contraseña no validos.", javafx.scene.control.Alert.AlertType.ERROR); }
     }
 
     public void cancelar(MouseEvent mouseEvent) {
@@ -53,11 +54,5 @@ public class SignInController {
             throw new RuntimeException(e);
         }
     }
-    private void showAlert(String title, String message, Alert.AlertType alertType) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+
 }

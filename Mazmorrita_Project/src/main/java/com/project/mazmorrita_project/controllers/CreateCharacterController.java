@@ -48,4 +48,10 @@ public class CreateCharacterController {
             throw new RuntimeException(e);
         }
     }
+    public void claseMago(MouseEvent mouseEvent) {
+    }
+    public void claseBarbaro(MouseEvent mouseEvent) {
+    }
+    public void clasePicaro(MouseEvent mouseEvent) {
+    }
 }
