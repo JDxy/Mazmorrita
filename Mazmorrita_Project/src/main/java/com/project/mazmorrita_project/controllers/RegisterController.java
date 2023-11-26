@@ -39,7 +39,6 @@ public class RegisterController {
             }
         }
     }
-
     public void cancelar(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));

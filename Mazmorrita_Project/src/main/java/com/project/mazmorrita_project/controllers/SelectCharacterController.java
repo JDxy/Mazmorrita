@@ -36,6 +36,6 @@ public class SelectCharacterController {
             throw new RuntimeException(e);
         }
     }
-
-
+    public void borrarPersonaje(MouseEvent mouseEvent) {
+    }
 }
