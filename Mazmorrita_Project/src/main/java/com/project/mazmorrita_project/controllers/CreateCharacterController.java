@@ -63,18 +63,17 @@ public class CreateCharacterController {
             int piso=1;
             int exp=0;
 
-            if(clase=="Mago"){
+            if(clase.equals("Mago")){
                 image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\mago.jpg";
             }
-            if(clase=="Barbaro"){
+            if(clase.equals("Barbaro")){
                 image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\barbaro.jpg";
             }
-            if(clase=="Picaro"){
+            if(clase.equals("Picaro")){
                 image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\picara.jpg";
             }
 
            CreateCharacterModel.crearPersonaje(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);
-
 
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
