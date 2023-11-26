@@ -1,6 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
+import com.project.mazmorrita_project.models.LocalConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,9 +24,17 @@ public class SignInController {
     @FXML
     public PasswordField tFPassword;
 
+    public static String id;
+
     public void iniciarSesion(MouseEvent mouseEvent) {
         if (findUser(tFNombre.getText(), tFPassword.getText())){
-            System.out.println("encontrao");
+            System.out.println("Encontrao");
+
+            //Busca id del usuario que inicie sesión para pasarselo cuando crear pj
+            String[]values=new String[1];
+            values[0]=tFNombre.getText();
+            id= LocalConnection.ExecuteSelectSql("Select Id from usuarios where Nombre= ?",values).toString();
+
             Scene scene= null;
             try {
                 scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
@@ -43,7 +52,6 @@ public class SignInController {
     }
 
     public void cancelar(MouseEvent mouseEvent) {
-
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
             Stage window= (Stage) iniciarSesionTitle.getScene().getWindow();

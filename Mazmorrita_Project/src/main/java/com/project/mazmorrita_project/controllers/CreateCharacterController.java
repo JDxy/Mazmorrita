@@ -1,14 +1,20 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
+import com.project.mazmorrita_project.models.CreateCharacterModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class CreateCharacterController {
     @FXML
@@ -45,7 +51,31 @@ public class CreateCharacterController {
         } else if (clase == null) {
             Alert.showAlert("Error", "Debe seleccionar una clase", javafx.scene.control.Alert.AlertType.ERROR);
         } else {
-            //crear personaje y mover a piso
+
+            String nombre= tFNombre.getText();
+            String image=null;
+            int idUser= Integer.parseInt(SignInController.id);
+            int vida= Integer.parseInt(labelVida.getText());
+            int fuerza= Integer.parseInt(labelFuerza.getText());
+            int defensa= Integer.parseInt(labelDefensa.getText());
+            int magia= Integer.parseInt(labelMagia.getText());
+            int mana= Integer.parseInt(labelMana.getText());
+            int piso=1;
+            int exp=0;
+
+            if(clase=="Mago"){
+                image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\mago.jpg";
+            }
+            if(clase=="Barbaro"){
+                image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\barbaro.jpg";
+            }
+            if(clase=="Picaro"){
+                image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\picara.jpg";
+            }
+
+           CreateCharacterModel.crearPersonaje(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);
+
+
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
                 Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();

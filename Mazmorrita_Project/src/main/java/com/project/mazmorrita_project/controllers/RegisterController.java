@@ -29,10 +29,10 @@ public class RegisterController {
         }else{
             RegisterModel.crearUsuario(nombre,password);
             try {
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/CreateCharacter.fxml")));
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SignIn.fxml")));
                 Stage window= (Stage) registroTitle.getScene().getWindow();
                 window.setScene(scene);
-                window.setTitle("Create Character");
+                window.setTitle("SignIn");
                 window.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);
