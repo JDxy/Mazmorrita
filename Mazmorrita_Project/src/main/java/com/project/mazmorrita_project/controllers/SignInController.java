@@ -13,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 import static com.project.mazmorrita_project.models.SingInModel.findUser;
 
@@ -25,6 +27,8 @@ public class SignInController {
     public PasswordField tFPassword;
 
     public static String id;
+    public static List<HashMap<String,String>>list;
+    public HashMap<String,String>idList;
 
     public void iniciarSesion(MouseEvent mouseEvent) {
         if (findUser(tFNombre.getText(), tFPassword.getText())){
@@ -33,7 +37,9 @@ public class SignInController {
             //Busca id del usuario que inicie sesión para pasarselo cuando crear pj
             String[]values=new String[1];
             values[0]=tFNombre.getText();
-            id= LocalConnection.ExecuteSelectSql("Select Id from usuarios where Nombre= ?",values).toString();
+            list= LocalConnection.ExecuteSelectSql("Select Id from usuarios where Nombre= ?",values);
+            idList=list.get(0);
+            id=idList.get("Id");
 
             Scene scene= null;
             try {
