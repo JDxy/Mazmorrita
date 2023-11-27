@@ -10,7 +10,7 @@ CREATE TABLE Usuarios (
 );
 
 CREATE TABLE Pisos (
-    Id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Id INT PRIMARY KEY AUTO_INCREMENT,
     ImagenPiso VARCHAR(50) NULL,
     Numero INT NOT NULL,
     NumeroEnemigos INT NOT NULL
@@ -23,8 +23,8 @@ CREATE TABLE Enemigos(
     Vida INT NOT NULL,
     Fuerza INT NOT NULL,
     Defensa INT NOT NULL,
-    Jefe INTEGER NOT NULL,
-    Botin VARCHAR(28),
+    Jefe TINYINT NOT NULL,
+    Botin INT,
     FOREIGN KEY (IdPiso) REFERENCES Pisos(Id));
 
 CREATE TABLE Personajes(
@@ -38,7 +38,7 @@ CREATE TABLE Personajes(
     Magia INT NOT NULL,
     Mana INT NOT NULL,
     Experiencia INT DEFAULT 0,
-    Clase TEXT NOT NULL CHECK(Clase IN ('Mago', 'Barbaro', 'Picaro')),
+    Clase ENUM( "Mago", "Barbaro", "Picaro") NOT NULL,
     PRIMARY KEY(Nombre, IdUsuario),
     FOREIGN KEY(IdPiso) REFERENCES Pisos(Id),
     FOREIGN KEY(IdUsuario) REFERENCES Usuarios(Id));
@@ -47,13 +47,14 @@ CREATE TABLE Armas(
     Nombre VARCHAR(50) NOT NULL,
     IdUsuario INT NOT NULL,
     NombrePersonaje VARCHAR(50) NOT NULL,
-    Fuerza INT DEFAULT 0,
-    Defensa INT DEFAULT 0,
-    Vida INT DEFAULT 0,
-    Magia INT DEFAULT 0,
-    Mana INT DEFAULT 0,
+    Fuerza INT,
+    Defensa INT,
+    Vida INT,
+    Magia INT,
+    Mana INT,
     PRIMARY KEY(Nombre, IdUsuario, NombrePersonaje),
-    FOREIGN KEY(IdUsuario, NombrePersonaje) REFERENCES Personajes(IdUsuario, Nombre));
+    FOREIGN KEY(IdUsuario) REFERENCES Personajes(IdUsuario),
+    FOREIGN KEY(NombrePersonaje) REFERENCES Personajes(Nombre));
 
 CREATE TABLE Ataques(
 	Nombre VARCHAR(50) PRIMARY KEY,
@@ -61,45 +62,33 @@ CREATE TABLE Ataques(
 	Tipo ENUM("Magico", "Fisico"));
 
 CREATE TABLE Ataque_enemigo(
-    NombreAtaque VARCHAR(50) NOT NULL,
+	NombreAtaque VARCHAR(50) NOT NULL,
     NombreEnemigo VARCHAR(50) NOT NULL,
-    Potencia INT DEFAULT 0,
     PRIMARY KEY(NombreAtaque, NombreEnemigo),
-    FOREIGN KEY(NombreEnemigo) REFERENCES Enemigos(Nombre));
+    FOREIGN KEY(NombreEnemigo) REFERENCES Enemigos(Nombre),
+    FOREIGN KEY(NombreAtaque) REFERENCES Ataques(Nombre));
 
 CREATE TABLE Ataque_personaje(
-    NombreAtaque VARCHAR(50) NOT NULL,
+	NombreAtaque VARCHAR(50) NOT NULL,
     IdUsuario INT NOT NULL,
-    NombrePersonaje VARCHAR(50) NOT NULL,
-    Potencia INT DEFAULT 0,
-    Tipo TEXT NOT NULL CHECK(Tipo IN ('Magico', 'Fisico')),
-    PRIMARY KEY(NombreAtaque, IdUsuario, NombrePersonaje),
-    FOREIGN KEY(IdUsuario, NombrePersonaje) REFERENCES Personajes(IdUsuario, Nombre));
+    NombrePersonaje VARCHAR(14) NOT NULL,
+	PRIMARY KEY(NombreAtaque, IdUsuario, NombrePersonaje),
+    FOREIGN KEY(NombrePersonaje) REFERENCES Personajes(Nombre),
+    FOREIGN KEY(IdUsuario) REFERENCES Personajes(IdUsuario),
+    FOREIGN KEY(NombreAtaque) REFERENCES Ataques(Nombre));
 
 DELIMITER //
 
 CREATE TRIGGER Armas_B_I BEFORE INSERT ON Armas
-FOR EACH ROW
-BEGIN
-    SET NEW.Fuerza = IFNULL(NEW.Fuerza, 0);
-    SET NEW.Defensa = IFNULL(NEW.Defensa, 0);
-    SET NEW.Vida = IFNULL(NEW.Vida, 0);
-    SET NEW.Magia = IFNULL(NEW.Magia, 0);
-    SET NEW.Mana = IFNULL(NEW.Mana, 0);
-END //
-
-CREATE TRIGGER AtaqueEnemigo_B_I BEFORE INSERT ON Ataque_enemigo
-FOR EACH ROW
-BEGIN
-    SET NEW.Potencia = IFNULL(NEW.Potencia, 0);
-END //
-
-CREATE TRIGGER AtaquePersonaje_B_I BEFORE INSERT ON Ataque_personaje
-FOR EACH ROW
-BEGIN
-    SET NEW.Potencia = IFNULL(NEW.Potencia, 0);
-END //
-
+	FOR EACH ROW
+    BEGIN
+		IF (NEW.Fuerza IS NULL) THEN SET NEW.Fuerza = 0; END IF;
+        IF (NEW.Defensa IS NULL) THEN SET NEW.Defensa = 0; END IF;
+        IF (NEW.Vida IS NULL) THEN SET NEW.Vida = 0; END IF;
+        IF (NEW.Magia IS NULL) THEN SET NEW.Magia = 0; END IF;
+        IF (NEW.Mana IS NULL) THEN SET NEW.Mana = 0; END IF;
+	END;
+    //
 DELIMITER ;
 
 -- Ataques Mago
@@ -147,26 +136,26 @@ INSERT INTO Enemigos VALUES("Emperatriz Arlequin: Zanoria", 2, null, 225, 70, 35
 -- Ataques Cocoona
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Lamento de encierro", 120);
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Golpe Fantasma", 50);
-INSERT INTO Ataque_enemigo VALUES("Lamento de encierro", "Dragon del lamento: Cocoona",120);
-INSERT INTO Ataque_enemigo VALUES("Golpe Fantasma", "Dragon del lamento: Cocoona",200);
+INSERT INTO Ataque_enemigo VALUES("Lamento de encierro", "Dragon del lamento: Cocoona");
+INSERT INTO Ataque_enemigo VALUES("Golpe Fantasma", "Dragon del lamento: Cocoona");
 
 -- Ataques Ecanthy
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Golpe de los 50 Brazos", 120);
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Retumbo de tierra", 50);
-INSERT INTO Ataque_enemigo VALUES("Golpe de los 50 Brazos", "Titan: Ecanthy",120);
-INSERT INTO Ataque_enemigo VALUES("Retumbo de tierra", "Titan: Ecanthy",200);
+INSERT INTO Ataque_enemigo VALUES("Golpe de los 50 Brazos", "Titan: Ecanthy");
+INSERT INTO Ataque_enemigo VALUES("Retumbo de tierra", "Titan: Ecanthy");
 
 -- Ataques XI
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Cometa Incoloro", 240);
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Distorcion existencial", 45);
-INSERT INTO Ataque_enemigo VALUES("Cometa Incoloro", "El enigmatico: XI",60);
-INSERT INTO Ataque_enemigo VALUES("Distorcion existencial", "El enigmatico: XI",40);
+INSERT INTO Ataque_enemigo VALUES("Cometa Incoloro", "El enigmatico: XI");
+INSERT INTO Ataque_enemigo VALUES("Distorcion existencial", "El enigmatico: XI");
 
 -- Ataques Zanoria
 INSERT INTO Ataques(Nombre, Potencia) VALUES("TODO EL MUNDO A BAILAR!", 120);
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Atraccion de Circo", 60);
-INSERT INTO Ataque_enemigo VALUES("TODO EL MUNDO A BAILAR!", "Emperatriz Arlequin: Zanoria",60);
-INSERT INTO Ataque_enemigo VALUES("Atraccion de Circo", "Emperatriz Arlequin: Zanoria",40);
+INSERT INTO Ataque_enemigo VALUES("TODO EL MUNDO A BAILAR!", "Emperatriz Arlequin: Zanoria");
+INSERT INTO Ataque_enemigo VALUES("Atraccion de Circo", "Emperatriz Arlequin: Zanoria");
 
 -- Ataques Enemigos
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Golpe", 20);
@@ -175,29 +164,29 @@ INSERT INTO Ataques VALUES("Felonia Simpatica", 20, "Magico");
 INSERT INTO Ataques VALUES("Invocar Nombre", 25, "Magico");
 INSERT INTO Ataques VALUES("Ataque emocional", 35, "Magico");
 
-INSERT INTO Ataque_Enemigo VALUES("Golpe", "Esqueleto",20);
-INSERT INTO Ataque_Enemigo VALUES("Estocada", "Esqueleto",20);
+INSERT INTO Ataque_Enemigo VALUES("Golpe", "Esqueleto");
+INSERT INTO Ataque_Enemigo VALUES("Estocada", "Esqueleto");
 
-INSERT INTO Ataque_Enemigo VALUES("Golpe", "Slime",20);
-INSERT INTO Ataque_Enemigo VALUES("Estocada", "Slime",20);
+INSERT INTO Ataque_Enemigo VALUES("Golpe", "Slime");
+INSERT INTO Ataque_Enemigo VALUES("Estocada", "Slime");
 
-INSERT INTO Ataque_Enemigo VALUES("Golpe", "Zombie",20);
-INSERT INTO Ataque_Enemigo VALUES("Estocada", "Zombie",20);
+INSERT INTO Ataque_Enemigo VALUES("Golpe", "Zombie");
+INSERT INTO Ataque_Enemigo VALUES("Estocada", "Zombie");
 
-INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Imp",20);
-INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Imp",20);
+INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Imp");
+INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Imp");
 
-INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Bruja",30);
-INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Bruja",30);
-INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Bruja",30);
+INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Bruja");
+INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Bruja");
+INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Bruja");
 
-INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Vampiro",30);
-INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Vampiro",30);
-INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Vampiro",30);
+INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Vampiro");
+INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Vampiro");
+INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Vampiro");
 
-INSERT INTO Ataque_Enemigo VALUES("Golpe", "Demonio",40);
-INSERT INTO Ataque_Enemigo VALUES("Estocada", "Demonio",40);
-INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Demonio",40);
+INSERT INTO Ataque_Enemigo VALUES("Golpe", "Demonio");
+INSERT INTO Ataque_Enemigo VALUES("Estocada", "Demonio");
+INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Demonio");
 
-INSERT INTO Ataque_Enemigo VALUES("Golpe", "Perro Infectado",30);
-INSERT INTO Ataque_Enemigo VALUES("Estocada", "Perro Infectado",30);
+INSERT INTO Ataque_Enemigo VALUES("Golpe", "Perro Infectado");
+INSERT INTO Ataque_Enemigo VALUES("Estocada", "Perro Infectado");
