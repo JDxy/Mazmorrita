@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="665.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.floorController">
+<AnchorPane prefHeight="681.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.FloorController">
    <children>
-      <ImageView fitHeight="684.0" fitWidth="1208.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="702.0" fitWidth="1173.0" layoutX="-13.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Backgrounds/caminoFinal.jpg" />
          </image>
@@ -54,12 +54,12 @@
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="454.0" layoutY="237.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="424.0" layoutY="240.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="bossPisoUno" fitHeight="125.0" fitWidth="131.0" layoutX="950.0" layoutY="237.0" onMouseClicked="#boss" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bossPisoUno" fitHeight="125.0" fitWidth="131.0" layoutX="806.0" layoutY="235.0" onMouseClicked="#boss" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
@@ -69,7 +69,7 @@
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Label layoutX="957.0" layoutY="604.0" text="Armería">
+      <Label layoutX="888.0" layoutY="605.0" text="Armería">
          <font>
             <Font name="Franklin Gothic Medium" size="36.0" />
          </font>
@@ -100,17 +100,17 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="1102.0" layoutY="592.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="1034.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="693.0" layoutY="330.0" onMouseClicked="#bicho3" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="65.0" layoutX="608.0" layoutY="392.0" onMouseClicked="#bicho3" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
       <Pane layoutX="32.0" layoutY="609.0" onMouseClicked="#salir" prefHeight="32.0" prefWidth="185.0" />
-      <Pane layoutX="950.0" layoutY="609.0" onMouseClicked="#armeria" prefHeight="32.0" prefWidth="235.0" />
+      <Pane layoutX="877.0" layoutY="611.0" onMouseClicked="#armeria" prefHeight="32.0" prefWidth="235.0" />
    </children>
 </AnchorPane>
