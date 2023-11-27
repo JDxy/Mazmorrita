@@ -16,7 +16,7 @@ public class TESTcontroller {
 
     public void initialize() {
         String sql = "SELECT avatar FROM Personajes WHERE nombre = ?";
-        String[] values = { "personaje2" };
+        String[] values = { "dd" };
         List<HashMap<String, String>> resultList = ExecuteSelectSql(sql, values);
 
         if (resultList != null && !resultList.isEmpty()) {

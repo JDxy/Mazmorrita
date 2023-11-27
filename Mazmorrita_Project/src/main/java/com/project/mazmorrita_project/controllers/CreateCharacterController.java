@@ -59,13 +59,13 @@ public class CreateCharacterController {
             int exp=0;
 
             if(clase.equals("Mago")){
-                image="src/main/resources/Images/Characters/mago.jpg";
+                image="Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
             }
             if(clase.equals("Barbaro")){
-                image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\barbaro.jpg";
+                image="Mazmorrita_Project/src/main/resources/Images/Characters/barbaro.jpg";
             }
             if(clase.equals("Picaro")){
-                image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\picara.jpg";
+                image="Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
             }
 
            Character.createCharacter(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);

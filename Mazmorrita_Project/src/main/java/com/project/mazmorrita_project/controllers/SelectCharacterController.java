@@ -20,38 +20,41 @@ import static com.project.mazmorrita_project.models.Character.showCharacters;
 public class SelectCharacterController {
     @FXML
     public Label seleccionPersonajeTitle;
-
     @FXML
-    public ImageView ImageView1;
-
+    public Pane Panel1, Panel2, Panel3, Panel4, Panel5;
     @FXML
-    public Label Name1;
-
+    public ImageView ImageView1, ImageView2, ImageView3, ImageView4, ImageView5;
     @FXML
-    public Label Experience1;
-
+    public Label Name1, Name2, Name3, Name4, Name5;
     @FXML
-    public Pane Panel1;
+    public Label Experience1, Experience2, Experience3, Experience4, Experience5;
+
     public void initialize() {
-        List<HashMap<String, String>> characters = showCharacters("3");
+        List<HashMap<String, String>> characters = showCharacters(SignInController.id);
 
-        Panel1.setVisible(true);
-        for (HashMap<String, String> character : characters) {
+        Pane[] panels = {Panel1, Panel2, Panel3, Panel4, Panel5};
+        ImageView[] imageViews = {ImageView1, ImageView2, ImageView3, ImageView4, ImageView5};
+        Label[] names = {Name1, Name2, Name3, Name4, Name5};
+        Label[] experiences = {Experience1, Experience2, Experience3, Experience4, Experience5};
+
+        for (int i = 0; i < characters.size(); i++) {
+            panels[i].setVisible(true);
+            HashMap<String, String> character = characters.get(i);
+
             for (Map.Entry<String, String> entry : character.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
 
                 if ("Avatar".equals(key)) {
                     Image image = new Image("file:" + value);
-                    ImageView1.setImage(image);
+                    imageViews[i].setImage(image);
                 } else if ("Nombre".equals(key)) {
-                    Name1.setText(value);
+                    names[i].setText(value);
                 } else if ("Experiencia".equals(key)) {
-                    Experience1.setText(value);
+                    experiences[i].setText(value);
                 }
             }
         }
-        System.out.println();
     }
 
     public void crearPersonaje(MouseEvent mouseEvent) {
