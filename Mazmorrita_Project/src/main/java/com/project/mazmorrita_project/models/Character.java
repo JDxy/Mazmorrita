@@ -1,11 +1,21 @@
 package com.project.mazmorrita_project.models;
 
-import javafx.scene.image.Image;
+import java.util.HashMap;
+import java.util.List;
 
-public class CreateCharacterModel {
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
-    public static void crearPersonaje(String nombre,String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana,
-                                      String clase, int piso, int experiencia) {
+public class Character {
+
+    public static List<HashMap<String, String>> showCharacters(String userId){
+        String[] listValues = new String[1];
+        listValues[0] = userId;
+        List<HashMap<String, String>> sql= ExecuteSelectSql("SELECT avatar, nombre, experiencia FROM personajes WHERE IdUsuario = ?", listValues);
+        return sql;
+    }
+
+    public static void createCharacter(String nombre, String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana,
+                                       String clase, int piso, int experiencia) {
 
         String[] listValues = new String[11];
         listValues[0] = nombre;

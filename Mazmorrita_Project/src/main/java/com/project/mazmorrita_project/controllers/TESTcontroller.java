@@ -1,6 +1,5 @@
 package com.project.mazmorrita_project.controllers;
 
-import com.project.mazmorrita_project.models.CreateCharacterModel;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

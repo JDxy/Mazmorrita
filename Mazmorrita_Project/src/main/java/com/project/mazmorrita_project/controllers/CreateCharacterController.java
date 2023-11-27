@@ -1,20 +1,15 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
-import com.project.mazmorrita_project.models.CreateCharacterModel;
+import com.project.mazmorrita_project.models.Character;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class CreateCharacterController {
     @FXML
@@ -64,7 +59,7 @@ public class CreateCharacterController {
             int exp=0;
 
             if(clase.equals("Mago")){
-                image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\mago.jpg";
+                image="src/main/resources/Images/Characters/mago.jpg";
             }
             if(clase.equals("Barbaro")){
                 image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\barbaro.jpg";
@@ -73,7 +68,7 @@ public class CreateCharacterController {
                 image="C:\\Users\\ana_p\\Documents\\GitHub\\Mazmorrita\\Mazmorrita_Project\\src\\main\\resources\\Images\\Characters\\picara.jpg";
             }
 
-           CreateCharacterModel.crearPersonaje(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);
+           Character.createCharacter(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);
 
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
