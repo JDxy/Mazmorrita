@@ -1,9 +1,10 @@
 package com.project.mazmorrita_project.models;
 
+import javafx.fxml.FXML;
+
 //He declarado esta clase solo para que no me de fallos la construccion de los enemigos
 //Ya le dejo al encargado de esta como la termina de hacer
 public class Attack {
-
     private  String nombre;
     private int potencia;
     private String tipo;

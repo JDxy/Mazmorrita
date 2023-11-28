@@ -74,8 +74,9 @@ public class CreateCharacterController {
                     image = "Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
                 }
                 imageSelected = new Image("file:" + image);
+                Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
 
-                Character.createCharacter(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
+                Character.insertCharacter(character);
 
                 try {
                     Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
@@ -89,7 +90,6 @@ public class CreateCharacterController {
             }
         }else {
             Alert.showAlert("Error", "Este personaje ya existe", javafx.scene.control.Alert.AlertType.ERROR);
-
         }
     }
     public void claseMago(MouseEvent mouseEvent) {
