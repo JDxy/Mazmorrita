@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import static com.project.mazmorrita_project.models.Character.findCharacter;
+import static com.project.mazmorrita_project.models.Character.noMoreThan5;
 
 public class CreateCharacterController {
     @FXML
@@ -46,24 +47,26 @@ public class CreateCharacterController {
     }
     public void comenzar(MouseEvent mouseEvent) {
         String nombre = tFNombre.getText();
+        int idUser = Integer.parseInt(SignInController.id);
 
         if (findCharacter(nombre) != true) {
-            if (tFNombre.getText().isEmpty()) {
-                Alert.showAlert("Error", "Debe insertar un nombre para el personaje", javafx.scene.control.Alert.AlertType.ERROR);
-            } else if (clase == null) {
-                Alert.showAlert("Error", "Debe seleccionar una clase", javafx.scene.control.Alert.AlertType.ERROR);
-            } else {
+            if (noMoreThan5(idUser)) {
+                if (tFNombre.getText().isEmpty()) {
+                    Alert.showAlert("Error", "Debe insertar un nombre para el personaje", javafx.scene.control.Alert.AlertType.ERROR);
+                } else if (clase == null) {
+                    Alert.showAlert("Error", "Debe seleccionar una clase", javafx.scene.control.Alert.AlertType.ERROR);
+                } else {
 
-                String image = null;
-                int idUser = Integer.parseInt(SignInController.id);
-                int vida = Integer.parseInt(labelVida.getText());
-                int fuerza = Integer.parseInt(labelFuerza.getText());
-                int defensa = Integer.parseInt(labelDefensa.getText());
-                int magia = Integer.parseInt(labelMagia.getText());
-                int mana = Integer.parseInt(labelMana.getText());
-                int piso = 1;
-                int exp = 0;
+                    String image = null;
+                    int vida = Integer.parseInt(labelVida.getText());
+                    int fuerza = Integer.parseInt(labelFuerza.getText());
+                    int defensa = Integer.parseInt(labelDefensa.getText());
+                    int magia = Integer.parseInt(labelMagia.getText());
+                    int mana = Integer.parseInt(labelMana.getText());
+                    int piso = 1;
+                    int exp = 0;
 
+<<<<<<< HEAD
                 if (clase.equals("Mago")) {
                     image = "Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
                 }
@@ -77,16 +80,33 @@ public class CreateCharacterController {
                 Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
 
                 Character.insertCharacter(character);
+=======
+                    if (clase.equals("Mago")) {
+                        image = "Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
+                    }
+                    if (clase.equals("Barbaro")) {
+                        image = "Mazmorrita_Project/src/main/resources/Images/Characters/barbaro.jpg";
+                    }
+                    if (clase.equals("Picaro")) {
+                        image = "Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
+                    }
+                    imageSelected = new Image("file:" + image);
 
-                try {
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
-                    Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();
-                    window.setScene(scene);
-                    window.setTitle("floor");
-                    window.show();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    Character.createCharacter(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
+>>>>>>> fd087c5b0251482de789477cf17bd21befd3aa07
+
+                    try {
+                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
+                        Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();
+                        window.setScene(scene);
+                        window.setTitle("floor");
+                        window.show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
+            }else {
+                Alert.showAlert("Error", "Un usuario no puede tener mas de 5 personajes", javafx.scene.control.Alert.AlertType.ERROR);
             }
         }else {
             Alert.showAlert("Error", "Este personaje ya existe", javafx.scene.control.Alert.AlertType.ERROR);

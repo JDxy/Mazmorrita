@@ -61,7 +61,27 @@ public class Character {
        return findValue("SELECT nombre FROM personajes WHERE nombre = ?", listValues);
     }
 
+<<<<<<< HEAD
     public static void insertCharacter(Character character) {
+=======
+    public static boolean noMoreThan5(int userId){
+        String[] listValues = new String[1];
+        listValues[0] = String.valueOf(userId);
+        System.out.println(userId);
+        List<HashMap<String, String>> sql =  ExecuteSelectSql("SELECT idUsuario FROM personajes WHERE idUsuario = ?", listValues);
+
+        if (sql.size() <= 5){
+
+            System.out.println(sql.size());
+
+            return true;
+        }
+        return false;
+    }
+
+    public static void createCharacter(String nombre, String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana,
+                                       String clase, int piso, int experiencia) {
+>>>>>>> fd087c5b0251482de789477cf17bd21befd3aa07
 
         String[] listValues = new String[11];
         listValues[0] = character.nombre;
