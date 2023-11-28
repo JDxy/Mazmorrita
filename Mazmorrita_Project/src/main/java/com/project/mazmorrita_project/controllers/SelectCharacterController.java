@@ -142,7 +142,6 @@ public class SelectCharacterController {
     }
     public void borrarPersonaje(MouseEvent mouseEvent) {
         deleteCharacter(nameSelected);
-
         Scene scene= null;
         try {
             scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
@@ -153,5 +152,9 @@ public class SelectCharacterController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void usarPersonaje(MouseEvent mouseEvent) {
+
     }
 }
