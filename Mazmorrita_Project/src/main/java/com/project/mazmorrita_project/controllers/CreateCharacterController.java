@@ -78,7 +78,7 @@ public class CreateCharacterController {
                 Character.createCharacter(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
 
                 try {
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
                     Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();
                     window.setScene(scene);
                     window.setTitle("floor");
@@ -95,6 +95,7 @@ public class CreateCharacterController {
     public void claseMago(MouseEvent mouseEvent) {
         labelFuerza.setText("5");
         labelDefensa.setText("5");
+        labelVida.setText("10");
         labelMagia.setText("10");
         labelMana.setText("10");
         clase="Mago";
@@ -102,6 +103,7 @@ public class CreateCharacterController {
     public void claseBarbaro(MouseEvent mouseEvent) {
         labelFuerza.setText("10");
         labelDefensa.setText("10");
+        labelVida.setText("15");
         labelMagia.setText("0");
         labelMana.setText("0");
         clase="Barbaro";
@@ -109,6 +111,7 @@ public class CreateCharacterController {
     public void clasePicaro(MouseEvent mouseEvent) {
         labelFuerza.setText("20");
         labelDefensa.setText("5");
+        labelVida.setText("5");
         labelMagia.setText("0");
         labelMana.setText("0");
         clase="Picaro";

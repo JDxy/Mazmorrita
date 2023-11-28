@@ -18,7 +18,6 @@ import java.util.Map;
 
 import static com.project.mazmorrita_project.models.Character.deleteCharacter;
 import static com.project.mazmorrita_project.models.Character.showCharacters;
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 
 public class SelectCharacterController {
     @FXML
@@ -169,7 +168,7 @@ public class SelectCharacterController {
     public void usarPersonaje(MouseEvent mouseEvent) {
         if (nameSelected != null) {
             try {
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
                 Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();
                 window.setScene(scene);
                 window.setTitle("floor");

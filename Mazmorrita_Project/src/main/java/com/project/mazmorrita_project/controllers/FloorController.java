@@ -17,12 +17,12 @@ public class FloorController {
     @FXML
     public ImageView personajeAvatar;
 
+    public static Image imageAvatar = null;
+
 
 
     public void initialize() {
-        Image imageAvatar = null;
         if (SelectCharacterController.imageSelected != null){
-
             imageAvatar = SelectCharacterController.imageSelected;
             SelectCharacterController.imageSelected = null;
         }

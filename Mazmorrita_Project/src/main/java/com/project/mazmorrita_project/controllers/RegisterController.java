@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.project.mazmorrita_project.models.SingInModel.findUser;
+
 public class RegisterController {
     @FXML
     public Label registroTitle;
@@ -22,22 +24,28 @@ public class RegisterController {
     public TextField tFNombre;
 
     public void confirmar(MouseEvent mouseEvent) {
-        String nombre= tFNombre.getText();
-        String password= tFPassword.getText();
-        if(nombre.isEmpty() || password.isEmpty()){
-            Alert.showAlert("Error", "Nombre o contraseña no validos.", javafx.scene.control.Alert.AlertType.ERROR);
-        }else{
-            RegisterModel.crearUsuario(nombre,password);
-            try {
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SignIn.fxml")));
-                Stage window= (Stage) registroTitle.getScene().getWindow();
-                window.setScene(scene);
-                window.setTitle("SignIn");
-                window.show();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        String name = tFNombre.getText();
+        String password = tFPassword.getText();
+        if (findUser(name, password) != true) {
+            if (name.isEmpty() || password.isEmpty()) {
+                Alert.showAlert("Error", "Nombre o contraseña no validos.", javafx.scene.control.Alert.AlertType.ERROR);
+            } else {
+                RegisterModel.crearUsuario(name, password);
+                try {
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SignIn.fxml")));
+                    Stage window = (Stage) registroTitle.getScene().getWindow();
+                    window.setScene(scene);
+                    window.setTitle("SignIn");
+                    window.show();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
+        }else {
+            Alert.showAlert("Error", "El usuario ya existe.", javafx.scene.control.Alert.AlertType.ERROR);
         }
+
+
     }
     public void cancelar(MouseEvent mouseEvent) {
         try {

@@ -18,11 +18,7 @@
          </image>
       </ImageView>
       <Pane layoutX="22.0" layoutY="97.0" opacity="0.15" prefHeight="535.0" prefWidth="1012.0" style="-fx-background-color: white;" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="197.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Images/Characters/mago.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="avatarPjCombat" fitHeight="150.0" fitWidth="200.0" layoutX="197.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="733.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Enemies/bruja3.jpg" />
