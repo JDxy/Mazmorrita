@@ -32,9 +32,6 @@ public class SignInController {
 
     public void iniciarSesion(MouseEvent mouseEvent) {
         if (findUser(tFNombre.getText(), tFPassword.getText())){
-            System.out.println("Encontrao");
-
-            //Busca id del usuario que inicie sesión para pasarselo cuando crear pj
             String[]values=new String[1];
             values[0]=tFNombre.getText();
             list= LocalConnection.ExecuteSelectSql("Select Id from usuarios where Nombre= ?",values);

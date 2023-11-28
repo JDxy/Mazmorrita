@@ -100,17 +100,17 @@
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelDefensa" layoutX="676.0" layoutY="131.0" prefWidth="100.0" text="5" textFill="#fcf6f6">
+            <Label fx:id="labelDefensa" layoutX="676.0" layoutY="131.0" prefWidth="100.0" text="0" textFill="#fcf6f6">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelFuerza" layoutX="676.0" layoutY="170.0" prefHeight="19.0" prefWidth="100.0" text="5" textFill="#f2e8e8">
+            <Label fx:id="labelFuerza" layoutX="676.0" layoutY="170.0" prefHeight="19.0" prefWidth="100.0" text="0" textFill="#f2e8e8">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelVida" layoutX="676.0" layoutY="212.0" prefHeight="19.0" prefWidth="100.0" text="5" textFill="#f5f5f5">
+            <Label fx:id="labelVida" layoutX="676.0" layoutY="212.0" prefHeight="19.0" prefWidth="100.0" text="0" textFill="#f5f5f5">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>

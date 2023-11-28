@@ -12,6 +12,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+import static com.project.mazmorrita_project.models.Character.findCharacter;
+
 public class CreateCharacterController {
     @FXML
     public Label crearPersonajeTitle;
@@ -43,46 +45,51 @@ public class CreateCharacterController {
         }
     }
     public void comenzar(MouseEvent mouseEvent) {
+        String nombre = tFNombre.getText();
 
-        if (tFNombre.getText().isEmpty()) {
-            Alert.showAlert("Error", "Debe insertar un nombre para el personaje", javafx.scene.control.Alert.AlertType.ERROR);
-        } else if (clase == null) {
-            Alert.showAlert("Error", "Debe seleccionar una clase", javafx.scene.control.Alert.AlertType.ERROR);
-        } else {
+        if (findCharacter(nombre) != true) {
+            if (tFNombre.getText().isEmpty()) {
+                Alert.showAlert("Error", "Debe insertar un nombre para el personaje", javafx.scene.control.Alert.AlertType.ERROR);
+            } else if (clase == null) {
+                Alert.showAlert("Error", "Debe seleccionar una clase", javafx.scene.control.Alert.AlertType.ERROR);
+            } else {
 
-            String nombre= tFNombre.getText();
-            String image=null;
-            int idUser= Integer.parseInt(SignInController.id);
-            int vida= Integer.parseInt(labelVida.getText());
-            int fuerza= Integer.parseInt(labelFuerza.getText());
-            int defensa= Integer.parseInt(labelDefensa.getText());
-            int magia= Integer.parseInt(labelMagia.getText());
-            int mana= Integer.parseInt(labelMana.getText());
-            int piso=1;
-            int exp=0;
+                String image = null;
+                int idUser = Integer.parseInt(SignInController.id);
+                int vida = Integer.parseInt(labelVida.getText());
+                int fuerza = Integer.parseInt(labelFuerza.getText());
+                int defensa = Integer.parseInt(labelDefensa.getText());
+                int magia = Integer.parseInt(labelMagia.getText());
+                int mana = Integer.parseInt(labelMana.getText());
+                int piso = 1;
+                int exp = 0;
 
-            if(clase.equals("Mago")){
-                image="Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
+                if (clase.equals("Mago")) {
+                    image = "Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
+                }
+                if (clase.equals("Barbaro")) {
+                    image = "Mazmorrita_Project/src/main/resources/Images/Characters/barbaro.jpg";
+                }
+                if (clase.equals("Picaro")) {
+                    image = "Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
+                }
+                imageSelected = new Image("file:" + image);
+
+                Character.createCharacter(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
+
+                try {
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
+                    Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();
+                    window.setScene(scene);
+                    window.setTitle("floor");
+                    window.show();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            if(clase.equals("Barbaro")){
-                image="Mazmorrita_Project/src/main/resources/Images/Characters/barbaro.jpg";
-            }
-            if(clase.equals("Picaro")){
-                image="Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
-            }
-            imageSelected = new Image("file:" + image);
+        }else {
+            Alert.showAlert("Error", "Este personaje ya existe", javafx.scene.control.Alert.AlertType.ERROR);
 
-           Character.createCharacter(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);
-
-            try {
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
-                Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();
-                window.setScene(scene);
-                window.setTitle("floor");
-                window.show();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
     public void claseMago(MouseEvent mouseEvent) {

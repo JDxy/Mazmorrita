@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
+import static com.project.mazmorrita_project.models.LocalConnection.findValue;
 
 public class SingInModel {
 
@@ -11,13 +12,8 @@ public class SingInModel {
         String[] listValues = new String[2];
         listValues[0] = userName;
         listValues[1] = password;
-        List<HashMap<String, String>> sql=
-        ExecuteSelectSql("SELECT id, nombre FROM usuarios WHERE nombre = ? AND contraseña = ?", listValues);
 
-        if (sql != null && !sql.isEmpty()) {
-            return true;
-        }
-        return false;
+        return  findValue("SELECT id, nombre FROM usuarios WHERE nombre = ? AND contraseña = ?", listValues);
     }
 
 }

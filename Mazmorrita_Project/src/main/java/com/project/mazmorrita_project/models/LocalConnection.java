@@ -115,5 +115,13 @@ public class LocalConnection {
         }
         return false;
     }
+
+    public static boolean findValue(String select, String[] listValues){
+        List<HashMap<String, String>> sql = ExecuteSelectSql(select, listValues);
+        if (sql != null && !sql.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
     
 }
