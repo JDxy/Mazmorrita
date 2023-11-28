@@ -55,7 +55,7 @@ public class SignInController {
         }else {
             System.out.println("false");
             Alert.showAlert("Error", "Nombre o contraseña no validos.", javafx.scene.control.Alert.AlertType.ERROR); }
-    }
+        }
 
     public void cancelar(MouseEvent mouseEvent) {
         try {

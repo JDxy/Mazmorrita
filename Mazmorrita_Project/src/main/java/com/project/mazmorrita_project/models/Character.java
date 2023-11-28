@@ -3,6 +3,7 @@ package com.project.mazmorrita_project.models;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class Character {
@@ -12,6 +13,13 @@ public class Character {
         listValues[0] = userId;
         List<HashMap<String, String>> sql= ExecuteSelectSql("SELECT avatar, nombre, experiencia FROM personajes WHERE IdUsuario = ?", listValues);
         return sql;
+    }
+
+    public static void deleteCharacter(String name){
+        String[] listValues = new String[1];
+        listValues[0] = name;
+        ExecuteChangesSql("DELETE FROM personajes WHERE nombre = ?", listValues);
+
     }
 
     public static void createCharacter(String nombre, String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana,

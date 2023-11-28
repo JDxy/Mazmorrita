@@ -7,7 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,7 +16,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.project.mazmorrita_project.models.Character.deleteCharacter;
 import static com.project.mazmorrita_project.models.Character.showCharacters;
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 
 public class SelectCharacterController {
     @FXML
@@ -28,6 +31,8 @@ public class SelectCharacterController {
     public Label Name1, Name2, Name3, Name4, Name5;
     @FXML
     public Label Experience1, Experience2, Experience3, Experience4, Experience5;
+    private Pane panelSeleccionado = null;
+    private String nameSelected = null;
 
     public void initialize() {
         List<HashMap<String, String>> characters = showCharacters(SignInController.id);
@@ -69,6 +74,61 @@ public class SelectCharacterController {
         }
     }
 
+    public void panelClick1(MouseEvent mouseEvent){
+        nameSelected = Name1.getText();
+        manejarSeleccion(Panel1);
+    }
+
+    public void panelClick2(MouseEvent mouseEvent){
+        nameSelected = Name2.getText();
+        manejarSeleccion(Panel2);
+    }
+
+    public void panelClick3(MouseEvent mouseEvent){
+        nameSelected = Name3.getText();
+        manejarSeleccion(Panel3);
+    }
+
+    public void panelClick4(MouseEvent mouseEvent){
+        nameSelected = Name4.getText();
+        manejarSeleccion(Panel4);
+    }
+
+    public void panelClick5(MouseEvent mouseEvent){
+        nameSelected = Name5.getText();
+        manejarSeleccion(Panel5);
+    }
+
+    private void manejarSeleccion(Pane panel){
+        if(panelSeleccionado != null && panelSeleccionado != panel){
+            quitarSeleccion(panelSeleccionado);
+        }
+
+        if(panel.equals(panelSeleccionado)){
+            quitarSeleccion(panel);
+            panelSeleccionado = null;
+        } else {
+            aplicarSeleccion(panel);
+            panelSeleccionado = panel;
+        }
+    }
+
+    private void aplicarSeleccion(Pane panel){
+        BorderStroke bordeRojo = new BorderStroke(
+                Color.RED,
+                BorderStrokeStyle.SOLID,
+                CornerRadii.EMPTY,
+                BorderStroke.THIN
+        );
+
+        Border nuevoBorde = new Border(bordeRojo);
+        panel.setBorder(nuevoBorde);
+    }
+
+    private void quitarSeleccion(Pane panel){
+        panel.setBorder(null);
+    }
+
     public void atras(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
@@ -81,5 +141,17 @@ public class SelectCharacterController {
         }
     }
     public void borrarPersonaje(MouseEvent mouseEvent) {
+        deleteCharacter(nameSelected);
+
+        Scene scene= null;
+        try {
+            scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
+            Stage window= (Stage) seleccionPersonajeTitle.getScene().getWindow();
+            window.setScene(scene);
+            window.setTitle("SelectCharacter");
+            window.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

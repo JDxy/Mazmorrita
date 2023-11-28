@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Shadow?>
@@ -41,6 +42,9 @@
                <image>
                   <Image url="@../../../Images/Characters/TarjetaBandida.jpg" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
             </ImageView>
             <Label layoutX="201.0" layoutY="7.0" text="Creacion de personaje">
                <font>
@@ -81,7 +85,11 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <TextField fx:id="tFNombre" layoutX="544.0" layoutY="94.0" opacity="0.5" prefHeight="25.0" prefWidth="279.0" />
+            <TextField fx:id="tFNombre" layoutX="544.0" layoutY="92.0" opacity="0.5" prefHeight="25.0" prefWidth="279.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
             <Label layoutX="258.0" layoutY="92.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
