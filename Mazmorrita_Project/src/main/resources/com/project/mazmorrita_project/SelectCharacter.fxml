@@ -264,27 +264,29 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="613.0" layoutY="654.0" onMouseClicked="#usarPersonaje" prefHeight="34.0" prefWidth="74.0" />
-      <Label layoutX="623.0" layoutY="657.0" text="Jugar">
-         <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="0.7772511848341233" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="0.9666666388511658" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
+      <Pane layoutX="613.0" layoutY="654.0" onMouseClicked="#usarPersonaje" prefHeight="34.0" prefWidth="74.0">
+         <children>
+            <Label layoutX="9.0" layoutY="6.0" text="Jugar">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.7772511848341233" startX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.9666666388511658" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children></Pane>
    </children>
 </AnchorPane>

@@ -33,6 +33,7 @@ public class SelectCharacterController {
     public Label Experience1, Experience2, Experience3, Experience4, Experience5;
     private Pane panelSeleccionado = null;
     private String nameSelected = null;
+    public static Image imageSelected = null;
 
     public void initialize() {
         List<HashMap<String, String>> characters = showCharacters(SignInController.id);
@@ -53,6 +54,7 @@ public class SelectCharacterController {
                 if ("Avatar".equals(key)) {
                     Image image = new Image("file:" + value);
                     imageViews[i].setImage(image);
+
                 } else if ("Nombre".equals(key)) {
                     names[i].setText(value);
                 } else if ("Experiencia".equals(key)) {
@@ -76,26 +78,36 @@ public class SelectCharacterController {
 
     public void panelClick1(MouseEvent mouseEvent){
         nameSelected = Name1.getText();
+        imageSelected = ImageView1.getImage();
+
         manejarSeleccion(Panel1);
     }
 
     public void panelClick2(MouseEvent mouseEvent){
         nameSelected = Name2.getText();
+        imageSelected = ImageView2.getImage();
+
         manejarSeleccion(Panel2);
     }
 
     public void panelClick3(MouseEvent mouseEvent){
         nameSelected = Name3.getText();
+        imageSelected = ImageView3.getImage();
+
         manejarSeleccion(Panel3);
     }
 
     public void panelClick4(MouseEvent mouseEvent){
         nameSelected = Name4.getText();
+        imageSelected = ImageView4.getImage();
+
         manejarSeleccion(Panel4);
     }
 
     public void panelClick5(MouseEvent mouseEvent){
         nameSelected = Name5.getText();
+        imageSelected = ImageView5.getImage();
+
         manejarSeleccion(Panel5);
     }
 
@@ -155,6 +167,16 @@ public class SelectCharacterController {
     }
 
     public void usarPersonaje(MouseEvent mouseEvent) {
-
+        if (nameSelected != null) {
+            try {
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor.fxml")));
+                Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("floor");
+                window.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

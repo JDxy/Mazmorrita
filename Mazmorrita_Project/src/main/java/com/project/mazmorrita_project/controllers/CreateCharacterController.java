@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -27,6 +28,8 @@ public class CreateCharacterController {
     @FXML
     public Label labelMana;
     private String clase=null;
+
+    public static Image imageSelected;
 
     public void cancelar(javafx.scene.input.MouseEvent mouseEvent) {
         try {
@@ -67,6 +70,7 @@ public class CreateCharacterController {
             if(clase.equals("Picaro")){
                 image="Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
             }
+            imageSelected = new Image("file:" + image);
 
            Character.createCharacter(nombre,image,idUser,vida,fuerza,defensa,magia,mana,clase,piso,exp);
 
