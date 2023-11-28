@@ -30,7 +30,7 @@ public class Floor {
         actualizarPiso(numPiso);
     }
 
-    public void actualizarPiso(int id){
+    private void actualizarPiso(int id){
         String sqlSentence= "SELECT Pisos.Id, Pisos.Numero, Pisos.NumeroEnemigos, Pisos.ImagenPiso FROM Pisos where Pisos.Id= ?;";
         String[] values= {""+id};
         List<HashMap<String, String>> results= LocalConnection.ExecuteSelectSql(sqlSentence, values);
