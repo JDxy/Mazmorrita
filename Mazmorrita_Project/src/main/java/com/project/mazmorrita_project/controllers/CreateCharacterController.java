@@ -66,21 +66,6 @@ public class CreateCharacterController {
                     int piso = 1;
                     int exp = 0;
 
-<<<<<<< HEAD
-                if (clase.equals("Mago")) {
-                    image = "Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
-                }
-                if (clase.equals("Barbaro")) {
-                    image = "Mazmorrita_Project/src/main/resources/Images/Characters/barbaro.jpg";
-                }
-                if (clase.equals("Picaro")) {
-                    image = "Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
-                }
-                imageSelected = new Image("file:" + image);
-                Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
-
-                Character.insertCharacter(character);
-=======
                     if (clase.equals("Mago")) {
                         image = "Mazmorrita_Project/src/main/resources/Images/Characters/mago.jpg";
                     }
@@ -91,9 +76,9 @@ public class CreateCharacterController {
                         image = "Mazmorrita_Project/src/main/resources/Images/Characters/picara.jpg";
                     }
                     imageSelected = new Image("file:" + image);
+                    Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
 
-                    Character.createCharacter(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
->>>>>>> fd087c5b0251482de789477cf17bd21befd3aa07
+                    Character.insertCharacter(character);
 
                     try {
                         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));

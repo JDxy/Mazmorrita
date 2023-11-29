@@ -35,70 +35,67 @@ public class Character {
         this.clase = clase;
         this.piso = piso;
         this.experiencia = experiencia;
-        this.armas=new ArrayList<>();
-        this.ataques=new ArrayList<>();
-        this.nivel=1;
+        this.armas = new ArrayList<>();
+        this.ataques = new ArrayList<>();
+        this.nivel = 1;
     }
 
-    public static List<HashMap<String, String>> showCharacters(String userId){
+    public static List<HashMap<String, String>> showCharacters(String userId) {
         String[] listValues = new String[1];
         listValues[0] = userId;
-        List<HashMap<String, String>> sql= ExecuteSelectSql("SELECT avatar, nombre, experiencia FROM personajes WHERE IdUsuario = ?", listValues);
+        List<HashMap<String, String>> sql = ExecuteSelectSql("SELECT avatar, nombre, experiencia FROM personajes WHERE IdUsuario = ?", listValues);
         return sql;
     }
 
 
-    public static void deleteCharacter(String name){
+    public static void deleteCharacter(String name) {
         String[] listValues = new String[1];
         listValues[0] = name;
         LocalConnection.ExecuteChangesSql("DELETE FROM personajes WHERE nombre = ?", listValues);
     }
 
-    public static boolean findCharacter(String name){
+    public static boolean findCharacter(String name) {
         String[] listValues = new String[1];
         listValues[0] = name;
 
-       return findValue("SELECT nombre FROM personajes WHERE nombre = ?", listValues);
+        return findValue("SELECT nombre FROM personajes WHERE nombre = ?", listValues);
     }
 
-<<<<<<< HEAD
-    public static void insertCharacter(Character character) {
-=======
-    public static boolean noMoreThan5(int userId){
+    public static boolean noMoreThan5(int userId) {
         String[] listValues = new String[1];
         listValues[0] = String.valueOf(userId);
-        System.out.println(userId);
-        List<HashMap<String, String>> sql =  ExecuteSelectSql("SELECT idUsuario FROM personajes WHERE idUsuario = ?", listValues);
 
-        if (sql.size() <= 5){
+        List<HashMap<String, String>> sql = ExecuteSelectSql("SELECT COUNT(*) AS count FROM personajes WHERE idUsuario = ?", listValues);
 
-            System.out.println(sql.size());
-
+        if (!sql.isEmpty()) {
+            int count = Integer.parseInt(sql.get(0).get("count"))+1;
+            if (count > 5){
+                return false;
+            }
             return true;
         }
-        return false;
+        return true;
+
     }
 
-    public static void createCharacter(String nombre, String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana,
-                                       String clase, int piso, int experiencia) {
->>>>>>> fd087c5b0251482de789477cf17bd21befd3aa07
 
-        String[] listValues = new String[11];
-        listValues[0] = character.nombre;
-        listValues[1] = String.valueOf(character.idUsuario);
-        listValues[2] = String.valueOf(character.vida);
-        listValues[3] = String.valueOf(character.fuerza);
-        listValues[4] = String.valueOf(character.defensa);
-        listValues[5] = String.valueOf(character.magia);
-        listValues[6] = String.valueOf(character.mana);
-        listValues[7] = String.valueOf(character.clase);
-        listValues[8] = String.valueOf(character.piso);
-        listValues[9] = String.valueOf(character.experiencia);
-        listValues[10] = String.valueOf(character.avatar);
 
-        LocalConnection.ExecuteChangesSql("INSERT INTO personajes (Nombre, IdUsuario, Vida, Fuerza, Defensa, Magia, Mana, Clase, idpiso, Experiencia ,Avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", listValues);
-    }
+    public static void insertCharacter(Character character) {
+            String[] listValues = new String[11];
+            listValues[0] = character.nombre;
+            listValues[1] = String.valueOf(character.idUsuario);
+            listValues[2] = String.valueOf(character.vida);
+            listValues[3] = String.valueOf(character.fuerza);
+            listValues[4] = String.valueOf(character.defensa);
+            listValues[5] = String.valueOf(character.magia);
+            listValues[6] = String.valueOf(character.mana);
+            listValues[7] = String.valueOf(character.clase);
+            listValues[8] = String.valueOf(character.piso);
+            listValues[9] = String.valueOf(character.experiencia);
+            listValues[10] = String.valueOf(character.avatar);
 
+            LocalConnection.ExecuteChangesSql("INSERT INTO personajes (Nombre, IdUsuario, Vida, Fuerza, Defensa, Magia, Mana, Clase, idpiso, Experiencia ,Avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", listValues);
+        }
 
 
 
