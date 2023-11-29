@@ -1,5 +1,6 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Alert;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,8 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.project.mazmorrita_project.models.Character.deleteCharacter;
-import static com.project.mazmorrita_project.models.Character.showCharacters;
+import static com.project.mazmorrita_project.models.Character.*;
 
 public class SelectCharacterController {
     @FXML
@@ -64,15 +64,20 @@ public class SelectCharacterController {
     }
 
     public void crearPersonaje(MouseEvent mouseEvent) {
-        try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/CreateCharacter.fxml")));
-            Stage window= (Stage) seleccionPersonajeTitle.getScene().getWindow();
-            window.setScene(scene);
-            window.setTitle("CreateCharacter");
-            window.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        if (noMoreThan5(Integer.parseInt(SignInController.id))) {
+
+            try {
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/CreateCharacter.fxml")));
+                Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("CreateCharacter");
+                window.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+        Alert.showAlert("Error", "Un usuario no puede tener mas de 5 personajes", javafx.scene.control.Alert.AlertType.ERROR);
+    }
     }
 
     public void panelClick1(MouseEvent mouseEvent){

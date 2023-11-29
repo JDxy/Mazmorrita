@@ -50,7 +50,6 @@ public class CreateCharacterController {
         int idUser = Integer.parseInt(SignInController.id);
 
         if (findCharacter(nombre) != true) {
-            if (noMoreThan5(idUser)) {
                 if (tFNombre.getText().isEmpty()) {
                     Alert.showAlert("Error", "Debe insertar un nombre para el personaje", javafx.scene.control.Alert.AlertType.ERROR);
                 } else if (clase == null) {
@@ -90,9 +89,7 @@ public class CreateCharacterController {
                         throw new RuntimeException(e);
                     }
                 }
-            }else {
-                Alert.showAlert("Error", "Un usuario no puede tener mas de 5 personajes", javafx.scene.control.Alert.AlertType.ERROR);
-            }
+
         }else {
             Alert.showAlert("Error", "Este personaje ya existe", javafx.scene.control.Alert.AlertType.ERROR);
         }
