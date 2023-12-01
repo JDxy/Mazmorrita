@@ -24,19 +24,6 @@ public class Enemy {
     private int botin;
     private boolean jefe;
 
-    public Enemy(){
-        nombre= "Enemigo Prueba";
-        avatar= "Avatar Prueba";
-        vidaMaxima= 500;
-        vidaActual= vidaMaxima;
-        fuerza= 500;
-        defensaBase= 500;
-        defensa= defensaBase;
-        ataques= null;
-        botin= 0;
-        jefe= false;
-    }
-
     public Enemy(int idPiso, boolean isJefe) {
         String sqlSentence= "SELECT Nombre, Avatar, Vida, Fuerza, Defensa, Jefe, Botin FROM Enemigos where IdPiso= ? AND Jefe= ?";
         String[] values= {""+idPiso, ""+((isJefe)? 1:0)};

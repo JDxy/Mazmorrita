@@ -8,7 +8,6 @@ import java.util.List;
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
-    // ANA, DEJA LA CONTRASEÑA COMO ESTA, CAMBIA LA DE TU CONEXION!!!
     private static final String password = "1234";
     private static Connection connect = null;
 

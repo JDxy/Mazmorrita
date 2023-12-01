@@ -1,5 +1,6 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Enemy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +14,15 @@ import java.io.IOException;
 public class FloorController {
     @FXML
     public ImageView bossPisoUno;
+
+    @FXML
+    public ImageView enemyAvatar1;
+
+    @FXML
+    public ImageView enemyAvatar2;
+
+    @FXML
+    public ImageView enemyAvatar3;
 
     @FXML
     public ImageView personajeAvatar;
@@ -32,10 +42,22 @@ public class FloorController {
             CreateCharacterController.imageSelected = null;
         }
         personajeAvatar.setImage(imageAvatar);
+        showEnemy(enemyAvatar1);
+        showEnemy(enemyAvatar2);
+        showEnemy(enemyAvatar3);
 
     }
+    public void showEnemy(ImageView enemyAvatar){
+        Enemy enemy = new Enemy(1, false);
+        Image image = new Image("file:" + enemy.getAvatar());
+        enemyAvatar.setImage(image);
+    }
+
     public void bicho1(MouseEvent mouseEvent) {
+
+
         try {
+
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
