@@ -8,7 +8,6 @@ import java.util.List;
 public class LocalConnection {
     private static final String url = "jdbc:mysql://localhost:3306/proyectomazmorrita";
     private static final String user = "root";
-    // ANA, DEJA LA CONTRASEÑA COMO ESTA, CAMBIA LA DE TU CONEXION!!!
     private static final String password = "1234";
     private static Connection connect = null;
 
@@ -38,8 +37,10 @@ public class LocalConnection {
     }
 
     public static List<HashMap<String, String>> ExecuteSelectSql(String sql, String[] values) {
+        //Preparas una instancia de conexion
         Connection connect = LocalConnection.getConnection();
         ResultSet resultSet = null;
+        //En la lista de hashMap guardas la columna y el valor de las tablas
         List<HashMap<String, String>> resultList = new ArrayList<>();
 
         if (connect != null) {

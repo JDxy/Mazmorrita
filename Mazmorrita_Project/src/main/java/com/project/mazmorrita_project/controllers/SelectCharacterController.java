@@ -31,7 +31,7 @@ public class SelectCharacterController {
     @FXML
     public Label Experience1, Experience2, Experience3, Experience4, Experience5;
     private Pane panelSeleccionado = null;
-    private String nameSelected = null;
+    public static String nameSelected = null;
     public static Image imageSelected = null;
 
     public void initialize() {
@@ -65,7 +65,6 @@ public class SelectCharacterController {
 
     public void crearPersonaje(MouseEvent mouseEvent) {
         if (noMoreThan5(Integer.parseInt(SignInController.id))) {
-
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/CreateCharacter.fxml")));
                 Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();
