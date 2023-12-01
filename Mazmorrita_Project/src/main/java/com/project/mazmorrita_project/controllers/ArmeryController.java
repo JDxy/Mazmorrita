@@ -1,6 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Weapon;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,11 +35,10 @@ public class ArmeryController implements Initializable {
     public ComboBox comboAtaque1;
     public ComboBox comboAtaque2;
     public ComboBox comboAtaque3;
-
+    private static List<Weapon> listaW = new ArrayList<>(Weapon.generarArmasDesdeArchivo());
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] valores=new String[6];
-        List<Weapon> listaW = new ArrayList<>(Weapon.generarArmasDesdeArchivo());
         for (int i = 0; i < listaW.size(); i++) {
             valores[i]= String.valueOf(listaW.get(i).getNombre());
         }
@@ -63,6 +63,7 @@ public class ArmeryController implements Initializable {
     }
 
     public void addMana(MouseEvent mouseEvent) {
+
     }
 
     public void addMagia(MouseEvent mouseEvent) {
@@ -76,6 +77,18 @@ public class ArmeryController implements Initializable {
 
     public void addDefensa(MouseEvent mouseEvent) {
     }
-
-
+    //cambio los valores de los label segun el arma seleccionada
+    public void comboArmasOA(ActionEvent actionEvent) {
+        String selectedWeapon = comboArmas.getValue().toString();
+        for (Weapon weapon : listaW) {
+            if (weapon.getNombre().equals(selectedWeapon)) {
+                labelFuerza.setText(String.valueOf(weapon.getFuerza()));
+                labelDefensa.setText(String.valueOf(weapon.getDefensa()));
+                labelVida.setText(String.valueOf(weapon.getVida()));
+                labelMagia.setText(String.valueOf(weapon.getMagia()));
+                labelMana.setText(String.valueOf(weapon.getMana()));
+                break;
+            }
+        }
+    }
 }

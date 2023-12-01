@@ -291,7 +291,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <ComboBox fx:id="comboArmas" layoutX="705.0" layoutY="133.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
+            <ComboBox fx:id="comboArmas" layoutX="705.0" layoutY="133.0" onAction="#comboArmasOA" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque1" layoutX="705.0" layoutY="256.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque2" layoutX="705.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque3" layoutX="705.0" layoutY="332.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
