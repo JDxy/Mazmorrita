@@ -34,44 +34,86 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
-                  <Stop offset="0.4847560975609756">
+                  <Stop offset="0.48140039286298897">
                      <color>
-                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
+                        <Color red="1.0" green="0.46666666865348816" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="0.6745098233222961" />
+                        <Color red="1.0" green="1.0" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="88.0" layoutY="620.0" text="Iniciar Sesión" textFill="#ffac00">
+      <Label layoutX="88.0" layoutY="615.0" text="Iniciar Sesión">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.48140039286298897">
+                     <color>
+                        <Color red="1.0" green="0.46666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label layoutX="876.0" layoutY="620.0" text="Registrarse" textFill="#ffac00">
+      <Label layoutX="837.0" layoutY="614.0" text="Registrarse">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.48140039286298897">
+                     <color>
+                        <Color red="1.0" green="0.46666666865348816" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="1005.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="51.0" fitWidth="56.0" layoutX="1006.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="57.0" layoutX="25.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+      <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="25.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutX="14.0" layoutY="609.0" onMouseClicked="#iniciarSesion" prefHeight="51.0" prefWidth="219.0" />
-      <Pane layoutX="863.0" layoutY="609.0" onMouseClicked="#registrarse" prefHeight="51.0" prefWidth="219.0" />
+      <Pane layoutX="14.0" layoutY="607.0" onMouseClicked="#iniciarSesion" prefHeight="51.0" prefWidth="249.0" />
+      <Pane layoutX="824.0" layoutY="607.0" onMouseClicked="#registrarse" prefHeight="51.0" prefWidth="249.0" />
    </children>
 </Pane>

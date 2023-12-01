@@ -57,30 +57,6 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane fx:id="Panel1" layoutX="34.0" layoutY="198.0" onMouseClicked="#panelClick1" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
-         <children>
-            <ImageView fx:id="ImageView1" fitHeight="84.0" fitWidth="112.0" layoutX="31.0" layoutY="14.0" preserveRatio="true" />
-            <Label fx:id="Name1" alignment="CENTER" layoutX="52.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="Experience1" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="94.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children></Pane>
       <Label layoutX="104.0" layoutY="674.0" text="Volver atras">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
@@ -136,6 +112,131 @@
       </ImageView>
       <Pane layoutX="22.0" layoutY="673.0" onMouseClicked="#atras" prefHeight="34.0" prefWidth="215.0" />
       <Pane layoutX="784.0" layoutY="674.0" onMouseClicked="#crearPersonaje" prefHeight="34.0" prefWidth="259.0" />
+      <Pane fx:id="Panel1" layoutX="34.0" layoutY="198.0" onMouseClicked="#panelClick1" opacity="0.5" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ImageView fx:id="ImageView1" fitHeight="84.0" fitWidth="112.0" layoutX="31.0" layoutY="14.0" preserveRatio="true" />
+            <Label fx:id="Name1" alignment="CENTER" layoutX="52.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Experience1" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="94.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane fx:id="Panel2" layoutX="238.0" layoutY="198.0" onMouseClicked="#panelClick2" opacity="0.5" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ImageView fx:id="ImageView2" fitHeight="94.0" fitWidth="138.0" layoutX="18.0" layoutY="14.0" preserveRatio="true" />
+            <Label fx:id="Name2" alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Experience2" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="94.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="Panel3" layoutX="444.0" layoutY="198.0" onMouseClicked="#panelClick3" opacity="0.5" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label fx:id="Name3" layoutX="68.0" layoutY="166.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Experience3" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="94.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="ImageView3" fitHeight="94.0" fitWidth="94.0" layoutX="40.0" layoutY="14.0" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="Panel4" layoutX="651.0" layoutY="198.0" onMouseClicked="#panelClick4" opacity="0.5" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ImageView fx:id="ImageView4" fitHeight="94.0" fitWidth="138.0" layoutX="18.0" layoutY="14.0" preserveRatio="true" />
+            <Label fx:id="Name4" alignment="CENTER" layoutX="53.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Experience4" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="89.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="ImageView311" fitHeight="94.0" fitWidth="94.0" layoutX="40.0" layoutY="14.0" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="Panel5" layoutX="850.0" layoutY="198.0" onMouseClicked="#panelClick5" opacity="0.5" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ImageView fx:id="ImageView5" fitHeight="94.0" fitWidth="138.0" layoutX="40.0" layoutY="14.0" preserveRatio="true" />
+            <Label fx:id="Name5" alignment="CENTER" layoutX="54.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Experience5" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="89.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Pane layoutX="281.0" layoutY="673.0" onMouseClicked="#borrarPersonaje" prefHeight="34.0" prefWidth="243.0">
          <children>
             <Label layoutX="55.0" layoutY="3.0" text="Borrar Personaje">
@@ -164,106 +265,6 @@
                   <Image url="@../../../Images/Icons/borrar-usuario.png" />
                </image>
             </ImageView>
-         </children></Pane>
-      <Pane fx:id="Panel2" layoutX="238.0" layoutY="198.0" onMouseClicked="#panelClick2" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
-         <children>
-            <ImageView fx:id="ImageView2" fitHeight="94.0" fitWidth="138.0" layoutX="18.0" layoutY="14.0" preserveRatio="true" />
-            <Label fx:id="Name2" alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="Experience2" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="94.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane fx:id="Panel3" layoutX="444.0" layoutY="198.0" onMouseClicked="#panelClick3" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
-         <children>
-            <Label fx:id="Name3" layoutX="68.0" layoutY="166.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="Experience3" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="94.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="ImageView3" fitHeight="94.0" fitWidth="94.0" layoutX="40.0" layoutY="14.0" preserveRatio="true" />
-         </children>
-      </Pane>
-      <Pane fx:id="Panel4" layoutX="651.0" layoutY="198.0" onMouseClicked="#panelClick4" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
-         <children>
-            <ImageView fx:id="ImageView4" fitHeight="94.0" fitWidth="138.0" layoutX="18.0" layoutY="14.0" preserveRatio="true" />
-            <Label fx:id="Name4" alignment="CENTER" layoutX="53.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="Experience4" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="89.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="ImageView311" fitHeight="94.0" fitWidth="94.0" layoutX="40.0" layoutY="14.0" preserveRatio="true" />
-         </children>
-      </Pane>
-      <Pane fx:id="Panel5" layoutX="850.0" layoutY="198.0" onMouseClicked="#panelClick5" prefHeight="315.0" prefWidth="174.0" style="-fx-background-color: white;" visible="false">
-         <children>
-            <ImageView fx:id="ImageView5" fitHeight="94.0" fitWidth="138.0" layoutX="40.0" layoutY="14.0" preserveRatio="true" />
-            <Label fx:id="Name5" alignment="CENTER" layoutX="54.0" layoutY="166.0" prefHeight="25.0" prefWidth="66.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="42.0" layoutY="201.0" text="Experiencia">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="54.0" layoutY="139.0" text="Nombre">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="Experience5" alignment="CENTER" layoutX="39.0" layoutY="228.0" prefHeight="25.0" prefWidth="89.0" text="Label">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
          </children>
       </Pane>
       <Pane layoutX="594.0" layoutY="667.0" onMouseClicked="#usarPersonaje" prefHeight="47.0" prefWidth="106.0">

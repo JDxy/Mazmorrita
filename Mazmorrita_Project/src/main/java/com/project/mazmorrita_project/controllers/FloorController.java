@@ -29,7 +29,6 @@ public class FloorController {
     public static Image imageAvatar = null;
 
 
-
     public void initialize() {
         if (SelectCharacterController.imageSelected != null){
             imageAvatar = SelectCharacterController.imageSelected;
@@ -44,14 +43,13 @@ public class FloorController {
         showEnemy(enemyAvatar1);
         showEnemy(enemyAvatar2);
         showEnemy(enemyAvatar3);
-
     }
     public void showEnemy(ImageView enemyAvatar){
-        Enemy enemy = new Enemy(1, false);
+       /* Enemy enemy = new Enemy(1, false);
         Image image = new Image("file:" + enemy.getAvatar());
         enemyAvatar.setImage(image);
+        */
     }
-
     public void bicho1(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
@@ -63,7 +61,6 @@ public class FloorController {
             throw new RuntimeException(e);
         }
     }
-
     public void bicho2(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
@@ -119,7 +116,6 @@ public class FloorController {
             throw new RuntimeException(e);
         }
     }
-
     public void volverAtras(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));

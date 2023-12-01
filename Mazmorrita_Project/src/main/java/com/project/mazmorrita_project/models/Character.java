@@ -51,6 +51,13 @@ public class Character {
         return sql;
     }
 
+    public static List<HashMap<String, String>> showStacksCharacters(String nombrePj) {
+        String[] listValues = new String[1];
+        listValues[0] = nombrePj;
+        List<HashMap<String, String>> sql = ExecuteSelectSql("SELECT Vida, Fuerza, Defensa, Magia, Mana FROM personajes WHERE Nombre = ?", listValues);
+        return sql;
+    }
+
 
     public static void deleteCharacter(String name) {
         String[] listValues = new String[1];
@@ -81,8 +88,6 @@ public class Character {
         return true;
 
     }
-
-
 
     public static void insertCharacter(Character character) {
             String[] listValues = new String[11];

@@ -49,11 +49,9 @@ public class SelectCharacterController {
             for (Map.Entry<String, String> entry : character.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-
                 if ("Avatar".equals(key)) {
                     Image image = new Image("file:" + value);
                     imageViews[i].setImage(image);
-
                 } else if ("Nombre".equals(key)) {
                     names[i].setText(value);
                 } else if ("Experiencia".equals(key)) {

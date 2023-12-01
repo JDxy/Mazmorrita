@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Shadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.ArmeryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.ArmeryController">
    <children>
       <Pane prefHeight="702.0" prefWidth="1055.0">
          <children>
@@ -148,27 +143,27 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label fx:id="labelDefensa" layoutX="253.0" layoutY="181.0" text="0" textFill="WHITE">
+            <Label fx:id="labelDefensa" layoutX="253.0" layoutY="181.0" prefWidth="50.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelFuerza" layoutX="253.0" layoutY="132.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="WHITE">
+            <Label fx:id="labelFuerza" layoutX="253.0" layoutY="132.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelVida" layoutX="253.0" layoutY="232.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="WHITE">
+            <Label fx:id="labelVida" layoutX="253.0" layoutY="232.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelMagia" layoutX="253.0" layoutY="282.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="WHITE">
+            <Label fx:id="labelMagia" layoutX="253.0" layoutY="282.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelMana" layoutX="253.0" layoutY="334.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="WHITE">
+            <Label fx:id="labelMana" layoutX="253.0" layoutY="334.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -340,7 +335,7 @@
             </ImageView>
             <Pane layoutX="14.0" layoutY="650.0" onMouseClicked="#volverAtras" prefHeight="34.0" prefWidth="248.0" />
             <Pane layoutX="721.0" layoutY="653.0" onMouseClicked="#guardarCambios" prefHeight="28.0" prefWidth="322.0" />
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="340.0" onMouseClicked="#addMana" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="340.0" onMouseClicked="#addMana" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
@@ -411,22 +406,22 @@
             <ComboBox fx:id="comboAtaque1" layoutX="705.0" layoutY="256.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque2" layoutX="705.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque3" layoutX="705.0" layoutY="332.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="288.0" onMouseClicked="#addMagia" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="288.0" onMouseClicked="#addMagia" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="238.0" onMouseClicked="#addVida" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="238.0" onMouseClicked="#addVida" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="137.0" onMouseClicked="#addFuerza" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="137.0" onMouseClicked="#addFuerza" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="187.0" onMouseClicked="#addDefensa" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="187.0" onMouseClicked="#addDefensa" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
