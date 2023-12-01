@@ -1,16 +1,23 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Weapon;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class ArmeryController {
+public class ArmeryController implements Initializable {
     @FXML
     public Label armeriaTitle;
     @FXML
@@ -23,6 +30,21 @@ public class ArmeryController {
     public Label labelMagia;
     @FXML
     public Label labelMana;
+    public ComboBox comboArmas;
+    public ComboBox comboAtaque1;
+    public ComboBox comboAtaque2;
+    public ComboBox comboAtaque3;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String[] valores=new String[6];
+        List<Weapon> listaW = new ArrayList<>(Weapon.generarArmasDesdeArchivo());
+        for (int i = 0; i < listaW.size(); i++) {
+            valores[i]= String.valueOf(listaW.get(i).getNombre());
+        }
+        comboArmas.getItems().addAll(valores);
+        comboArmas.setValue(" ");
+    }
 
     public void cancelar(MouseEvent mouseEvent) {
         try {
@@ -54,4 +76,6 @@ public class ArmeryController {
 
     public void addDefensa(MouseEvent mouseEvent) {
     }
+
+
 }

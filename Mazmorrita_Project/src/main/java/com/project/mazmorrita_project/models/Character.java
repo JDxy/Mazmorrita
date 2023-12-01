@@ -40,6 +40,10 @@ public class Character {
         this.nivel = 1;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public static List<HashMap<String, String>> showCharacters(String userId) {
         String[] listValues = new String[1];
         listValues[0] = userId;

@@ -31,7 +31,6 @@ public class CreateCharacterController {
     @FXML
     public Label labelMana;
     private String clase=null;
-
     public static Image imageSelected;
 
     public void cancelar(javafx.scene.input.MouseEvent mouseEvent) {
@@ -76,7 +75,6 @@ public class CreateCharacterController {
                     }
                     imageSelected = new Image("file:" + image);
                     Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
-
                     Character.insertCharacter(character);
 
                     try {

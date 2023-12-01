@@ -37,8 +37,10 @@ public class LocalConnection {
     }
 
     public static List<HashMap<String, String>> ExecuteSelectSql(String sql, String[] values) {
+        //Preparas una instancia de conexion
         Connection connect = LocalConnection.getConnection();
         ResultSet resultSet = null;
+        //En la lista de hashMap guardas la columna y el valor de las tablas
         List<HashMap<String, String>> resultList = new ArrayList<>();
 
         if (connect != null) {

@@ -1,6 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
+import com.project.mazmorrita_project.models.LocalConnection;
 import com.project.mazmorrita_project.models.RegisterModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
