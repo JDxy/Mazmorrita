@@ -150,7 +150,7 @@
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
-            <Label layoutX="96.0" layoutY="667.0" text="Cancelar" textFill="RED">
+            <Label layoutX="96.0" layoutY="667.0" text="Volver Atrás" textFill="RED">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -160,7 +160,7 @@
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
-            <Pane layoutX="4.0" layoutY="653.0" onMouseClicked="#cancelar" prefHeight="49.0" prefWidth="200.0" />
+            <Pane layoutX="11.0" layoutY="664.0" onMouseClicked="#cancelar" prefHeight="34.0" prefWidth="217.0" />
             <Pane layoutX="841.0" layoutY="661.0" onMouseClicked="#comenzar" prefHeight="34.0" prefWidth="200.0" />
          </children>
       </Pane>

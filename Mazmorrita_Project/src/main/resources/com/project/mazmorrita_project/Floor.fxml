@@ -17,7 +17,7 @@
             <Image url="@../../../Images/Backgrounds/caminoFinal.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="141.0" layoutY="604.0" text="Salir">
+      <Label layoutX="1032.0" layoutY="19.0" text="Salir">
          <font>
             <Font name="Franklin Gothic Medium" size="36.0" />
          </font>
@@ -48,27 +48,27 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fx:id="enemyAvatar3" fitHeight="100.0" fitWidth="65.0" layoutX="424.0" layoutY="465.0" onMouseClicked="#bicho1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemyAvatar3" fitHeight="100.0" fitWidth="65.0" layoutX="440.0" layoutY="440.0" onMouseClicked="#bicho1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemyAvatar1" fitHeight="100.0" fitWidth="65.0" layoutX="424.0" layoutY="240.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemyAvatar1" fitHeight="100.0" fitWidth="65.0" layoutX="440.0" layoutY="240.0" onMouseClicked="#bicho2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="bossPisoUno" fitHeight="125.0" fitWidth="131.0" layoutX="670.0" layoutY="315.0" onMouseClicked="#boss" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bossPisoUno" fitHeight="125.0" fitWidth="131.0" layoutX="806.0" layoutY="315.0" onMouseClicked="#boss" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="45.0" layoutY="592.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="27.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Label layoutX="888.0" layoutY="605.0" text="Armería">
+      <Label layoutX="927.0" layoutY="629.0" text="Armería">
          <font>
             <Font name="Franklin Gothic Medium" size="36.0" />
          </font>
@@ -99,18 +99,55 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="1034.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="80.0" fitWidth="65.0" layoutX="1073.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemyAvatar2" fitHeight="100.0" fitWidth="65.0" layoutX="489.0" layoutY="345.0" onMouseClicked="#bicho3" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemyAvatar2" fitHeight="100.0" fitWidth="65.0" layoutX="595.0" layoutY="345.0" onMouseClicked="#bicho3" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <Pane layoutX="32.0" layoutY="609.0" onMouseClicked="#salir" prefHeight="32.0" prefWidth="185.0" />
-      <Pane layoutX="877.0" layoutY="611.0" onMouseClicked="#armeria" prefHeight="32.0" prefWidth="235.0" />
+      <Pane layoutX="1008.0" layoutY="14.0" onMouseClicked="#salir" prefHeight="52.0" prefWidth="144.0" />
+      <Pane layoutX="915.0" layoutY="630.0" onMouseClicked="#armeria" prefHeight="42.0" prefWidth="235.0" />
       <ImageView fx:id="personajeAvatar" fitHeight="76.0" fitWidth="65.0" layoutX="218.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="116.0" layoutY="629.0" text="Volver Atrás">
+         <font>
+            <Font name="Franklin Gothic Medium" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.042682926829268296">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7382550335570469">
+                     <color>
+                        <Color red="1.0" green="0.6452381014823914" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.7809523940086365" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutX="16.0" layoutY="624.0" onMouseClicked="#volverAtras" prefHeight="52.0" prefWidth="287.0" />
+      <ImageView fitHeight="42.0" fitWidth="102.0" layoutX="1106.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Icons/borrar-usuario.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

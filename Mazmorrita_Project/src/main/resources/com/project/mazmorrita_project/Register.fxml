@@ -74,12 +74,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="106.0" layoutY="622.0" text="Confirmar" textFill="#ffce00">
+      <Label layoutX="940.0" layoutY="623.0" text="Confirmar" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="953.0" layoutY="622.0" text="Cancelar" textFill="#ffce00">
+      <Label layoutX="97.0" layoutY="623.0" text="Cancelar" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium Italic" size="24.0" />
          </font>
@@ -94,7 +94,7 @@
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutX="14.0" layoutY="615.0" onMouseClicked="#confirmar" prefHeight="44.0" prefWidth="200.0" />
-      <Pane layoutX="935.0" layoutY="615.0" onMouseClicked="#cancelar" prefHeight="44.0" prefWidth="200.0" />
+      <Pane layoutX="935.0" layoutY="615.0" onMouseClicked="#confirmar" prefHeight="44.0" prefWidth="200.0" />
+      <Pane layoutX="14.0" layoutY="615.0" onMouseClicked="#cancelar" prefHeight="44.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

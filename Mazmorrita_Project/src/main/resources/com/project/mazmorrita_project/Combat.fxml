@@ -10,23 +10,23 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.CombatController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="1039.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.CombatController">
    <children>
-      <ImageView fitHeight="731.0" fitWidth="1074.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="731.0" fitWidth="1074.0" layoutX="-23.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Backgrounds/pisoFinal.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="22.0" layoutY="97.0" opacity="0.15" prefHeight="535.0" prefWidth="1012.0" style="-fx-background-color: white;" />
-      <ImageView fx:id="avatarPjCombat" fitHeight="150.0" fitWidth="200.0" layoutX="197.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="42.0" layoutY="48.0" opacity="0.15" prefHeight="588.0" prefWidth="948.0" style="-fx-background-color: white;" />
+      <ImageView fx:id="avatarPjCombat" fitHeight="150.0" fitWidth="200.0" layoutX="149.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="733.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Enemies/bruja3.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="837.0" layoutY="651.0" text="Salir">
+      <Label layoutX="135.0" layoutY="655.0" text="Volver Atrás">
          <font>
-            <Font name="Franklin Gothic Medium" size="36.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -50,7 +50,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label fx:id="combatTitle" layoutX="501.0" layoutY="385.0" text="VS">
+      <Label fx:id="combatTitle" layoutX="505.0" layoutY="190.0" text="VS">
          <font>
             <Font name="Franklin Gothic Medium" size="48.0" />
          </font>
@@ -196,9 +196,9 @@
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="211.0" layoutY="535.0" text="Luchar">
+      <Label layoutX="462.0" layoutY="530.0" text="Luchar">
          <font>
-            <Font name="Franklin Gothic Medium" size="36.0" />
+            <Font name="Franklin Gothic Medium" size="48.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -222,22 +222,22 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="932.0" layoutY="647.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fitHeight="74.0" fitWidth="58.0" layoutX="54.0" layoutY="644.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutX="815.0" layoutY="651.0" onMouseClicked="#salir" prefHeight="42.0" prefWidth="200.0" />
-      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="322.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+      <Pane layoutX="42.0" layoutY="652.0" onMouseClicked="#salir" prefHeight="42.0" prefWidth="253.0" />
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="602.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="161.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="420.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <Pane layoutX="164.0" layoutY="528.0" onMouseClicked="#luchar" prefHeight="56.0" prefWidth="200.0" />
+      <Pane layoutX="420.0" layoutY="530.0" onMouseClicked="#luchar" prefHeight="56.0" prefWidth="224.0" />
    </children>
 </Pane>

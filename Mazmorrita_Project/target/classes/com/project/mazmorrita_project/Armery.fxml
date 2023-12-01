@@ -50,7 +50,7 @@
                   <Shadow radius="15.0" width="41.0" />
                </effect>
             </Label>
-            <Label fx:id="armeriaTitle" layoutX="404.0" layoutY="14.0" prefHeight="84.0" prefWidth="249.0" text="Armería">
+            <Label fx:id="armeriaTitle" layoutX="403.0" layoutY="19.0" prefHeight="84.0" prefWidth="249.0" text="Armería">
                <font>
                   <Font name="Franklin Gothic Medium" size="72.0" />
                </font>
@@ -81,7 +81,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="111.0" layoutY="131.0" text="Defensa">
+            <Label layoutX="113.0" layoutY="181.0" text="Defensa">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -102,12 +102,12 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label fx:id="labelDefensa" layoutX="253.0" layoutY="131.0" text="0" textFill="WHITE">
+            <Label fx:id="labelDefensa" layoutX="253.0" layoutY="181.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelFuerza" layoutX="253.0" layoutY="181.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="WHITE">
+            <Label fx:id="labelFuerza" layoutX="253.0" layoutY="132.0" prefHeight="19.0" prefWidth="9.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -127,7 +127,7 @@
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="112.0" layoutY="181.0" text="Fuerza">
+            <Label layoutX="113.0" layoutY="132.0" text="Fuerza">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -169,7 +169,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="111.0" layoutY="282.0" text="Magia">
+            <Label layoutX="112.0" layoutY="282.0" text="Magia">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -216,7 +216,7 @@
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
-            <Label layoutX="96.0" layoutY="667.0" text="Cancelar">
+            <Label layoutX="96.0" layoutY="667.0" text="Volver Atrás">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
@@ -242,8 +242,8 @@
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
-            <Pane layoutX="13.0" layoutY="664.0" onMouseClicked="#cancelar" prefHeight="34.0" prefWidth="200.0" />
-            <Pane layoutX="780.0" layoutY="664.0" onMouseClicked="#guardarCambios" prefHeight="28.0" prefWidth="265.0" />
+            <Pane layoutX="13.0" layoutY="664.0" onMouseClicked="#volverAtras" prefHeight="34.0" prefWidth="210.0" />
+            <Pane layoutX="776.0" layoutY="667.0" onMouseClicked="#guardarCambios" prefHeight="28.0" prefWidth="265.0" />
             <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="340.0" onMouseClicked="#addMana" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
@@ -305,12 +305,12 @@
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="187.0" onMouseClicked="#addFuerza" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="137.0" onMouseClicked="#addFuerza" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="137.0" onMouseClicked="#addDefensa" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="295.0" layoutY="187.0" onMouseClicked="#addDefensa" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Icons/add.png" />
                </image>

@@ -53,10 +53,7 @@ public class FloorController {
     }
 
     public void bicho1(MouseEvent mouseEvent) {
-
-
         try {
-
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
@@ -121,5 +118,9 @@ public class FloorController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void volverAtras(MouseEvent mouseEvent) {
+
     }
 }
