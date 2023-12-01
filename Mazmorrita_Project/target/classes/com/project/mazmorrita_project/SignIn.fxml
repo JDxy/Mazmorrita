@@ -72,12 +72,12 @@
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font></PasswordField>
-      <Label layoutX="89.0" layoutY="615.0" text="Iniciar Sesión" textFill="#ffce00">
+      <Label layoutX="823.0" layoutY="617.0" text="Iniciar Sesión" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="875.0" layoutY="617.0" text="Cancelar" textFill="#ffce00">
+      <Label layoutX="89.0" layoutY="615.0" text="Cancelar" textFill="#ffce00">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
@@ -92,7 +92,7 @@
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutY="608.0" onMouseClicked="#iniciarSesion" prefHeight="42.0" prefWidth="241.0" />
-      <Pane layoutX="800.0" layoutY="610.0" onMouseClicked="#cancelar" prefHeight="42.0" prefWidth="241.0" />
+      <Pane layoutX="813.0" layoutY="608.0" onMouseClicked="#iniciarSesion" prefHeight="42.0" prefWidth="228.0" />
+      <Pane layoutX="14.0" layoutY="608.0" onMouseClicked="#cancelar" prefHeight="42.0" prefWidth="175.0" />
    </children>
 </Pane>

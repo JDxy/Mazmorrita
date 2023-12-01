@@ -23,10 +23,31 @@
                </image>
             </ImageView>
             <Pane layoutX="204.0" layoutY="75.0" opacity="0.25" prefHeight="548.0" prefWidth="100.0" style="-fx-background-color: grey;" />
-            <Label layoutX="849.0" layoutY="664.0" text="Comenzar" textFill="RED">
+            <Label layoutX="823.0" layoutY="649.0" text="Comenzar">
                <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
+                  <Font name="Franklin Gothic Medium" size="30.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.47256097560975613">
+                           <color>
+                              <Color red="1.0" green="0.5450980067253113" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9215686321258545" green="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
             <ImageView fitHeight="242.0" fitWidth="98.0" layoutX="479.0" layoutY="351.0" onMouseClicked="#claseBarbaro">
                <image>
@@ -145,23 +166,44 @@
                   <Font name="Franklin Gothic Medium" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="971.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="970.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
                <image>
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
-            <Label layoutX="96.0" layoutY="667.0" text="Volver Atrás" textFill="RED">
+            <Label layoutX="96.0" layoutY="649.0" text="Volver Atrás">
                <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
+                  <Font name="Franklin Gothic Medium" size="30.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.47256097560975613">
+                           <color>
+                              <Color red="1.0" green="0.5450980067253113" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9215686321258545" green="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
-            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="26.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+            <ImageView fitHeight="77.0" fitWidth="58.0" layoutX="26.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
                <image>
                   <Image url="@../../../Images/Icons/flecha.png" />
                </image>
             </ImageView>
-            <Pane layoutX="11.0" layoutY="664.0" onMouseClicked="#cancelar" prefHeight="34.0" prefWidth="217.0" />
-            <Pane layoutX="841.0" layoutY="661.0" onMouseClicked="#comenzar" prefHeight="34.0" prefWidth="200.0" />
+            <Pane layoutX="14.0" layoutY="644.0" onMouseClicked="#cancelar" prefHeight="46.0" prefWidth="251.0" />
+            <Pane layoutX="813.0" layoutY="650.0" onMouseClicked="#comenzar" prefHeight="34.0" prefWidth="229.0" />
          </children>
       </Pane>
    </children>
