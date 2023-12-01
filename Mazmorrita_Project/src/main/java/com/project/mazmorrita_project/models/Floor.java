@@ -37,7 +37,7 @@ public class Floor {
 
         HashMap<String, String> piso= results.get( (int)(Math.random()*results.size()));
 
-        id= Integer.parseInt(piso.get("1"));
+        this.id= Integer.parseInt(piso.get("1"));
         numero= Integer.parseInt(piso.get("2"));
         numEnemigos= Integer.parseInt(piso.get("3"));
         imagen= piso.get("4");
@@ -48,5 +48,42 @@ public class Floor {
         }
 
         jefe= new Enemy(id, true);
+    }
+
+    /**
+     * Devuelve todos los enemigos del piso
+     * @return (ArrayList&lt;Enemy&gt;) ArrayList con todos los enemigos de la planta
+     */
+    public ArrayList<Enemy> getAllEnemies(){
+        return enemigos;
+    }
+
+    /**
+     * Devuelve el enemigo concreto
+     * @param pos (Int) Posicion de la array en la que se encuentra el enemigo
+     * @return (Enemy) El enemigo concreto que se encuentra en la posicion proporcionada
+     */
+    public Enemy getEnemyByPos(int pos){
+        return enemigos.get(pos);
+    }
+
+    public Enemy getJefe(){
+        return jefe;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public int getNumEnemigos() {
+        return numEnemigos;
+    }
+
+    public String getImagen() {
+        return imagen;
     }
 }

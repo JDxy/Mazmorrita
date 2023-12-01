@@ -19,7 +19,7 @@
             <Image url="@../../../Images/Backgrounds/creacionPersonaje2.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="163.0" layoutY="180.0" opacity="0.25" prefHeight="217.0" prefWidth="729.0" style="-fx-background-color: grey;" />
+      <Pane layoutX="171.0" layoutY="207.0" opacity="0.25" prefHeight="190.0" prefWidth="721.0" style="-fx-background-color: grey;" />
       <Label layoutX="312.0" layoutY="41.0" text="Iniciar Sesión">
          <font>
             <Font name="Franklin Gothic Medium" size="72.0" />
@@ -37,32 +37,58 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
-                  <Stop offset="0.5469798657718121">
+                  <Stop offset="0.006711409395973154">
                      <color>
-                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5439515468980193">
+                     <color>
+                        <Color red="1.0" green="0.9333333373069763" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="0.6745098233222961" />
+                        <Color red="1.0" green="1.0" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="257.0" layoutY="232.0" text="Usuario" textFill="#ffce00">
+      <Label layoutX="249.0" layoutY="229.0" text="Usuario">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
-      </Label>
-      <Label layoutX="254.0" layoutY="309.0" text="Contraseña" textFill="#ffce00">
-         <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
-         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5439515468980193">
+                     <color>
+                        <Color red="1.0" green="0.9333333373069763" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <TextField fx:id="tFNombre" layoutX="576.0" layoutY="229.0" opacity="0.5" prefHeight="25.0" prefWidth="266.0" style="-fx-border-color: black;">
          <font>
@@ -72,27 +98,110 @@
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font></PasswordField>
-      <Label layoutX="823.0" layoutY="617.0" text="Iniciar Sesión" textFill="#ffce00">
+      <Label layoutX="775.0" layoutY="611.0" text="Iniciar Sesión">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5439515468980193">
+                     <color>
+                        <Color red="1.0" green="0.9333333373069763" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label layoutX="89.0" layoutY="615.0" text="Cancelar" textFill="#ffce00">
+      <Label layoutX="100.0" layoutY="613.0" text="Cancelar">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5439515468980193">
+                     <color>
+                        <Color red="1.0" green="0.9333333373069763" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <ImageView fitHeight="72.0" fitWidth="53.0" layoutX="25.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+      <ImageView fitHeight="59.0" fitWidth="59.0" layoutX="26.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="53.0" layoutX="977.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <Pane layoutX="765.0" layoutY="610.0" onMouseClicked="#iniciarSesion" prefHeight="42.0" prefWidth="282.0" />
+      <Pane layoutX="13.0" layoutY="608.0" onMouseClicked="#cancelar" prefHeight="42.0" prefWidth="217.0" />
+      <ImageView fitHeight="59.0" fitWidth="59.0" layoutX="970.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutX="813.0" layoutY="608.0" onMouseClicked="#iniciarSesion" prefHeight="42.0" prefWidth="228.0" />
-      <Pane layoutX="14.0" layoutY="608.0" onMouseClicked="#cancelar" prefHeight="42.0" prefWidth="175.0" />
+      <Label layoutX="249.0" layoutY="308.0" text="Contraseña">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5439515468980193">
+                     <color>
+                        <Color red="1.0" green="0.9333333373069763" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </Pane>

@@ -20,22 +20,64 @@
             <Image url="@../../../Images/Backgrounds/comienzo.jpg" />
          </image>
       </ImageView>
-      <TextField id="TFName" fx:id="tFNombre" layoutX="448.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
+      <TextField id="TFName" fx:id="tFNombre" layoutX="439.0" layoutY="293.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="538.0" layoutY="251.0" text="Usuario" textFill="RED">
+      <Label layoutX="526.0" layoutY="236.0" text="Usuario">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.679386970044197">
+                     <color>
+                        <Color red="0.9556428790092468" green="1.0" blue="0.3100000023841858" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label layoutX="523.0" layoutY="359.0" text="Contraseña" textFill="RED">
+      <Label layoutX="499.0" layoutY="353.0" text="Contraseña">
          <font>
-            <Font name="Franklin Gothic Medium" size="24.0" />
+            <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.679386970044197">
+                     <color>
+                        <Color red="0.9556428790092468" green="1.0" blue="0.3100000023841858" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <PasswordField id="TFPassword" fx:id="tFPassword" layoutX="448.0" layoutY="405.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
+      <PasswordField id="TFPassword" fx:id="tFPassword" layoutX="441.0" layoutY="401.0" opacity="0.5" prefHeight="25.0" prefWidth="268.0" style="-fx-border-color: Black;">
          <font>
             <Font name="Franklin Gothic Medium" size="18.0" />
          </font>
@@ -48,7 +90,7 @@
             <Shadow height="10.0" radius="18.2425" width="64.97" />
          </effect>
       </Label>
-      <Label fx:id="registroTitle" layoutX="453.0" layoutY="111.0" text="Registro">
+      <Label fx:id="registroTitle" layoutX="454.0" layoutY="88.0" text="Registro">
          <font>
             <Font name="Franklin Gothic Medium" size="72.0" />
          </font>
@@ -57,32 +99,74 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
-                  <Stop offset="0.46920527091176956">
+                  <Stop offset="0.679386970044197">
                      <color>
-                        <Color red="0.8666666746139526" green="0.5098039507865906" blue="0.1764705926179886" />
+                        <Color red="0.9556428790092468" green="1.0" blue="0.3100000023841858" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="0.6745098233222961" />
+                        <Color red="1.0" green="1.0" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="940.0" layoutY="623.0" text="Confirmar" textFill="#ffce00">
+      <Label layoutX="923.0" layoutY="619.0" text="Confirmar">
          <font>
-            <Font name="Franklin Gothic Medium Italic" size="24.0" />
+            <Font name="Franklin Gothic Medium Italic" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.679386970044197">
+                     <color>
+                        <Color red="0.9556428790092468" green="1.0" blue="0.3100000023841858" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label layoutX="97.0" layoutY="623.0" text="Cancelar" textFill="#ffce00">
+      <Label layoutX="97.0" layoutY="619.0" text="Cancelar">
          <font>
-            <Font name="Franklin Gothic Medium Italic" size="24.0" />
+            <Font name="Franklin Gothic Medium Italic" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.679386970044197">
+                     <color>
+                        <Color red="0.9556428790092468" green="1.0" blue="0.3100000023841858" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <ImageView fitHeight="65.0" fitWidth="59.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
          <image>
@@ -94,7 +178,7 @@
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutX="935.0" layoutY="615.0" onMouseClicked="#confirmar" prefHeight="44.0" prefWidth="200.0" />
+      <Pane layoutX="923.0" layoutY="615.0" onMouseClicked="#confirmar" prefHeight="44.0" prefWidth="210.0" />
       <Pane layoutX="14.0" layoutY="615.0" onMouseClicked="#cancelar" prefHeight="44.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
