@@ -121,12 +121,13 @@ public class Weapon {
         return weapons.get(0);
     }
 
-    public static List<Weapon> showWeapon(String namePj) {
-        String[] listValues = new String[1];
+    public static List<Weapon> showWeapon(String namePj, String userId) {
+        String[] listValues = new String[2];
         listValues[0] = namePj;
+        listValues[1] = userId;
         String sql;
 
-            sql = "SELECT * FROM Armas WHERE NombrePersonaje = ?";
+            sql = "SELECT * FROM Armas WHERE NombrePersonaje = ? AND IdUsuario = ?";
         List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
 
         List<Weapon> weapons = new ArrayList<>();

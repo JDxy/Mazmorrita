@@ -57,8 +57,8 @@ public class ArmeryController implements Initializable {
     private static int magiaOriginal;
     private static int manaOriginal;
 
-    private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected));
-    private static List<Attack> listaA = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected));
+    final private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
+    final private static List<Attack> listaA = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected, LoginController.id));
 
 
 
