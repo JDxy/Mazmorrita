@@ -1,6 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
+import com.project.mazmorrita_project.models.Character;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,11 +32,12 @@ public class SelectCharacterController {
     @FXML
     public Label Experience1, Experience2, Experience3, Experience4, Experience5;
     private Pane panelSeleccionado = null;
-    public static String nameSelected = null;
+    public static String nameSelected;
+
     public static Image imageSelected = null;
 
     public void initialize() {
-        List<HashMap<String, String>> characters = showCharacters(SignInController.id);
+        List<Character> characters = showCharacters(LoginController.id, "IdUsuario");
 
         Pane[] panels = {Panel1, Panel2, Panel3, Panel4, Panel5};
         ImageView[] imageViews = {ImageView1, ImageView2, ImageView3, ImageView4, ImageView5};
@@ -44,27 +46,22 @@ public class SelectCharacterController {
 
         for (int i = 0; i < characters.size(); i++) {
             panels[i].setVisible(true);
-            HashMap<String, String> character = characters.get(i);
+            Character character = characters.get(i);
 
-            for (Map.Entry<String, String> entry : character.entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
-                if ("Avatar".equals(key)) {
-                    Image image = new Image("file:" + value);
-                    imageViews[i].setImage(image);
-                } else if ("Nombre".equals(key)) {
-                    names[i].setText(value);
-                } else if ("Experiencia".equals(key)) {
-                    experiences[i].setText(value);
-                }
-            }
+            Image image = new Image("file:" + character.getAvatar());
+            imageViews[i].setImage(image);
+            names[i].setText(character.getNombre());
+
+            experiences[i].setText(String.valueOf(character.getExperiencia()));
+
+
         }
     }
 
     public void crearPersonaje(MouseEvent mouseEvent) {
-        if (noMoreThan5(Integer.parseInt(SignInController.id))) {
+        if (noMoreThan5(Integer.parseInt(LoginController.id))) {
             try {
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/CreateCharacter.fxml")));
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/createcharacter-view.fxml")));
                 Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();
                 window.setScene(scene);
                 window.setTitle("CreateCharacter");
@@ -144,7 +141,8 @@ public class SelectCharacterController {
 
     public void atras(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+            nameSelected = null;
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/main-view.fxml")));
             Stage window= (Stage) seleccionPersonajeTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Login");
@@ -157,7 +155,7 @@ public class SelectCharacterController {
         deleteCharacter(nameSelected);
         Scene scene= null;
         try {
-            scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
+            scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
             Stage window= (Stage) seleccionPersonajeTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("SelectCharacter");
@@ -170,7 +168,7 @@ public class SelectCharacterController {
     public void usarPersonaje(MouseEvent mouseEvent) {
         if (nameSelected != null) {
             try {
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
                 Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();
                 window.setScene(scene);
                 window.setTitle("floor");
@@ -178,6 +176,8 @@ public class SelectCharacterController {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }else {
+            Alert.showAlert("ERROR","¡Para jugar debes de seleccionar un personaje!", javafx.scene.control.Alert.AlertType.ERROR);
         }
     }
 }

@@ -23,6 +23,114 @@ public class Character {
     private ArrayList<Attack> ataques;
     private int nivel;
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getFuerza() {
+        return fuerza;
+    }
+
+    public void setFuerza(int fuerza) {
+        this.fuerza = fuerza;
+    }
+
+    public int getDefensa() {
+        return defensa;
+    }
+
+    public void setDefensa(int defensa) {
+        this.defensa = defensa;
+    }
+
+    public int getMagia() {
+        return magia;
+    }
+
+    public void setMagia(int magia) {
+        this.magia = magia;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+
+    public int getPiso() {
+        return piso;
+    }
+
+    public void setPiso(int piso) {
+        this.piso = piso;
+    }
+
+    public int getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    public ArrayList<Weapon> getArmas() {
+        return armas;
+    }
+
+    public void setArmas(ArrayList<Weapon> armas) {
+        this.armas = armas;
+    }
+
+    public ArrayList<Attack> getAtaques() {
+        return ataques;
+    }
+
+    public void setAtaques(ArrayList<Attack> ataques) {
+        this.ataques = ataques;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
     public Character(String nombre, String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana, String clase, int piso, int experiencia) {
         this.nombre = nombre;
         this.avatar = avatar;
@@ -40,22 +148,46 @@ public class Character {
         this.nivel = 1;
     }
 
+
     public String getNombre() {
         return nombre;
     }
 
-    public static List<HashMap<String, String>> showCharacters(String userId) {
+    public static List<Character> showCharacters(String userId, String type) {
         String[] listValues = new String[1];
         listValues[0] = userId;
-        List<HashMap<String, String>> sql = ExecuteSelectSql("SELECT avatar, nombre, experiencia FROM personajes WHERE IdUsuario = ?", listValues);
-        return sql;
+        String sql;
+        if (type.equals("IdUsuario")){
+            sql = "SELECT * FROM personajes WHERE IdUsuario = ?";
+        }else {
+            sql = "SELECT * FROM personajes WHERE Nombre = ?";
+        }
+        List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
+
+        List<Character> characters = new ArrayList<>();
+
+        for (HashMap<String, String> row : sqlResult) {
+            Character character = createCharacterFromHashMap(row);
+            characters.add(character);
+        }
+
+        return characters;
     }
 
-    public static List<HashMap<String, String>> showStacksCharacters(String nombrePj) {
-        String[] listValues = new String[1];
-        listValues[0] = nombrePj;
-        List<HashMap<String, String>> sql = ExecuteSelectSql("SELECT Vida, Fuerza, Defensa, Magia, Mana FROM personajes WHERE Nombre = ?", listValues);
-        return sql;
+    private static Character createCharacterFromHashMap(HashMap<String, String> characterData) {
+        String nombre = characterData.get("Nombre");
+        String avatarPath = characterData.get("Avatar");
+        int idUsuario = Integer.parseInt(characterData.get("IdUsuario"));
+        int vida = Integer.parseInt(characterData.get("Vida"));
+        int fuerza = Integer.parseInt(characterData.get("Fuerza"));
+        int defensa = Integer.parseInt(characterData.get("Defensa"));
+        int magia = Integer.parseInt(characterData.get("Magia"));
+        int mana = Integer.parseInt(characterData.get("Mana"));
+        String clase = characterData.get("Clase");
+        int piso = Integer.parseInt(characterData.get("IdPiso"));
+        int experiencia = Integer.parseInt(characterData.get("Experiencia"));
+
+        return new Character(nombre, avatarPath, idUsuario, vida, fuerza, defensa, magia, mana, clase, piso, experiencia);
     }
 
 

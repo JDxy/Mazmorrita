@@ -1,5 +1,4 @@
 package com.project.mazmorrita_project.controllers;
-import com.project.mazmorrita_project.models.Enemy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -52,7 +51,7 @@ public class FloorController {
     }
     public void bicho1(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("floor");
@@ -63,7 +62,7 @@ public class FloorController {
     }
     public void bicho2(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("floor");
@@ -74,7 +73,7 @@ public class FloorController {
     }
     public void bicho3(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("floor");
@@ -85,7 +84,7 @@ public class FloorController {
     }
     public void boss(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Combat.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("floor");
@@ -96,7 +95,7 @@ public class FloorController {
     }
     public void armeria(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Armery.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/armery-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Armery");
@@ -107,7 +106,8 @@ public class FloorController {
     }
     public void salir(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+            SelectCharacterController.nameSelected = null;
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/main-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Login");
@@ -118,7 +118,8 @@ public class FloorController {
     }
     public void volverAtras(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
+            SelectCharacterController.nameSelected = null;
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Select Character");

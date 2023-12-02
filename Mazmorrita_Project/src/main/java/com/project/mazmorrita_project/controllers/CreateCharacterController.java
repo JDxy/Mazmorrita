@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import static com.project.mazmorrita_project.models.Character.findCharacter;
-import static com.project.mazmorrita_project.models.Character.noMoreThan5;
 
 public class CreateCharacterController {
     @FXML
@@ -35,7 +34,7 @@ public class CreateCharacterController {
 
     public void cancelar(javafx.scene.input.MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
             Stage window= (Stage) crearPersonajeTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("SelectCharacter");
@@ -46,7 +45,7 @@ public class CreateCharacterController {
     }
     public void comenzar(MouseEvent mouseEvent) {
         String nombre = tFNombre.getText();
-        int idUser = Integer.parseInt(SignInController.id);
+        int idUser = Integer.parseInt(LoginController.id);
 
         if (findCharacter(nombre) != true) {
                 if (tFNombre.getText().isEmpty()) {
@@ -78,7 +77,7 @@ public class CreateCharacterController {
                     Character.insertCharacter(character);
 
                     try {
-                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Floor.fxml")));
+                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
                         Stage window = (Stage) crearPersonajeTitle.getScene().getWindow();
                         window.setScene(scene);
                         window.setTitle("floor");

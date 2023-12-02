@@ -15,7 +15,7 @@ public class GameOverController {
 
     public void nuevaPartida(MouseEvent mouseEvent) {
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SelectCharacter.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
             Stage window = (Stage) gameOverTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Login");
@@ -27,7 +27,7 @@ public class GameOverController {
 
     public void salir(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/main-view.fxml")));
             Stage window= (Stage) gameOverTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Login");

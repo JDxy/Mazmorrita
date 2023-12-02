@@ -1,14 +1,6 @@
 package com.project.mazmorrita_project.models;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
-import static com.project.mazmorrita_project.models.SingInModel.findUser;
+import static com.project.mazmorrita_project.models.LoginModel.findUser;
 
 public class RegisterModel {
 

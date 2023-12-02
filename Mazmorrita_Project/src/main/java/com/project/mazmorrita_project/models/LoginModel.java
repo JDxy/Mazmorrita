@@ -1,12 +1,8 @@
 package com.project.mazmorrita_project.models;
 
-import java.util.HashMap;
-import java.util.List;
-
-import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 import static com.project.mazmorrita_project.models.LocalConnection.findValue;
 
-public class SingInModel {
+public class LoginModel {
 
     public static boolean findUser(String userName, String password) {
         String[] listValues = new String[2];

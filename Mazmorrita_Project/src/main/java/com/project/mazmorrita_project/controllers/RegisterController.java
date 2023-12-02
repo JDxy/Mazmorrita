@@ -1,7 +1,6 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
-import com.project.mazmorrita_project.models.LocalConnection;
 import com.project.mazmorrita_project.models.RegisterModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.project.mazmorrita_project.models.SingInModel.findUser;
+import static com.project.mazmorrita_project.models.LoginModel.findUser;
 
 public class RegisterController {
     @FXML
@@ -33,7 +32,7 @@ public class RegisterController {
             } else {
                 RegisterModel.crearUsuario(name, password);
                 try {
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/SignIn.fxml")));
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/login-view.fxml")));
                     Stage window = (Stage) registroTitle.getScene().getWindow();
                     window.setScene(scene);
                     window.setTitle("SignIn");
@@ -50,7 +49,7 @@ public class RegisterController {
     }
     public void cancelar(MouseEvent mouseEvent) {
         try {
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/Login.fxml")));
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/main-view.fxml")));
             Stage window= (Stage) registroTitle.getScene().getWindow();
             window.setScene(scene);
             window.setTitle("Login");
