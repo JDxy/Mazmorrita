@@ -23,6 +23,17 @@ import static com.project.mazmorrita_project.models.Character.showCharacters;
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 
 public class ArmeryController implements Initializable {
+
+    @FXML
+    public Label labelFuerzaArma;
+    @FXML
+    public Label labelDefensaArma;
+    @FXML
+    public Label labelVidaArma;
+    @FXML
+    public Label labelMagiaArma;
+    @FXML
+    public Label labelManaArma;
     @FXML
     public Label armeriaTitle;
     @FXML
@@ -45,7 +56,7 @@ public class ArmeryController implements Initializable {
     private static int magiaOriginal;
     private static int manaOriginal;
 
-    private static List<Weapon> listaW = new ArrayList<>(Weapon.generarArmasDesdeArchivo());
+    private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected));
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] valores=new String[6];
@@ -65,12 +76,13 @@ public class ArmeryController implements Initializable {
             labelMagia.setText(String.valueOf(character.getMagia()));
             labelMana.setText(String.valueOf(character.getMana()));
         }
-
+/*
         fuerzaOriginal = Integer.parseInt(labelFuerza.getText());
         defensaOriginal = Integer.parseInt(labelDefensa.getText());
         vidaOriginal = Integer.parseInt(labelVida.getText());
         magiaOriginal = Integer.parseInt(labelMagia.getText());
         manaOriginal = Integer.parseInt(labelMana.getText());
+  */
     }
     public void guardarCambios(MouseEvent mouseEvent) {
         String[] listValues = new String[6];
@@ -118,17 +130,26 @@ public class ArmeryController implements Initializable {
         for (Weapon weapon : listaW) {
             if (weapon.getNombre().equals(selectedWeapon)) {
                 // Restaurar los valores originales
+                labelFuerzaArma.setText(String.valueOf(weapon.getFuerza()));
+                labelDefensaArma.setText(String.valueOf(weapon.getDefensa()));
+                labelVidaArma.setText(String.valueOf(weapon.getVida()));
+                labelMagiaArma.setText(String.valueOf(weapon.getMagia()));
+                labelManaArma.setText(String.valueOf(weapon.getMana()));
+
+
+                /*
                 int fuerzaConArma = fuerzaOriginal + weapon.getFuerza();
-                labelFuerza.setText(String.valueOf(fuerzaConArma));
+                labelFuerzaArma.setText(String.valueOf(fuerzaConArma));
                 int defConArma = defensaOriginal + weapon.getDefensa();
-                labelDefensa.setText(String.valueOf(defConArma));
+                labelDefensaArma.setText(String.valueOf(defConArma));
                 int vidaConArma = vidaOriginal + weapon.getVida();
-                labelVida.setText(String.valueOf(vidaConArma));
+                labelVidaArma.setText(String.valueOf(vidaConArma));
                 int magiaConArma = magiaOriginal + weapon.getMagia();
-                labelMagia.setText(String.valueOf(magiaConArma));
+                labelMagiaArma.setText(String.valueOf(magiaConArma));
                 int manaConArma = manaOriginal + weapon.getMana();
-                labelMana.setText(String.valueOf(manaConArma));
+                labelManaArma.setText(String.valueOf(manaConArma));
                 break;
+                 */
             }
         }
     }

@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -16,7 +17,7 @@
    <children>
       <Pane layoutY="6.0" prefHeight="702.0" prefWidth="1055.0">
          <children>
-            <ImageView fitHeight="714.0" fitWidth="1055.0" layoutY="-8.0">
+            <ImageView fx:id="s" fitHeight="714.0" fitWidth="1055.0" layoutY="-6.0">
                <image>
                   <Image url="@../../../Images/Backgrounds/armeria.png" />
                </image>
@@ -147,31 +148,6 @@
                      </stops>
                   </LinearGradient>
                </textFill>
-            </Label>
-            <Label fx:id="labelDefensa" layoutX="253.0" layoutY="181.0" prefWidth="50.0" text="0" textFill="WHITE">
-               <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelFuerza" layoutX="253.0" layoutY="132.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
-               <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelVida" layoutX="253.0" layoutY="232.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
-               <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelMagia" layoutX="253.0" layoutY="282.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
-               <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelMana" layoutX="253.0" layoutY="334.0" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
-               <font>
-                  <Font name="Franklin Gothic Medium" size="24.0" />
-               </font>
             </Label>
             <Label layoutX="113.0" layoutY="132.0" text="Fuerza">
                <font>
@@ -340,11 +316,6 @@
             </ImageView>
             <Pane layoutX="14.0" layoutY="650.0" onMouseClicked="#volverAtras" prefHeight="34.0" prefWidth="248.0" />
             <Pane layoutX="721.0" layoutY="653.0" onMouseClicked="#guardarCambios" prefHeight="28.0" prefWidth="322.0" />
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="340.0" onMouseClicked="#addMana" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Icons/add.png" />
-               </image>
-            </ImageView>
             <Label layoutX="567.0" layoutY="131.0" text="Armas">
                <font>
                   <Font name="Franklin Gothic Medium" size="24.0" />
@@ -411,26 +382,153 @@
             <ComboBox fx:id="comboAtaque1" layoutX="705.0" layoutY="256.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque2" layoutX="705.0" layoutY="294.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
             <ComboBox fx:id="comboAtaque3" layoutX="705.0" layoutY="332.0" opacity="0.5" prefHeight="25.0" prefWidth="249.0" />
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="288.0" onMouseClicked="#addMagia" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Icons/add.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="238.0" onMouseClicked="#addVida" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Icons/add.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="137.0" onMouseClicked="#addFuerza" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Icons/add.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="321.0" layoutY="187.0" onMouseClicked="#addDefensa" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Icons/add.png" />
-               </image>
-            </ImageView>
+            <VBox layoutX="219.0" layoutY="131.0" prefHeight="230.0" prefWidth="45.0" spacing="22.0">
+               <children>
+                  <Label fx:id="labelFuerza" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelDefensa" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelVida" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMagia" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMana" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="262.0" layoutY="137.0" prefHeight="230.0" prefWidth="18.0" spacing="33.0">
+               <children>
+                  <ImageView fitHeight="17.0" fitWidth="27.0" onMouseClicked="#addFuerza" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Icons/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="27.0" onMouseClicked="#addDefensa" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Icons/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="27.0" onMouseClicked="#addVida" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Icons/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="27.0" onMouseClicked="#addMagia" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Icons/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="27.0" onMouseClicked="#addMana" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Icons/add.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox layoutX="335.0" layoutY="131.0" prefHeight="230.0" prefWidth="46.0" spacing="22.0">
+               <children>
+                  <Label fx:id="labelFuerzaArma" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelDefensaArma" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelVidaArma" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMagiaArma" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelManaArma" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="317.0" layoutY="131.0" prefHeight="230.0" prefWidth="18.0" spacing="22.0">
+               <children>
+                  <Label fx:id="labelFuerza11" prefHeight="19.0" prefWidth="50.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelDefensa11" prefWidth="50.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelVida11" prefHeight="19.0" prefWidth="50.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMagia11" prefHeight="19.0" prefWidth="50.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMana11" prefHeight="19.0" prefWidth="50.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label layoutX="307.0" layoutY="103.0" text="Arma">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startY="0.27014218009478674">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.45302013422818793">
+                           <color>
+                              <Color red="1.0" green="0.949999988079071" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
          </children>
       </Pane>
    </children>
