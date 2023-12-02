@@ -19,7 +19,7 @@ CREATE TABLE Pisos (
 CREATE TABLE Enemigos(
     Nombre VARCHAR(50) PRIMARY KEY,
     IdPiso INT NOT NULL,
-    Avatar VARCHAR(50) NULL,
+    Avatar VARCHAR(200) NULL,
     Vida INT NOT NULL,
     Fuerza INT NOT NULL,
     Defensa INT NOT NULL,
@@ -77,8 +77,6 @@ CREATE TABLE Ataque_personaje(
     FOREIGN KEY(NombrePersonaje) REFERENCES Personajes(Nombre),
     FOREIGN KEY(NombreAtaque) REFERENCES Ataques(Nombre));
 
-
-
 DELIMITER //
 
 CREATE TRIGGER Armas_B_I BEFORE INSERT ON Armas
@@ -118,22 +116,21 @@ INSERT INTO Pisos(Numero, NumeroEnemigos) VALUES(1, 3);
 INSERT INTO Pisos(Numero, NumeroEnemigos) VALUES(2, 5);
 
 
-INSERT INTO Enemigos VALUES("Esqueleto", 1, null, 50, 12, 5, 0, 10);
-INSERT INTO Enemigos VALUES("Slime", 1, null, 10, 5, 25, 0, 8);
-INSERT INTO Enemigos VALUES("Zombie", 1, null, 25, 24, 5, 0, 20);
-INSERT INTO Enemigos VALUES("Imp", 1, null, 14, 20, 20, 0, 50);
+INSERT INTO Enemigos VALUES("Esqueleto", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/esqueleto.jpg", 50, 12, 5, 0, 10);
+INSERT INTO Enemigos VALUES("Slime", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/slime.jpg", 10, 5, 25, 0, 8);
+INSERT INTO Enemigos VALUES("Zombie", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/bichoGordo.png", 25, 24, 5, 0, 20);
+INSERT INTO Enemigos VALUES("Imp", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/demonio.jpg", 14, 20, 20, 0, 50);
 
-INSERT INTO Enemigos VALUES("Titan: Ecanthy", 1, null, 125, 35, 25, 1, 200);
-INSERT INTO Enemigos VALUES("Dragon del lamento: Cocoona", 1, null, 100, 35, 40, 1, 200);
+INSERT INTO Enemigos VALUES("Titan: Ecanthy", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/demonio2.jpg", 125, 35, 25, 1, 200);
+INSERT INTO Enemigos VALUES("Dragon del lamento: Cocoona", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/dragon.jpg", 100, 35, 40, 1, 200);
 
-INSERT INTO Enemigos VALUES("Bruja", 2, null, 50, 45, 15, 0, 50);
-INSERT INTO Enemigos VALUES("Demonio", 2, null, 75, 15, 50, 0, 55);
-INSERT INTO Enemigos VALUES("Perro Infectado", 2, null, 55, 33, 24, 0, 60);
-INSERT INTO Enemigos VALUES("Vampiro", 2, null, 45, 30, 30, 0, 100);
+INSERT INTO Enemigos VALUES("Bruja", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/bruja.jpg", 50, 45, 15, 0, 50);
+INSERT INTO Enemigos VALUES("Demonio", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/demon.jpeg", 75, 15, 50, 0, 55);
+INSERT INTO Enemigos VALUES("Perro Infectado", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/perroInfectado.jpg", 55, 33, 24, 0, 60);
+INSERT INTO Enemigos VALUES("Vampiro", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/vampiro.jpg", 45, 30, 30, 0, 100);
 
-INSERT INTO Enemigos VALUES("El enigmatico: XI", 2, null, 280, 15, 80, 1, 500);
-INSERT INTO Enemigos VALUES("Emperatriz Arlequin: Zanoria", 2, null, 225, 70, 35, 1, 500);
-
+INSERT INTO Enemigos VALUES("El enigmatico: XI", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/vampiro2.jpg", 280, 15, 80, 1, 500);
+INSERT INTO Enemigos VALUES("Emperatriz Arlequin: Zanoria", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/bruja3.jpg", 225, 70, 35, 1, 500);
 
 -- Ataques Cocoona
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Lamento de encierro", 120);
