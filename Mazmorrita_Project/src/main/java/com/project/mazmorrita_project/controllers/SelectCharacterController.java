@@ -33,8 +33,8 @@ public class SelectCharacterController {
     public Label Experience1, Experience2, Experience3, Experience4, Experience5;
     private Pane panelSeleccionado = null;
     public static String nameSelected;
-
     public static Image imageSelected = null;
+    public static Character characterSelected;
 
     public void initialize() {
         List<Character> characters = showCharacters(LoginController.id, "IdUsuario");
@@ -110,6 +110,7 @@ public class SelectCharacterController {
     }
 
     private void manejarSeleccion(Pane panel){
+
         if(panelSeleccionado != null && panelSeleccionado != panel){
             quitarSeleccion(panelSeleccionado);
         }
@@ -166,7 +167,11 @@ public class SelectCharacterController {
     }
 
     public void usarPersonaje(MouseEvent mouseEvent) {
+
         if (nameSelected != null) {
+            System.out.println(nameSelected);
+            characterSelected = showCharacters(nameSelected, "Nombre").get(0);
+
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
                 Stage window = (Stage) seleccionPersonajeTitle.getScene().getWindow();

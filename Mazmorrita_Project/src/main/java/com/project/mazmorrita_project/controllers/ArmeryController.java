@@ -56,8 +56,12 @@ public class ArmeryController implements Initializable {
     private static int vidaOriginal;
     private static int magiaOriginal;
     private static int manaOriginal;
-    private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected));
-    private static List<Attack> listaA = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected));
+
+    final private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
+    final private static List<Attack> listaA = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected, LoginController.id));
+
+
+
     private static String[] valores=new String[6];
     private List<String> attackValues = new ArrayList<>();
     @Override
@@ -75,10 +79,10 @@ public class ArmeryController implements Initializable {
         comboAtaque3.getItems().addAll(attackValues);
         comboAtaque3.setValue(" ");
 
-        for (int i = 0; i < listaW.size(); i++) {
-        valores[i]= String.valueOf(listaW.get(i).getNombre());
-        }
 
+            for (int i = 0; i < listaW.size(); i++) {
+            valores[i]= String.valueOf(listaW.get(i).getNombre());
+        }
         comboArmas.getItems().addAll(valores);
         comboArmas.setValue(" ");
 

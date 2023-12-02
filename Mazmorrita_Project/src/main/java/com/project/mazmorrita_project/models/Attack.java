@@ -12,6 +12,7 @@ import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelec
 //Ya le dejo al encargado de esta como la termina de hacer
 public class Attack {
     private  String nombre;
+
     private int potencia;
     private String tipo;
 
@@ -27,21 +28,22 @@ public class Attack {
         return tipo;
     }
 
-    public Attack(String nombre, int potencia, String tipo) {
+    public Attack(String nombre,int potencia, String tipo) {
         this.nombre = nombre;
         this.potencia = potencia;
         this.tipo = tipo;
     }
 
-    public static List<Attack> showAttacks(String namePj) {
-        String[] listValues = new String[1];
+    public static List<Attack> showAttacks(String namePj, String UserId) {
+        String[] listValues = new String[2];
         listValues[0] = namePj;
+        listValues[1] = UserId;
         String sql;
         sql = "SELECT ataques.*\n" +
                 "FROM Ataques \n" +
                 "INNER JOIN Ataque_personaje AS aP \n" +
                 "ON Ataques.Nombre = aP.NombreAtaque \n" +
-                "WHERE aP.NombrePersonaje = ?;";
+                "WHERE aP.NombrePersonaje = ? AND aP.idUsuario = ?";
         List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
 
         List<Attack> attacks = new ArrayList<>();

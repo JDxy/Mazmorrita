@@ -1,10 +1,12 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Character;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -17,11 +19,14 @@ public class CombatController {
     @FXML
     public ComboBox elegirAtaque;
 
+    public Character character = SelectCharacterController.characterSelected;
+
     @FXML
     public ImageView avatarPjCombat;
 
     public void initialize(){
-        avatarPjCombat.setImage(FloorController.imageAvatar);
+        Image image = new Image("file:" + character.getAvatar());
+        avatarPjCombat.setImage(image);
     }
 
     public void salir(MouseEvent mouseEvent) {
