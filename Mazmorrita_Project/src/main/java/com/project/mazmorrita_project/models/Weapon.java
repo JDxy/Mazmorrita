@@ -29,7 +29,6 @@ public class Weapon {
         this.magia = (int) (Math.random()*5+1);
         this.mana = (int) (Math.random()*5+1);
     }
-
  */
 
     public Weapon(String nombre, String nombrePersonaje, int fuerza, int defensa, int vida, int magia, int mana) {
@@ -127,7 +126,7 @@ public class Weapon {
         listValues[1] = userId;
         String sql;
 
-            sql = "SELECT * FROM Armas WHERE NombrePersonaje = ? AND IdUsuario = ?";
+        sql = "SELECT * FROM Armas WHERE NombrePersonaje = ? AND IdUsuario = ?";
         List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
 
         List<Weapon> weapons = new ArrayList<>();

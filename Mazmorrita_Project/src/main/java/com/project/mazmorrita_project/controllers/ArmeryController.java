@@ -24,7 +24,6 @@ import static com.project.mazmorrita_project.models.Character.showCharacters;
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 
 public class ArmeryController implements Initializable {
-
     @FXML
     public Label labelFuerzaArma;
     @FXML
@@ -56,12 +55,8 @@ public class ArmeryController implements Initializable {
     private static int vidaOriginal;
     private static int magiaOriginal;
     private static int manaOriginal;
-
     final private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
     final private static List<Attack> listaA = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected, LoginController.id));
-
-
-
     private static String[] valores=new String[6];
     private List<String> attackValues = new ArrayList<>();
     @Override
@@ -79,10 +74,10 @@ public class ArmeryController implements Initializable {
         comboAtaque3.getItems().addAll(attackValues);
         comboAtaque3.setValue(" ");
 
-
-            for (int i = 0; i < listaW.size(); i++) {
+        for (int i = 0; i < listaW.size(); i++) {
             valores[i]= String.valueOf(listaW.get(i).getNombre());
         }
+
         comboArmas.getItems().addAll(valores);
         comboArmas.setValue(" ");
 
@@ -96,16 +91,14 @@ public class ArmeryController implements Initializable {
             labelMagia.setText(String.valueOf(character.getMagia()));
             labelMana.setText(String.valueOf(character.getMana()));
         }
-/*
+        /*
         fuerzaOriginal = Integer.parseInt(labelFuerza.getText());
         defensaOriginal = Integer.parseInt(labelDefensa.getText());
         vidaOriginal = Integer.parseInt(labelVida.getText());
         magiaOriginal = Integer.parseInt(labelMagia.getText());
         manaOriginal = Integer.parseInt(labelMana.getText());
-  */
+        */
     }
-
-
     public void guardarCambios(MouseEvent mouseEvent) {
         attackValues = new ArrayList<>();
         String[] listValues = new String[6];
@@ -158,8 +151,6 @@ public class ArmeryController implements Initializable {
                 labelVidaArma.setText(String.valueOf(weapon.getVida()));
                 labelMagiaArma.setText(String.valueOf(weapon.getMagia()));
                 labelManaArma.setText(String.valueOf(weapon.getMana()));
-
-
                 /*
                 int fuerzaConArma = fuerzaOriginal + weapon.getFuerza();
                 labelFuerzaArma.setText(String.valueOf(fuerzaConArma));

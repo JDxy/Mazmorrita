@@ -1,6 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
+import com.project.mazmorrita_project.models.AttackPj;
 import com.project.mazmorrita_project.models.Character;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -75,6 +76,16 @@ public class CreateCharacterController {
                     imageSelected = new Image("file:" + image);
                     Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
                     Character.insertCharacter(character);
+
+                    if (clase.equals("Mago")) {
+                        AttackPj.generarNombresAttacksMago(nombre,idUser);
+                    }
+                    if (clase.equals("Barbaro")) {
+                        AttackPj.generarNombresAttacksBarbaro(nombre,idUser);
+                    }
+                    if (clase.equals("Picaro")) {
+                        AttackPj.generarNombresAttacksPicaro(nombre,idUser);
+                    }
 
                     try {
                         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));

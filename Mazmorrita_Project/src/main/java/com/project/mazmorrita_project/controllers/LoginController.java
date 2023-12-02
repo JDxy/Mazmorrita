@@ -27,6 +27,7 @@ public class LoginController {
     public PasswordField tFPassword;
 
     public static String id;
+
     public static List<HashMap<String,String>>list;
     public HashMap<String,String>idList;
 
@@ -48,7 +49,6 @@ public class LoginController {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         }else {
             System.out.println("false");
             Alert.showAlert("Error", "Nombre o contraseña no validos.", javafx.scene.control.Alert.AlertType.ERROR); }

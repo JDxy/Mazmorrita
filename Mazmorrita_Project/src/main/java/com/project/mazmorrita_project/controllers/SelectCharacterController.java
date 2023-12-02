@@ -38,7 +38,6 @@ public class SelectCharacterController {
 
     public void initialize() {
         List<Character> characters = showCharacters(LoginController.id, "IdUsuario");
-
         Pane[] panels = {Panel1, Panel2, Panel3, Panel4, Panel5};
         ImageView[] imageViews = {ImageView1, ImageView2, ImageView3, ImageView4, ImageView5};
         Label[] names = {Name1, Name2, Name3, Name4, Name5};
@@ -53,8 +52,6 @@ public class SelectCharacterController {
             names[i].setText(character.getNombre());
 
             experiences[i].setText(String.valueOf(character.getExperiencia()));
-
-
         }
     }
 

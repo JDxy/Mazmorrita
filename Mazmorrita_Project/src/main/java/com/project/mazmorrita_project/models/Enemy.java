@@ -12,7 +12,6 @@ import java.util.List;
  * @since 25-11-2023
  */
 public class Enemy {
-
     private String avatar;
     private String nombre;
     private int vidaMaxima;
