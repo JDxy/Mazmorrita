@@ -3,6 +3,7 @@
  */
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Attack;
 import com.project.mazmorrita_project.models.Character;
 import com.project.mazmorrita_project.models.Weapon;
 import javafx.event.ActionEvent;
@@ -57,10 +58,29 @@ public class ArmeryController implements Initializable {
     private static int manaOriginal;
 
     private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected));
+    private static List<Attack> listaA = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected));
+
+
+
+    private static String[] valores=new String[6];
+    private List<String> attackValues = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] valores=new String[6];
-        for (int i = 0; i < listaW.size(); i++) {
+
+        for (int i = 0; i < listaA.size(); i++) {
+            attackValues.add(String.valueOf(listaA.get(i).getNombre()));
+        }
+        comboAtaque1.getItems().addAll(attackValues);
+        comboAtaque1.setValue(" ");
+
+        comboAtaque2.getItems().addAll(attackValues);
+        comboAtaque2.setValue(" ");
+
+        comboAtaque3.getItems().addAll(attackValues);
+        comboAtaque3.setValue(" ");
+
+
+            for (int i = 0; i < listaW.size(); i++) {
             valores[i]= String.valueOf(listaW.get(i).getNombre());
         }
         comboArmas.getItems().addAll(valores);
@@ -84,7 +104,10 @@ public class ArmeryController implements Initializable {
         manaOriginal = Integer.parseInt(labelMana.getText());
   */
     }
+
+
     public void guardarCambios(MouseEvent mouseEvent) {
+        attackValues = new ArrayList<>();
         String[] listValues = new String[6];
         listValues[0] = labelFuerza.getText();
         listValues[1] = labelDefensa.getText();
@@ -155,6 +178,7 @@ public class ArmeryController implements Initializable {
     }
     public void volverAtras(MouseEvent mouseEvent) {
         try {
+            attackValues = new ArrayList<>();
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
             Stage window= (Stage) armeriaTitle.getScene().getWindow();
             window.setScene(scene);

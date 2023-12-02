@@ -68,11 +68,9 @@ CREATE TABLE Ataque_enemigo(
 
 CREATE TABLE Ataque_personaje(
 	NombreAtaque VARCHAR(50) NOT NULL,
-    IdUsuario INT NOT NULL,
     NombrePersonaje VARCHAR(14) NOT NULL,
-	PRIMARY KEY(NombreAtaque, IdUsuario, NombrePersonaje),
+	PRIMARY KEY(NombreAtaque, NombrePersonaje),
     FOREIGN KEY(NombrePersonaje) REFERENCES Personajes(Nombre),
-    FOREIGN KEY(IdUsuario) REFERENCES Personajes(IdUsuario),
     FOREIGN KEY(NombreAtaque) REFERENCES Ataques(Nombre));
 
 DELIMITER //
@@ -189,3 +187,6 @@ INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Demonio");
 INSERT INTO Ataque_Enemigo VALUES("Golpe", "Perro Infectado");
 INSERT INTO Ataque_Enemigo VALUES("Estocada", "Perro Infectado");
 INSERT INTO Armas VALUES ("Baston", "sw", 32,22,11,33,44);
+INSERT INTO Ataque_personaje VALUES ("Golpe de los 50 Brazos", "sw");
+INSERT INTO Ataque_personaje VALUES ("Felonia Simpatica", "sw");
+INSERT INTO Ataque_personaje VALUES ("Estocada", "sw");
