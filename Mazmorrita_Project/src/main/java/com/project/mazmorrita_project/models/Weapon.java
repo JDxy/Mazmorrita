@@ -106,7 +106,7 @@ public class Weapon {
      * lee la ruta del fichero weapons.txt para crear armas nuevas
      * @return
      */
-    public static List<Weapon> generarArmasDesdeArchivo() {
+    public static Weapon generarArmasDesdeArchivo() {
         List<Weapon> weapons = new ArrayList<>();
         File file=new File("Mazmorrita_Project/src/main/resources/Files/Weapons.txt");
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(String.valueOf(file))))) {
@@ -118,13 +118,14 @@ public class Weapon {
         } catch (IOException e) {
             throw new RuntimeException("Error al leer el archivo de armas", e);
         }
-        return weapons;
+        return weapons.get(0);
     }
 
     public static List<Weapon> showWeapon(String namePj) {
         String[] listValues = new String[1];
         listValues[0] = namePj;
         String sql;
+
             sql = "SELECT * FROM Armas WHERE NombrePersonaje = ?";
         List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
 
