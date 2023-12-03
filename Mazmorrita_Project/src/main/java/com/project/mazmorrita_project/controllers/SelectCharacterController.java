@@ -167,8 +167,6 @@ public class SelectCharacterController {
         }
     }
 
-
-
     public void usarPersonaje(MouseEvent mouseEvent) {
 
         if (nameSelected != null) {
