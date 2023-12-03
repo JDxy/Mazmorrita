@@ -30,28 +30,28 @@ public class Enemy {
         List<HashMap<String, String>> allEnemies= LocalConnection.ExecuteSelectSql(sqlSentence, values);
         HashMap<String, String> singleEnemy= allEnemies.get((int)(Math.random()*allEnemies.size()));
 
-        nombre= singleEnemy.get("Nombre");
-        avatar= singleEnemy.get("Avatar");
-        vidaMaxima= Integer.parseInt(singleEnemy.get("Vida"));
+        nombre= singleEnemy.get("1");
+        avatar= singleEnemy.get("2");
+        vidaMaxima= Integer.parseInt(singleEnemy.get("3"));
         vidaActual= vidaMaxima;
-        fuerza= Integer.parseInt(singleEnemy.get("Fuerza"));
-        defensaBase= Integer.parseInt(singleEnemy.get("Defensa"));
+        fuerza= Integer.parseInt(singleEnemy.get("4"));
+        defensaBase= Integer.parseInt(singleEnemy.get("5"));
         defensa= defensaBase;
-        jefe= !singleEnemy.get("Jefe").equals("0");
-        botin= Integer.parseInt(singleEnemy.get("Botin"));
+        jefe= !singleEnemy.get("6").equals("0");
+        botin= Integer.parseInt(singleEnemy.get("7"));
 
         ataques= conseguirAtaques(nombre);
     }
 
     public ArrayList<Attack> conseguirAtaques(String nombre) {
-        String sqlSentence= "SELECT Nombre, Potencia, Tipo FROM Ataques WHERE Nombre IN (SELECT NombreAtaque FROM Ataque_enemigo WHERE NombreEnemigo= ?);";
+        String sqlSentence= "SELECT Nombre, Potencia, Tipo FROM Ataques WHERE Nombre= (SELECT NombreAtaque FROM Ataque_enemigo WHERE NombreEnemigo= ?);";
         String[] values= {nombre};
         ArrayList<Attack> ataques2= new ArrayList<>();
 
         List<HashMap<String, String>> allAtacks= LocalConnection.ExecuteSelectSql(sqlSentence, values);
 
         for (HashMap<String, String> ataque : allAtacks) {
-            ataques2.add(new Attack(ataque.get("Nombre"), Integer.parseInt(ataque.get("Potencia")), ataque.get("Tipo")));
+            ataques2.add(new Attack(ataque.get("1"), Integer.parseInt(ataque.get("2")), ataque.get("3")));
         }
 
         return ataques2;
@@ -97,11 +97,8 @@ public class Enemy {
     public boolean restarVida(int damage){
         // (vidaActual-(AtaqueEnemigo*(MultiplicadorAtque/100)*Defenza)
         // 500 - (200 / (500*0.5))
-        vidaActual= (int) (vidaActual-(damage-(defensa*0.25)));
-        if (vidaActual <= 0){
-            return true;
-        }
-        return false;
+        vidaActual= (vidaActual-damage);
+        return vidaActual <= 0;
     }
 
     /**

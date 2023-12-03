@@ -11,10 +11,12 @@ public class Character {
     private String nombre;
     private String avatar;
     private int idUsuario;
+    private int vidaMax;
     private int vida;
     private int fuerza;
     private int defensa;
     private int magia;
+    private int manaMax;
     private int mana;
     private String clase;
     private int piso;
@@ -131,15 +133,33 @@ public class Character {
         this.nivel = nivel;
     }
 
+    public int getVidaMax() {
+        return vidaMax;
+    }
+
+    public void setVidaMax(int vidaMax) {
+        this.vidaMax = vidaMax;
+    }
+
+    public void setManaMax(int manaMax) {
+        this.manaMax = manaMax;
+    }
+
+    public int getManaMax() {
+        return manaMax;
+    }
+
     public Character(String nombre, String avatar, int idUsuario, int vida, int fuerza, int defensa, int magia, int mana, String clase, int piso, int experiencia) {
         this.nombre = nombre;
         this.avatar = avatar;
         this.idUsuario = idUsuario;
-        this.vida = vida;
+        this.vidaMax = vida;
+        this.vida= vidaMax;
         this.fuerza = fuerza;
         this.defensa = defensa;
         this.magia = magia;
-        this.mana = mana;
+        this.manaMax = mana;
+        this.mana = manaMax;
         this.clase = clase;
         this.piso = piso;
         this.experiencia = experiencia;
@@ -234,8 +254,15 @@ public class Character {
             listValues[10] = String.valueOf(character.avatar);
 
             LocalConnection.ExecuteChangesSql("INSERT INTO personajes (Nombre, IdUsuario, Vida, Fuerza, Defensa, Magia, Mana, Clase, idpiso, Experiencia ,Avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", listValues);
-        }
+    }
 
-
-
+    /**
+     * Metodo que resta la vida actual del personaje
+     * @param damage (int) El daño que realiza el enemigo
+     * @return (true) si el personaje muere, (false) si el personaje sobrevive
+     */
+    public boolean restarVida(int damage){
+        vida= (vida-damage);
+        return vida <= 0;
+    }
 }

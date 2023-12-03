@@ -1,5 +1,6 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Attack;
 import com.project.mazmorrita_project.models.Character;
 import com.project.mazmorrita_project.models.Enemy;
 import javafx.fxml.FXML;
@@ -40,6 +41,7 @@ public class CombatController {
 
     private Character character;
     private static Enemy enemy;
+    private String[] turnos;
 
     public void initialize(){
         character= Character.character;
@@ -51,8 +53,17 @@ public class CombatController {
         imageEnemy.setImage(enemyAvatar);
 
         vidaEnemy.setText(String.valueOf(enemy.getVidaMaxima()));
+        vidaMaxPJ.setText(String.valueOf(character.getVidaMax()));
+        vidaActualPj.setText(String.valueOf(character.getVida()));
 
+        manaMaxPJ.setText(String.valueOf(character.getManaMax()));
+        manaActualPj.setText(String.valueOf(character.getMana()));
 
+        if ((Math.random()*20)%2 == 0){
+            turnos= new String[]{"character", "enemy"};
+        } else {
+            turnos= new String[]{"enemy", "character"};
+        }
     }
 
     public static void setEnemy(Enemy enemy) {
@@ -60,17 +71,59 @@ public class CombatController {
     }
 
     public void salir(MouseEvent mouseEvent) {
-        try {
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
-        Stage window = (Stage) combatTitle.getScene().getWindow();
-        window.setScene(scene);
-        window.setTitle("floor");
-        window.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        cambiarScene("/com/project/mazmorrita_project/floor-view.fxml", "Floor");
     }
 
     public void luchar(MouseEvent mouseEvent) {
+
+        for (String turn : turnos) {
+            if (turn.equals("character")){
+                if (turnCharacter(attackPj.getValue().toString())){
+                    cambiarScene("/com/project/mazmorrita_project/battleWin-view.fxml", "Victory!!!");
+                }
+            }
+            else {
+                if (turnEnemyAttack()){
+                    cambiarScene("/com/project/mazmorrita_project/gameover-view.fxml", "Game Over");
+                }
+            }
+        }
+    }
+
+    private boolean turnEnemyAttack(){
+        Attack attack= enemy.getAtaques().get((int) (Math.random()*enemy.getAtaques().size()));
+
+        int damage= (int) ((enemy.getFuerza()*0.5) * (attack.getPotencia()*0.25) * (1/ character.getDefensa()));
+
+        
+
+        return character.restarVida(damage);
+    }
+
+    private boolean turnCharacter(String attackName){
+        Attack ataque= null;
+
+        for (Attack attack : character.getAtaques()) {
+            if (attack.getNombre().equals(attackName)){
+                ataque= attack;
+            }
+        }
+
+        int damage= (int) ((character.getFuerza()*0.5) * (ataque.getPotencia()*0.25)* (1/ enemy.getDefensa()));
+
+        return enemy.restarVida(damage);
+    }
+
+    private void cambiarScene(String ruta, String tittle){
+        Scene scene = null;
+        try {
+            scene = new Scene(FXMLLoader.load(getClass().getResource(ruta)));
+            Stage window = (Stage) combatTitle.getScene().getWindow();
+            window.setScene(scene);
+            window.setTitle(tittle);
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
