@@ -1,4 +1,4 @@
-DROP DATABASE ProyectoMazmorrita;
+DROP DATABASE if exists ProyectoMazmorrita;
 CREATE DATABASE ProyectoMazmorrita;
 
 USE ProyectoMazmorrita;
@@ -70,10 +70,10 @@ CREATE TABLE Ataque_enemigo(
 
 CREATE TABLE Ataque_personaje(
 	NombreAtaque VARCHAR(50) NOT NULL,
-    IdUsuario INT,
-    NombrePersonaje VARCHAR(14) NOT NULL,
-    FOREIGN KEY(IdUsuario) REFERENCES Personajes(IdUsuario),
-	PRIMARY KEY(NombreAtaque, NombrePersonaje),
+    IdUsuario INT NOT NULL,
+    NombrePersonaje VARCHAR(14) NOT NULL,  
+	PRIMARY KEY(NombreAtaque, IdUsuario, NombrePersonaje),
+	FOREIGN KEY(IdUsuario) REFERENCES Personajes(IdUsuario),
     FOREIGN KEY(NombrePersonaje) REFERENCES Personajes(Nombre),
     FOREIGN KEY(NombreAtaque) REFERENCES Ataques(Nombre));
 
@@ -93,21 +93,18 @@ DELIMITER ;
 
 -- Ataques Mago
 INSERT INTO Ataques VALUES("Golpe de baston", 20, "Fisico");
-INSERT INTO Ataques VALUES("Enciclopediaso", 15, "Fisico");
 INSERT INTO Ataques VALUES("Bola de fuego", 45, "Magico");
 INSERT INTO Ataques VALUES("Invocar Trueno", 65, "Magico");
 INSERT INTO Ataques VALUES("Corte arcano", 80, "Magico");
 
 -- Ataques barbaro
-INSERT INTO Ataques VALUES("QUE TE MATOOOOOOOOOO!!!!", 25, "Fisico");
 INSERT INTO Ataques VALUES("Golpe de Furia", 15, "Fisico");
 INSERT INTO Ataques VALUES("Testarazo", 20, "Fisico");
 INSERT INTO Ataques VALUES("Mini Temblor", 35, "Magico");
 INSERT INTO Ataques VALUES("Carga Ignea", 40, "Magico");
 
 -- Ataques Picaro
-INSERT INTO Ataques VALUES("Disparo normal", 15, "Fisico");
-INSERT INTO Ataques VALUES("Disparo preciso", 25, "Fisico");
+INSERT INTO Ataques VALUES("Disparo certero", 25, "Fisico");
 INSERT INTO Ataques VALUES("Golpe con la flecha", 10, "Fisico");
 INSERT INTO Ataques VALUES("Flecha espiritual", 34, "Magico");
 INSERT INTO Ataques VALUES("Ira de Armonia", 90, "Magico");
@@ -160,7 +157,6 @@ INSERT INTO Ataque_enemigo VALUES("Atraccion de Circo", "Emperatriz Arlequin: Za
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Golpe", 20);
 INSERT INTO Ataques(Nombre, Potencia) VALUES("Estocada", 25);
 INSERT INTO Ataques VALUES("Felonia Simpatica", 20, "Magico");
-INSERT INTO Ataques VALUES("Invocar Nombre", 25, "Magico");
 INSERT INTO Ataques VALUES("Ataque emocional", 35, "Magico");
 
 INSERT INTO Ataque_Enemigo VALUES("Golpe", "Esqueleto");
@@ -173,17 +169,14 @@ INSERT INTO Ataque_Enemigo VALUES("Golpe", "Zombie");
 INSERT INTO Ataque_Enemigo VALUES("Estocada", "Zombie");
 
 INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Imp");
-INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Imp");
+INSERT INTO Ataque_Enemigo VALUES("Ataque emocional", "Imp");
 
 INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Bruja");
-INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Bruja");
 INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Bruja");
 
 INSERT INTO Ataque_Enemigo VALUES("Felonia Simpatica", "Vampiro");
-INSERT INTO Ataque_Enemigo VALUES("Invocar Nombre", "Vampiro");
 INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Vampiro");
 
-INSERT INTO Ataque_Enemigo VALUES("Golpe", "Demonio");
 INSERT INTO Ataque_Enemigo VALUES("Estocada", "Demonio");
 INSERT INTO ataque_enemigo VALUES("Ataque emocional", "Demonio");
 
