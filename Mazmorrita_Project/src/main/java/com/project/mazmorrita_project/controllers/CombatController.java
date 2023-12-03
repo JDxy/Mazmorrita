@@ -66,7 +66,6 @@ public class CombatController {
         vidaEnemy.setText(String.valueOf(enemy.getVidaMaxima()));
         vidaMaxPJ.setText(String.valueOf(character.getVidaMax()));
         vidaActualPj.setText(String.valueOf(character.getVida()));
-
         manaMaxPJ.setText(String.valueOf(character.getManaMax()));
         manaActualPj.setText(String.valueOf(character.getMana()));
 
@@ -92,7 +91,6 @@ public class CombatController {
                 if (turnCharacter(attackPj.getValue().toString(), armaSeleccionada)){
                     BattleWinViewController.exp= enemy.devolverBotin();
                     FloorController.enemigosDerrotados.add(numEnemigo);
-
                     cambiarScene("/com/project/mazmorrita_project/battleWin-view.fxml", "Victory!!!");
                 }
             }
@@ -125,7 +123,6 @@ public class CombatController {
             if (attack.getNombre().equals(attackName)){
                 ataque= attack;
             }
-            System.out.println(attack.getTipo());
         }
 
         for (Weapon weapon: character.getArmas()){
@@ -145,13 +142,13 @@ public class CombatController {
         }
 
         if (ataque.getTipo().equals("Magico")){
-            damage= (int) (character.getMagia() * (ataque.getPotencia()));
+            damage= (int) (character.getMagia() + (ataque.getPotencia()));
             int manaActual= character.getMana();
             manaActual-= (int) (ataque.getPotencia()*0.25);
             character.setMana(manaActual);
             manaActualPj.setText(String.valueOf(character.getMana()));
         } else {
-            damage= (int) (character.getFuerza() * (ataque.getPotencia()));
+            damage= (int) (character.getFuerza() + (ataque.getPotencia()));
         }
 
         actionsTextArea.setText(actionsTextArea.getText()+

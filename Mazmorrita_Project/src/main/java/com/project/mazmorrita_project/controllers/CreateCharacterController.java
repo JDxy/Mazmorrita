@@ -102,27 +102,27 @@ public class CreateCharacterController {
         }
     }
     public void claseMago(MouseEvent mouseEvent) {
-        labelFuerza.setText("5");
-        labelDefensa.setText("5");
-        labelVida.setText("100");
-        labelMagia.setText("10");
-        labelMana.setText("10");
+        labelFuerza.setText("25");
+        labelDefensa.setText("25");
+        labelVida.setText("150");
+        labelMagia.setText("50");
+        labelMana.setText("50");
         clase="Mago";
     }
     public void claseBarbaro(MouseEvent mouseEvent) {
-        labelFuerza.setText("10");
-        labelDefensa.setText("10");
+        labelFuerza.setText("50");
+        labelDefensa.setText("25");
         labelVida.setText("300");
-        labelMagia.setText("0");
-        labelMana.setText("0");
+        labelMagia.setText("20");
+        labelMana.setText("20");
         clase="Barbaro";
     }
     public void clasePicaro(MouseEvent mouseEvent) {
-        labelFuerza.setText("20");
-        labelDefensa.setText("5");
+        labelFuerza.setText("50");
+        labelDefensa.setText("25");
         labelVida.setText("150");
-        labelMagia.setText("0");
-        labelMana.setText("0");
+        labelMagia.setText("20");
+        labelMana.setText("20");
         clase="Picaro";
     }
 }

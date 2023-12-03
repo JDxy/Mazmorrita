@@ -113,7 +113,7 @@ public class Enemy {
      * Metodo que ataque que realiza el enemigo
      * @return (HashMap&lt;String, Integer&gt;) Daño puro que realiza un enemigo antes de ser reducido por la defenza
      */
-    public HashMap<String, Integer> ataqar(){
+    public HashMap<String, Integer> atacar(){
         HashMap<String, Integer> ataqueMap= new HashMap<>();
         Attack ataque= ataques.get((int) (Math.random() * ataques.size()));
         ataqueMap.put(ataque.getNombre(), (fuerza*(ataque.getPotencia()/100)));
