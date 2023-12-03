@@ -1,4 +1,5 @@
 package com.project.mazmorrita_project.controllers;
+import com.project.mazmorrita_project.models.Alert;
 import com.project.mazmorrita_project.models.Floor;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +31,6 @@ public class FloorController {
     public static Image imageAvatar = null;
 
     public static ArrayList<Integer> enemigosDerrotados= new ArrayList<>();
-
 
     public void initialize() {
         if (SelectCharacterController.imageSelected != null){
@@ -76,58 +76,74 @@ public class FloorController {
         */
     }
     public void bicho1(MouseEvent mouseEvent) {
-        try {
-            CombatController.setEnemy(Floor.floor.getEnemigos().get(0));
-            CombatController.numEnemigo= 1;
+        if(CombatController.ataquesSeleccionados==null){
+            Alert.showAlert("Error", "Debe equiparse en armeria", javafx.scene.control.Alert.AlertType.ERROR);
+        }else {
+            try {
+                CombatController.setEnemy(Floor.floor.getEnemigos().get(0));
+                CombatController.numEnemigo = 1;
 
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
-            Stage window= (Stage) bossPisoUno.getScene().getWindow();
-            window.setScene(scene);
-            window.setTitle("floor");
-            window.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
+                Stage window = (Stage) bossPisoUno.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("floor");
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void bicho2(MouseEvent mouseEvent) {
-        try {
-            CombatController.setEnemy(Floor.floor.getEnemigos().get(1));
-            CombatController.numEnemigo= 2;
+        if(CombatController.ataquesSeleccionados==null){
+            Alert.showAlert("Error", "Debe equiparse en armeria", javafx.scene.control.Alert.AlertType.ERROR);
+        }else {
+            try {
+                CombatController.setEnemy(Floor.floor.getEnemigos().get(1));
+                CombatController.numEnemigo = 2;
 
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
-            Stage window= (Stage) bossPisoUno.getScene().getWindow();
-            window.setScene(scene);
-            window.setTitle("floor");
-            window.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
+                Stage window = (Stage) bossPisoUno.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("floor");
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void bicho3(MouseEvent mouseEvent) {
-        try {
-            CombatController.setEnemy(Floor.floor.getEnemigos().get(2));
-            CombatController.numEnemigo= 3;
+        if(CombatController.ataquesSeleccionados==null){
+            Alert.showAlert("Error", "Debe equiparse en armeria", javafx.scene.control.Alert.AlertType.ERROR);
+        }else {
+            try {
+                CombatController.setEnemy(Floor.floor.getEnemigos().get(2));
+                CombatController.numEnemigo = 3;
 
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
-            Stage window= (Stage) bossPisoUno.getScene().getWindow();
-            window.setScene(scene);
-            window.setTitle("floor");
-            window.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
+                Stage window = (Stage) bossPisoUno.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("floor");
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void boss(MouseEvent mouseEvent) {
-        try {
-            CombatController.setEnemy(Floor.floor.getJefe());
+        if(CombatController.ataquesSeleccionados==null){
+            Alert.showAlert("Error", "Debe equiparse en armeria", javafx.scene.control.Alert.AlertType.ERROR);
+        }else {
+            try {
+                CombatController.setEnemy(Floor.floor.getJefe());
 
-            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
-            Stage window= (Stage) bossPisoUno.getScene().getWindow();
-            window.setScene(scene);
-            window.setTitle("floor");
-            window.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
+                Stage window = (Stage) bossPisoUno.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("floor");
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void armeria(MouseEvent mouseEvent) {

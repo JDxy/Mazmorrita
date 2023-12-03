@@ -272,7 +272,7 @@ public class Character {
         for (HashMap<String, String> weapon : allWeapons) {
             String weaponName= weapon.get("Nombre");
             int weaponFuerza= Integer.parseInt(weapon.get("Fuerza"));
-            int weaponDefensa= Integer.parseInt("Defensa");
+            int weaponDefensa= Integer.parseInt(weapon.get("Defensa"));
             int weapomVida= Integer.parseInt(weapon.get("Vida"));
             int weaponMagia= Integer.parseInt(weapon.get("Magia"));
             int weaponMana= Integer.parseInt(weapon.get("Mana"));
@@ -284,7 +284,7 @@ public class Character {
 
     private ArrayList<Attack> generateAttacksFromDataBase(String nombreChar, int idUsuario){
         String sqlSentence= "SELECT Nombre, Potencia, Tipo FROM Ataques WHERE Nombre IN (SELECT NombreAtaque FROM Ataque_personaje WHERE IdUsuario = ? AND NombrePersonaje = ?);";
-        String [] values = {nombreChar, String.valueOf(idUsuario)};
+        String [] values = {String.valueOf(idUsuario), nombreChar};
 
         List<HashMap<String, String>> allAttacks= LocalConnection.ExecuteSelectSql(sqlSentence, values);
         ArrayList<Attack> attacksArray= new ArrayList<>();

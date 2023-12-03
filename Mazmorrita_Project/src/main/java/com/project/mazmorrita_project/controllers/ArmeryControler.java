@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 import static com.project.mazmorrita_project.models.Character.showCharacters;
 import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
 
-public class ArmeryControler2 implements Initializable {
+public class ArmeryControler implements Initializable {
     public Label armeriaTitle;
     public ComboBox comboArmas;
     public ComboBox comboAtaque1;

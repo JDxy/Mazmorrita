@@ -59,7 +59,9 @@ public class CombatController {
         Image enemyAvatar= new Image("file:"+enemy.getAvatar());
         imageEnemy.setImage(enemyAvatar);
 
-        attackPj.getItems().addAll(ataquesSeleccionados);
+        for (int i = 0; i <ataquesSeleccionados.length ; i++) {
+            attackPj.getItems().addAll(ataquesSeleccionados[i]);
+        }
 
         vidaEnemy.setText(String.valueOf(enemy.getVidaMaxima()));
         vidaMaxPJ.setText(String.valueOf(character.getVidaMax()));
@@ -105,7 +107,7 @@ public class CombatController {
     private boolean turnEnemyAttack(){
         Attack attack= enemy.getAtaques().get((int) (Math.random()*enemy.getAtaques().size()));
 
-        int damage= (int) ((enemy.getFuerza()) * (attack.getPotencia()) * (1/ character.getDefensa()) *0.5);
+        int damage= (int) (enemy.getFuerza()) + (attack.getPotencia()) ;
 
         actionsTextArea.setText(actionsTextArea.getText()+
                 "\n"+enemy.getNombre()+" uso "+attack.getNombre()+" hizo: "+damage+" puntos de daño.");
@@ -123,6 +125,7 @@ public class CombatController {
             if (attack.getNombre().equals(attackName)){
                 ataque= attack;
             }
+            System.out.println(attack.getTipo());
         }
 
         for (Weapon weapon: character.getArmas()){
@@ -130,7 +133,6 @@ public class CombatController {
                 arma= weapon;
             }
         }
-
 
         //int damage= (int) ((character.getFuerza()) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
 
@@ -142,24 +144,20 @@ public class CombatController {
             return false;
         }
 
-
         if (ataque.getTipo().equals("Magico")){
-            damage= (int) ((character.getMagia() + (0.5*arma.getMagia())) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
-
+            damage= (int) (character.getMagia() * (ataque.getPotencia()));
             int manaActual= character.getMana();
             manaActual-= (int) (ataque.getPotencia()*0.25);
-
             character.setMana(manaActual);
             manaActualPj.setText(String.valueOf(character.getMana()));
         } else {
-            damage= (int) ((character.getFuerza() + (0.5*arma.getFuerza())) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
+            damage= (int) (character.getFuerza() * (ataque.getPotencia()));
         }
 
         actionsTextArea.setText(actionsTextArea.getText()+
                 "\nHaz usado "+attackName+", hizite: "+damage+" puntos de daño.");
 
         vidaEnemy.setText(String.valueOf(enemy.getVidaActual()));
-
         return enemy.restarVida(damage);
     }
 

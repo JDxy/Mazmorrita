@@ -113,13 +113,13 @@ INSERT INTO Pisos(Numero, NumeroEnemigos) VALUES(1, 3);
 INSERT INTO Pisos(Numero, NumeroEnemigos) VALUES(2, 5);
 
 
-INSERT INTO Enemigos VALUES("Esqueleto", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/esqueleto.jpg", 50, 12, 5, 0, 10);
-INSERT INTO Enemigos VALUES("Slime", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/slime.jpg", 10, 5, 25, 0, 8);
-INSERT INTO Enemigos VALUES("Zombie", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/bichoGordo.png", 25, 24, 5, 0, 20);
-INSERT INTO Enemigos VALUES("Imp", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/demonio.jpg", 14, 20, 20, 0, 50);
+INSERT INTO Enemigos VALUES("Esqueleto", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/esqueleto.jpg", 180, 12, 5, 0, 10);
+INSERT INTO Enemigos VALUES("Slime", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/slime.jpg", 100, 5, 25, 0, 8);
+INSERT INTO Enemigos VALUES("Zombie", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/bichoGordo.png", 150, 24, 5, 0, 20);
+INSERT INTO Enemigos VALUES("Imp", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/demonio.jpg", 120, 20, 20, 0, 50);
 
-INSERT INTO Enemigos VALUES("Titan: Ecanthy", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/demonio2.jpg", 125, 35, 25, 1, 200);
-INSERT INTO Enemigos VALUES("Dragon del lamento: Cocoona", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/dragon.jpg", 100, 35, 40, 1, 200);
+INSERT INTO Enemigos VALUES("Titan: Ecanthy", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/demonio2.jpg", 500, 35, 25, 1, 200);
+INSERT INTO Enemigos VALUES("Dragon del lamento: Cocoona", 1, "Mazmorrita_Project/src/main/resources/Images/Enemies/dragon.jpg", 500, 35, 40, 1, 200);
 
 INSERT INTO Enemigos VALUES("Bruja", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/bruja.jpg", 50, 45, 15, 0, 50);
 INSERT INTO Enemigos VALUES("Demonio", 2, "Mazmorrita_Project/src/main/resources/Images/Enemies/demon.jpeg", 75, 15, 50, 0, 55);

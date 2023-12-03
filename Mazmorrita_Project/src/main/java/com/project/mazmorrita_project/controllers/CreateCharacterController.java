@@ -104,7 +104,7 @@ public class CreateCharacterController {
     public void claseMago(MouseEvent mouseEvent) {
         labelFuerza.setText("5");
         labelDefensa.setText("5");
-        labelVida.setText("10");
+        labelVida.setText("100");
         labelMagia.setText("10");
         labelMana.setText("10");
         clase="Mago";
@@ -112,7 +112,7 @@ public class CreateCharacterController {
     public void claseBarbaro(MouseEvent mouseEvent) {
         labelFuerza.setText("10");
         labelDefensa.setText("10");
-        labelVida.setText("15");
+        labelVida.setText("300");
         labelMagia.setText("0");
         labelMana.setText("0");
         clase="Barbaro";
@@ -120,7 +120,7 @@ public class CreateCharacterController {
     public void clasePicaro(MouseEvent mouseEvent) {
         labelFuerza.setText("20");
         labelDefensa.setText("5");
-        labelVida.setText("5");
+        labelVida.setText("150");
         labelMagia.setText("0");
         labelMana.setText("0");
         clase="Picaro";
