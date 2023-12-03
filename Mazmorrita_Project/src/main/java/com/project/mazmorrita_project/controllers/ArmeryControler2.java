@@ -44,24 +44,29 @@ public class ArmeryControler2 implements Initializable {
     private static int vidaOriginal;
     private static int magiaOriginal;
     private static int manaOriginal;
-    final private static List<AttackPj> listaAPJ = new ArrayList<>(AttackPj.mostrarAtaquesPersonajes(SelectCharacterController.nameSelected, LoginController.id));
-    final private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
+    final private static ArrayList<Attack> listaAPJ = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected, LoginController.id));
+    final private static ArrayList<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
     private static ArrayList<String> values= new ArrayList<>();
-
     private List<String> attackValues = new ArrayList<>();
+    private Character character;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        character = Character.character;
 
         for (int i = 0; i < listaW.size(); i++) {
             values.add(String.valueOf(listaW.get(i).getNombre()));
-        }
 
+        }
+        character.setArmas(listaW);
         comboArmas.getItems().addAll(values);
         comboArmas.setValue(" ");
 
         for (int i = 0; i < listaAPJ.size(); i++) {
             attackValues.add(String.valueOf(listaAPJ.get(i).getNombre()));
+
         }
+        character.setAtaques(listaAPJ);
         comboAtaque1.getItems().addAll(attackValues);
         comboAtaque1.setValue(" ");
         comboAtaque2.getItems().addAll(attackValues);
