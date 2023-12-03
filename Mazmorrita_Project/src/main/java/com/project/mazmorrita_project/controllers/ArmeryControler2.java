@@ -2,7 +2,6 @@ package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.*;
 import com.project.mazmorrita_project.models.Character;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -49,26 +48,26 @@ public class ArmeryControler2 implements Initializable {
     private static int manaOriginal;
     final private static ArrayList<AttackPj> listaAPJ = new ArrayList<>(AttackPj.mostrarAtaquesPersonajes(SelectCharacterController.nameSelected, LoginController.id));
     final private static ArrayList<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
-    private static ArrayList<String> values= new ArrayList<>();
+    private ArrayList<String> weaponValues = new ArrayList<>();
+    public static ArrayList<Weapon> weaponsList = new ArrayList<>();
     private List<String> attackValues = new ArrayList<>();
-
     private Character character = SelectCharacterController.characterSelected;
 
-
+    //atributo para pasar el nombre de las armas seleccionadas.
+    public static String[] ataquesSeleccionadas =new String[3];
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         for (int i = 0; i < listaW.size(); i++) {
-            values.add(String.valueOf(listaW.get(i).getNombre()));
-
+            weaponValues.add(String.valueOf(listaW.get(i).getNombre()));
         }
+        weaponsList=weaponValues;
         character.setArmas(listaW);
-        comboArmas.getItems().addAll(values);
+        comboArmas.getItems().addAll(weaponValues);
         comboArmas.setValue(" ");
 
         for (int i = 0; i < listaAPJ.size(); i++) {
             attackValues.add(String.valueOf(listaAPJ.get(i).getNombre()));
-
         }
         comboAtaque1.getItems().addAll(attackValues);
         comboAtaque1.setValue(" ");
@@ -89,19 +88,13 @@ public class ArmeryControler2 implements Initializable {
         labelVida.setText(String.valueOf(vidaOriginal));
         labelMagia.setText(String.valueOf(magiaOriginal));
         labelMana.setText(String.valueOf(manaOriginal));
-
-
+        //Se suman a los valores los puntos del arma seleccionada.
         labelFuerzaFinal.setText(String.valueOf(fuerzaOriginal));
         labelDefensaFinal.setText(String.valueOf(defensaOriginal));
         labelVidaFinal.setText(String.valueOf(vidaOriginal));
         labelMagiaFinal.setText(String.valueOf(magiaOriginal));
         labelManaFinal.setText(String.valueOf(manaOriginal));
-
-
     }
-
-
-
     public void volverAtras(MouseEvent mouseEvent) {
         try {
             attackValues = new ArrayList<>();
@@ -114,10 +107,7 @@ public class ArmeryControler2 implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
     public void guardarCambios(MouseEvent mouseEvent) {
-
-
 
         if(comboAtaque1.getValue().equals(comboAtaque2.getValue()) || comboAtaque1.getValue().equals(comboAtaque3.getValue()) ){
             Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
@@ -126,6 +116,11 @@ public class ArmeryControler2 implements Initializable {
         } else if(comboAtaque3.getValue().equals(comboAtaque1.getValue()) || comboAtaque3.getValue().equals(comboAtaque2.getValue()) ){
             Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
         } else {
+            //guardamos los valores nombres de los ataques seleccionados en el arreglo de string para pasarlo al combate.
+            ataquesSeleccionadas[0]= (String) comboAtaque1.getValue();
+            ataquesSeleccionadas[1]= (String) comboAtaque2.getValue();
+            ataquesSeleccionadas[2]= (String) comboAtaque3.getValue();
+
             String[] listValues = new String[6];
             listValues[0] = labelFuerza.getText();
             listValues[1] = labelDefensa.getText();
@@ -137,15 +132,12 @@ public class ArmeryControler2 implements Initializable {
 
             List<Character> characters = showCharacters(SelectCharacterController.nameSelected, "Nombre");
 
-
-             character = characters.get(0);
-             character.setFuerza(Integer.parseInt(labelFuerza.getText()));
-             character.setDefensa(Integer.parseInt(labelDefensa.getText()));
-             character.setVida(Integer.parseInt(labelVida.getText()));
-             character.setMagia(Integer.parseInt(labelMagia.getText()));
-             character.setMana(Integer.parseInt(labelMana.getText()));
-
-
+            character = characters.get(0);
+            character.setFuerza(Integer.parseInt(labelFuerza.getText()));
+            character.setDefensa(Integer.parseInt(labelDefensa.getText()));
+            character.setVida(Integer.parseInt(labelVida.getText()));
+            character.setMagia(Integer.parseInt(labelMagia.getText()));
+            character.setMana(Integer.parseInt(labelMana.getText()));
 
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
@@ -157,11 +149,8 @@ public class ArmeryControler2 implements Initializable {
                 throw new RuntimeException(e);
             }
         }
-
     }
-
     public void comboArmasOA(ActionEvent actionEvent) {
-
         String selectedWeapon = comboArmas.getValue().toString();
         for (Weapon weapon : listaW) {
             if (weapon.getNombre().equals(selectedWeapon)) {

@@ -188,7 +188,6 @@ public class Character {
         }
         return characters;
     }
-
     private static Character createCharacterFromHashMap(HashMap<String, String> characterData) {
         String nombre = characterData.get("Nombre");
         String avatarPath = characterData.get("Avatar");
@@ -204,8 +203,6 @@ public class Character {
 
         return new Character(nombre, avatarPath, idUsuario, vida, fuerza, defensa, magia, mana, clase, piso, experiencia);
     }
-
-
     public static void deleteCharacter(String name, String idUsuario) {
         String[] listValues = new String[2];
         listValues[0] = name;
@@ -216,7 +213,6 @@ public class Character {
     public static boolean findCharacter(String name) {
         String[] listValues = new String[1];
         listValues[0] = name;
-
         return findValue("SELECT nombre FROM personajes WHERE nombre = ?", listValues);
     }
 
