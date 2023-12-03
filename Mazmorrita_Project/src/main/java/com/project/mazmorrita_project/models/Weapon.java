@@ -151,4 +151,13 @@ public class Weapon {
         return new Weapon(nombre, nombrePersonaje, fuerza, vida, defensa, magia, mana);
     }
 
+    public static void deleteWeaponTable(String nameChar, String idUser){
+        String sqlSentence= "DELETE FROM armas where NombrePersonaje IN (SELECT Nombre, IdUsuario FROM personajes WHERE Nombre = ?) and IdUsuario = ?;";
+        String[] values = new String[2];
+        values[0]= nameChar;
+        values[1]= idUser;
+        values[2]= idUser;
+
+        LocalConnection.ExecuteChangesSql(sqlSentence, values);
+    }
 }

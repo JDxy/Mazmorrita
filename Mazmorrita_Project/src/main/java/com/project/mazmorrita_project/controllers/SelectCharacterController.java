@@ -1,8 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
-import com.project.mazmorrita_project.models.Alert;
+import com.project.mazmorrita_project.models.*;
 import com.project.mazmorrita_project.models.Character;
-import com.project.mazmorrita_project.models.Floor;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -151,7 +150,11 @@ public class SelectCharacterController {
         }
     }
     public void borrarPersonaje(MouseEvent mouseEvent) {
-        deleteCharacter(nameSelected,LoginController.id);
+
+        Attack.deleteAttacksTable(nameSelected, LoginController.id);
+        Weapon.deleteWeaponTable(nameSelected, LoginController.id);
+        deleteCharacter(nameSelected, LoginController.id);
+
         Scene scene= null;
         try {
             scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
@@ -163,6 +166,8 @@ public class SelectCharacterController {
             throw new RuntimeException(e);
         }
     }
+
+
 
     public void usarPersonaje(MouseEvent mouseEvent) {
 
