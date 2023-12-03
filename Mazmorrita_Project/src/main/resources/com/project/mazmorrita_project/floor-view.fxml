@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="681.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.FloorController">
+<AnchorPane prefHeight="681.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.FloorController">
    <children>
       <ImageView fitHeight="702.0" fitWidth="1173.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -109,7 +105,6 @@
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <Pane layoutX="1008.0" layoutY="14.0" onMouseClicked="#salir" prefHeight="52.0" prefWidth="144.0" />
       <Pane layoutX="933.0" layoutY="629.0" onMouseClicked="#armeria" prefHeight="42.0" prefWidth="216.0" />
       <ImageView fx:id="personajeAvatar" fitHeight="76.0" fitWidth="65.0" layoutX="218.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="116.0" layoutY="633.0" text="Volver Atrás">
@@ -149,5 +144,6 @@
             <Image url="@../../../Images/Icons/borrar-usuario.png" />
          </image>
       </ImageView>
+      <Pane layoutX="1012.0" layoutY="14.0" onMouseClicked="#salir" prefHeight="52.0" prefWidth="154.0" />
    </children>
 </AnchorPane>

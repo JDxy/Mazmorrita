@@ -13,10 +13,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BattleWinViewController implements Initializable {
-
     @FXML
     public Label botinRecibido;
-
     public static int exp;
 
     @Override

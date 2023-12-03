@@ -20,7 +20,6 @@ import static com.project.mazmorrita_project.models.Character.deleteCharacter;
 public class GameOverController implements Initializable {
     @FXML
     public Label gameOverTitle;
-
     public void nuevaPartida(MouseEvent mouseEvent) {
         try {
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));
@@ -32,7 +31,6 @@ public class GameOverController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
     public void salir(MouseEvent mouseEvent) {
         try {
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/main-view.fxml")));
@@ -44,7 +42,6 @@ public class GameOverController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Attack.deleteAttacksTable(Character.character.getNombre(), LoginController.id);
