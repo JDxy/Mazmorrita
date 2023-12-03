@@ -1,12 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.BattleWinViewController">
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.BattleWinViewController">
    <children>
-      <Label layoutX="226.0" layoutY="129.0" text="YUJUUUUUU Ganaste" />
-      <Label fx:id="botinRecibido" layoutX="99.0" layoutY="259.0" text="botin" />
-      <Label layoutX="67.0" layoutY="349.0" onMouseClicked="#volver" text="Volver Atrás" />
+      <ImageView fitHeight="748.0" fitWidth="1143.0" layoutX="-19.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Backgrounds/salaDrake.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="378.0" layoutY="164.0" text="YOU WIN">
+         <font>
+            <Font name="Franklin Gothic Medium" size="96.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.49085365853658536">
+                     <color>
+                        <Color red="0.9714285731315613" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="botinRecibido" layoutX="528.0" layoutY="327.0" minWidth="100.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font></Label>
+      <Label layoutX="130.0" layoutY="653.0" onMouseClicked="#volver" text="Volver Atrás" textFill="#110000">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font></Label>
+      <Label layoutX="426.0" layoutY="327.0" text="Botin:">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.49085365853658536">
+                     <color>
+                        <Color red="0.9714285731315613" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="638.0" layoutY="327.0" text="Exp.">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.49085365853658536">
+                     <color>
+                        <Color red="0.9714285731315613" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="64.0" fitWidth="62.0" layoutX="46.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+         <image>
+            <Image url="@../../../Images/Icons/flecha.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
