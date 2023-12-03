@@ -3,6 +3,7 @@ package com.project.mazmorrita_project.controllers;
 import com.project.mazmorrita_project.models.Attack;
 import com.project.mazmorrita_project.models.Character;
 import com.project.mazmorrita_project.models.Enemy;
+import com.project.mazmorrita_project.models.Weapon;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CombatController {
     @FXML
@@ -46,6 +48,8 @@ public class CombatController {
     private static Enemy enemy;
     private String[] turnos;
     public static int numEnemigo;
+    public static String armaSeleccionada;
+    public static String[] ataquesSeleccionados;
 
     public void initialize(){
 
@@ -54,6 +58,8 @@ public class CombatController {
 
         Image enemyAvatar= new Image("file:"+enemy.getAvatar());
         imageEnemy.setImage(enemyAvatar);
+
+        attackPj.getItems().addAll(ataquesSeleccionados);
 
         vidaEnemy.setText(String.valueOf(enemy.getVidaMaxima()));
         vidaMaxPJ.setText(String.valueOf(character.getVidaMax()));
@@ -81,7 +87,7 @@ public class CombatController {
         volverAtrasPane.setDisable(true);
         for (String turn : turnos) {
             if (turn.equals("character")){
-                if (turnCharacter(attackPj.getValue().toString())){
+                if (turnCharacter(attackPj.getValue().toString(), armaSeleccionada)){
                     BattleWinViewController.exp= enemy.devolverBotin();
                     FloorController.enemigosDerrotados.add(numEnemigo);
 
@@ -109,14 +115,26 @@ public class CombatController {
         return character.restarVida(damage);
     }
 
-    private boolean turnCharacter(String attackName){
+    private boolean turnCharacter(String attackName, String armaName){
         Attack ataque= null;
+        Weapon arma= null;
 
         for (Attack attack : character.getAtaques()) {
             if (attack.getNombre().equals(attackName)){
                 ataque= attack;
             }
         }
+
+        for (Weapon weapon: character.getArmas()){
+            if (weapon.getNombre().equals(armaName)){
+                arma= weapon;
+            }
+        }
+
+
+        //int damage= (int) ((character.getFuerza()) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
+
+        int damage= 0;
 
         if (ataque.getTipo().equals("Magico") && (ataque.getPotencia()*0.25) < character.getMana()){
             actionsTextArea.setText(actionsTextArea.getText()+
@@ -125,14 +143,16 @@ public class CombatController {
         }
 
 
-        int damage= (int) ((character.getFuerza()) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
-
         if (ataque.getTipo().equals("Magico")){
+            damage= (int) ((character.getMagia() + (0.5*arma.getMagia())) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
+
             int manaActual= character.getMana();
             manaActual-= (int) (ataque.getPotencia()*0.25);
 
             character.setMana(manaActual);
             manaActualPj.setText(String.valueOf(character.getMana()));
+        } else {
+            damage= (int) ((character.getFuerza() + (0.5*arma.getFuerza())) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
         }
 
         actionsTextArea.setText(actionsTextArea.getText()+

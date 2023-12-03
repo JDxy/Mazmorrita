@@ -61,7 +61,7 @@ public class ArmeryControler2 implements Initializable {
         for (int i = 0; i < listaW.size(); i++) {
             weaponValues.add(String.valueOf(listaW.get(i).getNombre()));
         }
-        weaponsList=weaponValues;
+
         character.setArmas(listaW);
         comboArmas.getItems().addAll(weaponValues);
         comboArmas.setValue(" ");
@@ -120,6 +120,10 @@ public class ArmeryControler2 implements Initializable {
             ataquesSeleccionadas[0]= (String) comboAtaque1.getValue();
             ataquesSeleccionadas[1]= (String) comboAtaque2.getValue();
             ataquesSeleccionadas[2]= (String) comboAtaque3.getValue();
+
+            CombatController.ataquesSeleccionados = ataquesSeleccionadas;
+
+            CombatController.armaSeleccionada = comboArmas.getValue().toString();
 
             String[] listValues = new String[6];
             listValues[0] = labelFuerza.getText();

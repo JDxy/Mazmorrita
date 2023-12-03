@@ -11,8 +11,6 @@ import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelec
 
 public class Weapon {
     private String nombre;
-    private int idUsuario;
-    private String nombrePersonaje;
     private int fuerza;
     private int defensa;
     private int vida;
@@ -30,9 +28,8 @@ public class Weapon {
         this.mana = (int) (Math.random()*5+1);
     }
  */
-    public Weapon(String nombre, String nombrePersonaje, int fuerza, int defensa, int vida, int magia, int mana) {
+    public Weapon(String nombre, int fuerza, int defensa, int vida, int magia, int mana) {
         this.nombre = nombre;
-        this.nombrePersonaje = nombrePersonaje;
         this.fuerza = fuerza;
         this.defensa = defensa;
         this.vida = vida;
@@ -46,25 +43,13 @@ public class Weapon {
         int vida = (int) (Math.random() * 5 + 1);
         int magia = (int) (Math.random() * 5 + 1);
         int mana = (int) (Math.random() * 5 + 1);
-        return new Weapon(nombre, nombrePersonaje, fuerza, defensa, vida, magia, mana);
+        return new Weapon(nombre, fuerza, defensa, vida, magia, mana);
     }
     public String getNombre() {
         return nombre;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-    public String getNombrePersonaje() {
-        return nombrePersonaje;
-    }
-    public void setNombrePersonaje(String nombrePersonaje) {
-        this.nombrePersonaje = nombrePersonaje;
     }
     public int getFuerza() {
         return fuerza;
@@ -137,7 +122,7 @@ public class Weapon {
         int vida = Integer.parseInt(weaponData.get("Vida"));
         int magia = Integer.parseInt(weaponData.get("Magia"));
         int mana = Integer.parseInt(weaponData.get("Mana"));
-        return new Weapon(nombre, nombrePersonaje, fuerza, vida, defensa, magia, mana);
+        return new Weapon(nombre, fuerza, vida, defensa, magia, mana);
     }
 
     public static void deleteWeaponTable(String nameChar, String idUser){

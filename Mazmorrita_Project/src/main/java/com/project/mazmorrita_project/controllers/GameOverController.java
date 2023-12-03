@@ -1,15 +1,23 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Attack;
+import com.project.mazmorrita_project.models.Character;
+import com.project.mazmorrita_project.models.Weapon;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class GameOverController {
+import static com.project.mazmorrita_project.models.Character.deleteCharacter;
+
+public class GameOverController implements Initializable {
     @FXML
     public Label gameOverTitle;
 
@@ -35,5 +43,12 @@ public class GameOverController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Attack.deleteAttacksTable(Character.character.getNombre(), LoginController.id);
+        Weapon.deleteWeaponTable(Character.character.getNombre(), LoginController.id);
+        deleteCharacter(Character.character.getNombre(), LoginController.id);
     }
 }

@@ -1,5 +1,7 @@
 package com.project.mazmorrita_project.models;
 
+import com.project.mazmorrita_project.controllers.LoginController;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -163,8 +165,8 @@ public class Character {
         this.clase = clase;
         this.piso = piso;
         this.experiencia = experiencia;
-        this.armas = new ArrayList<>();
-        this.ataques = new ArrayList<>();
+        this.armas = generateWeaponsFromDataBase(nombre, Integer.parseInt(LoginController.id));
+        this.ataques = generateAttacksFromDataBase(nombre, Integer.parseInt(LoginController.id));
         this.nivel = 1;
     }
     public String getNombre() {
@@ -258,5 +260,43 @@ public class Character {
     public boolean restarVida(int damage){
         vida= (vida-damage);
         return vida <= 0;
+    }
+
+    private ArrayList<Weapon> generateWeaponsFromDataBase(String nombreChar, int idUsuario){
+        String sqlSentence= "SELECT Nombre, Fuerza, Defensa, Vida, Magia, Mana FROM Armas WHERE NombrePersonaje = ? AND IdUsuario = ?;";
+        String[] values = {nombreChar, String.valueOf(idUsuario)};
+
+        List<HashMap<String, String>> allWeapons= LocalConnection.ExecuteSelectSql(sqlSentence, values);
+        ArrayList<Weapon> weaponArray= new ArrayList<>();
+
+        for (HashMap<String, String> weapon : allWeapons) {
+            String weaponName= weapon.get("Nombre");
+            int weaponFuerza= Integer.parseInt(weapon.get("Fuerza"));
+            int weaponDefensa= Integer.parseInt("Defensa");
+            int weapomVida= Integer.parseInt(weapon.get("Vida"));
+            int weaponMagia= Integer.parseInt(weapon.get("Magia"));
+            int weaponMana= Integer.parseInt(weapon.get("Mana"));
+            weaponArray.add(new Weapon(weaponName, weaponFuerza, weaponDefensa, weapomVida, weaponMagia, weaponMana));
+        }
+
+        return weaponArray;
+    }
+
+    private ArrayList<Attack> generateAttacksFromDataBase(String nombreChar, int idUsuario){
+        String sqlSentence= "SELECT Nombre, Potencia, Tipo FROM Ataques WHERE Nombre IN (SELECT NombreAtaque FROM Ataque_personaje WHERE IdUsuario = ? AND NombrePersonaje = ?);";
+        String [] values = {nombreChar, String.valueOf(idUsuario)};
+
+        List<HashMap<String, String>> allAttacks= LocalConnection.ExecuteSelectSql(sqlSentence, values);
+        ArrayList<Attack> attacksArray= new ArrayList<>();
+
+        for (HashMap<String, String> attack : allAttacks) {
+            String attackNombre= attack.get("Nombre");
+            int attackPotencia= Integer.parseInt(attack.get("Potencia"));
+            String attackTipo= attack.get("Tipo");
+
+            attacksArray.add(new Attack(attackNombre, attackPotencia, attackTipo));
+        }
+
+        return attacksArray;
     }
 }
