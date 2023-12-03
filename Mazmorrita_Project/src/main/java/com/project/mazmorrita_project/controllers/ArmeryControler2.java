@@ -3,6 +3,7 @@ package com.project.mazmorrita_project.controllers;
 import com.project.mazmorrita_project.models.Alert;
 import com.project.mazmorrita_project.models.Attack;
 import com.project.mazmorrita_project.models.AttackPj;
+import com.project.mazmorrita_project.models.Character;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -35,17 +36,18 @@ public class ArmeryControler2 implements Initializable {
     public Label labelVidaArma;
     public Label labelMagiaArma;
     public Label labelManaArma;
-    public Label labelFuerza11;
-    public Label labelDefensa11;
-    public Label labelVida11;
-    public Label labelMagia11;
-    public Label labelMana11;
+    public Label labelFuerzaFinal;
+    public Label labelDefensaFinal;
+    public Label labelVidaFinal;
+    public Label labelMagiaFinal;
+    public Label labelManaFinal;
     private static int fuerzaOriginal;
     private static int defensaOriginal;
     private static int vidaOriginal;
     private static int magiaOriginal;
     private static int manaOriginal;
     final private static List<AttackPj> listaAPJ = new ArrayList<>(AttackPj.mostrarAtaquesPersonajes(SelectCharacterController.nameSelected, LoginController.id));
+
     private List<String> attackValues = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,6 +64,7 @@ public class ArmeryControler2 implements Initializable {
         comboAtaque3.getItems().addAll(attackValues);
         comboAtaque3.setValue(" ");
 
+       Character.character.getFuerza();
 
     }
     public void volverAtras(MouseEvent mouseEvent) {

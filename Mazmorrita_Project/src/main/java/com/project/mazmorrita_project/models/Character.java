@@ -181,14 +181,11 @@ public class Character {
             sql = "SELECT * FROM personajes WHERE Nombre = ?";
         }
         List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
-
         List<Character> characters = new ArrayList<>();
-
         for (HashMap<String, String> row : sqlResult) {
             Character character = createCharacterFromHashMap(row);
             characters.add(character);
         }
-
         return characters;
     }
 
