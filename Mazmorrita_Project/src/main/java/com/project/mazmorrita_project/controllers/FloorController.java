@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FloorController {
     @FXML
@@ -28,6 +29,8 @@ public class FloorController {
 
     public static Image imageAvatar = null;
 
+    public static ArrayList<Integer> enemigosDerrotados= new ArrayList<>();
+
 
     public void initialize() {
         if (SelectCharacterController.imageSelected != null){
@@ -40,9 +43,31 @@ public class FloorController {
             CreateCharacterController.imageSelected = null;
         }
         personajeAvatar.setImage(imageAvatar);
+
+        bossPisoUno.setDisable(true);
+
         showEnemy(enemyAvatar1);
         showEnemy(enemyAvatar2);
         showEnemy(enemyAvatar3);
+
+
+        for (int i: enemigosDerrotados){
+            switch (i){
+                case 1:
+                    enemyAvatar1.setDisable(true);
+                    break;
+                case 2:
+                    enemyAvatar2.setDisable(true);
+                    break;
+                case 3:
+                    enemyAvatar3.setDisable(true);
+                    break;
+            }
+        }
+
+        if (enemigosDerrotados.size() == Floor.floor.getNumEnemigos()){
+            bossPisoUno.setDisable(false);
+        }
     }
     public void showEnemy(ImageView enemyAvatar){
        /* Enemy enemy = new Enemy(1, false);
@@ -53,6 +78,7 @@ public class FloorController {
     public void bicho1(MouseEvent mouseEvent) {
         try {
             CombatController.setEnemy(Floor.floor.getEnemigos().get(0));
+            CombatController.numEnemigo= 1;
 
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
@@ -60,12 +86,13 @@ public class FloorController {
             window.setTitle("floor");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
     public void bicho2(MouseEvent mouseEvent) {
         try {
             CombatController.setEnemy(Floor.floor.getEnemigos().get(1));
+            CombatController.numEnemigo= 2;
 
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
@@ -73,12 +100,13 @@ public class FloorController {
             window.setTitle("floor");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
     public void bicho3(MouseEvent mouseEvent) {
         try {
             CombatController.setEnemy(Floor.floor.getEnemigos().get(2));
+            CombatController.numEnemigo= 3;
 
             Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/combat-view.fxml")));
             Stage window= (Stage) bossPisoUno.getScene().getWindow();
@@ -86,7 +114,7 @@ public class FloorController {
             window.setTitle("floor");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
     public void boss(MouseEvent mouseEvent) {
@@ -99,7 +127,7 @@ public class FloorController {
             window.setTitle("floor");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
     public void armeria(MouseEvent mouseEvent) {
@@ -110,7 +138,7 @@ public class FloorController {
             window.setTitle("Armery");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
     public void salir(MouseEvent mouseEvent) {
@@ -122,7 +150,7 @@ public class FloorController {
             window.setTitle("Login");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
     public void volverAtras(MouseEvent mouseEvent) {
@@ -134,7 +162,7 @@ public class FloorController {
             window.setTitle("Select Character");
             window.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }

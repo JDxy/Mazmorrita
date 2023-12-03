@@ -45,6 +45,7 @@ public class CombatController {
     private final Character character = SelectCharacterController.characterSelected;
     private static Enemy enemy;
     private String[] turnos;
+    public static int numEnemigo;
 
     public void initialize(){
 
@@ -81,6 +82,9 @@ public class CombatController {
         for (String turn : turnos) {
             if (turn.equals("character")){
                 if (turnCharacter(attackPj.getValue().toString())){
+                    BattleWinViewController.exp= enemy.devolverBotin();
+                    FloorController.enemigosDerrotados.add(numEnemigo);
+
                     cambiarScene("/com/project/mazmorrita_project/battleWin-view.fxml", "Victory!!!");
                 }
             }
@@ -95,7 +99,7 @@ public class CombatController {
     private boolean turnEnemyAttack(){
         Attack attack= enemy.getAtaques().get((int) (Math.random()*enemy.getAtaques().size()));
 
-        int damage= (int) ((enemy.getFuerza()*0.5) * (attack.getPotencia()*0.25) * (1/ character.getDefensa()));
+        int damage= (int) ((enemy.getFuerza()) * (attack.getPotencia()) * (1/ character.getDefensa()) *0.5);
 
         actionsTextArea.setText(actionsTextArea.getText()+
                 "\n"+enemy.getNombre()+" uso "+attack.getNombre()+" hizo: "+damage+" puntos de daño.");
@@ -114,7 +118,22 @@ public class CombatController {
             }
         }
 
-        int damage= (int) ((character.getFuerza()*0.5) * (ataque.getPotencia()*0.25)* (1/ enemy.getDefensa()));
+        if (ataque.getTipo().equals("Magico") && (ataque.getPotencia()*0.25) < character.getMana()){
+            actionsTextArea.setText(actionsTextArea.getText()+
+                    "\nNo tienes mana suficiente.");
+            return false;
+        }
+
+
+        int damage= (int) ((character.getFuerza()) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
+
+        if (ataque.getTipo().equals("Magico")){
+            int manaActual= character.getMana();
+            manaActual-= (int) (ataque.getPotencia()*0.25);
+
+            character.setMana(manaActual);
+            manaActualPj.setText(String.valueOf(character.getMana()));
+        }
 
         actionsTextArea.setText(actionsTextArea.getText()+
                 "\nHaz usado "+attackName+", hizite: "+damage+" puntos de daño.");

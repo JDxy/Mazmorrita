@@ -58,4 +58,8 @@ public class Floor {
     public Enemy getJefe() {
         return jefe;
     }
+
+    public int getNumEnemigos(){
+        return numEnemigos;
+    }
 }
