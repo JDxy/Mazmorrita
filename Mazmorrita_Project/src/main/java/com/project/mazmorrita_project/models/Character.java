@@ -7,7 +7,6 @@ import java.util.List;
 import static com.project.mazmorrita_project.models.LocalConnection.*;
 
 public class Character {
-
     public static Character character;
     private String nombre;
     private String avatar;
@@ -148,8 +147,6 @@ public class Character {
         this.ataques = new ArrayList<>();
         this.nivel = 1;
     }
-
-
     public String getNombre() {
         return nombre;
     }

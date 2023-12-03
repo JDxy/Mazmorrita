@@ -1,13 +1,19 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Alert;
 import com.project.mazmorrita_project.models.Attack;
 import com.project.mazmorrita_project.models.AttackPj;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,11 +61,45 @@ public class ArmeryControler2 implements Initializable {
 
         comboAtaque3.getItems().addAll(attackValues);
         comboAtaque3.setValue(" ");
+
+
     }
     public void volverAtras(MouseEvent mouseEvent) {
+        try {
+            attackValues = new ArrayList<>();
+            Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
+            Stage window= (Stage) armeriaTitle.getScene().getWindow();
+            window.setScene(scene);
+            window.setTitle("Floor");
+            window.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void guardarCambios(MouseEvent mouseEvent) {
+
+        if(comboAtaque1.getValue().equals(comboAtaque2.getValue()) || comboAtaque1.getValue().equals(comboAtaque3.getValue()) ){
+            Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
+        }else if(comboAtaque2.getValue().equals(comboAtaque1.getValue()) || comboAtaque2.getValue().equals(comboAtaque3.getValue()) ){
+            Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
+        } else if(comboAtaque3.getValue().equals(comboAtaque1.getValue()) || comboAtaque3.getValue().equals(comboAtaque2.getValue()) ){
+            Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
+        } else {
+
+            //Guardar cosas
+
+            try {
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
+                Stage window = (Stage) armeriaTitle.getScene().getWindow();
+                window.setScene(scene);
+                window.setTitle("Floor");
+                window.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
     public void comboArmasOA(ActionEvent actionEvent) {
