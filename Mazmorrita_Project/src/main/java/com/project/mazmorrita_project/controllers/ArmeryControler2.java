@@ -1,8 +1,6 @@
 package com.project.mazmorrita_project.controllers;
 
-import com.project.mazmorrita_project.models.Alert;
-import com.project.mazmorrita_project.models.Attack;
-import com.project.mazmorrita_project.models.AttackPj;
+import com.project.mazmorrita_project.models.*;
 import com.project.mazmorrita_project.models.Character;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -47,10 +45,19 @@ public class ArmeryControler2 implements Initializable {
     private static int magiaOriginal;
     private static int manaOriginal;
     final private static List<AttackPj> listaAPJ = new ArrayList<>(AttackPj.mostrarAtaquesPersonajes(SelectCharacterController.nameSelected, LoginController.id));
+    final private static List<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
+    private static ArrayList<String> values= new ArrayList<>();
 
     private List<String> attackValues = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        for (int i = 0; i < listaW.size(); i++) {
+            values.add(String.valueOf(listaW.get(i).getNombre()));
+        }
+
+        comboArmas.getItems().addAll(values);
+        comboArmas.setValue(" ");
 
         for (int i = 0; i < listaAPJ.size(); i++) {
             attackValues.add(String.valueOf(listaAPJ.get(i).getNombre()));
@@ -74,7 +81,19 @@ public class ArmeryControler2 implements Initializable {
         labelVida.setText(String.valueOf(vidaOriginal));
         labelMagia.setText(String.valueOf(magiaOriginal));
         labelMana.setText(String.valueOf(manaOriginal));
+
+
+        labelFuerzaFinal.setText(String.valueOf(fuerzaOriginal));
+        labelDefensaFinal.setText(String.valueOf(defensaOriginal));
+        labelVidaFinal.setText(String.valueOf(vidaOriginal));
+        labelMagiaFinal.setText(String.valueOf(magiaOriginal));
+        labelManaFinal.setText(String.valueOf(manaOriginal));
+
+
     }
+
+
+
     public void volverAtras(MouseEvent mouseEvent) {
         try {
             attackValues = new ArrayList<>();
@@ -114,21 +133,54 @@ public class ArmeryControler2 implements Initializable {
     }
 
     public void comboArmasOA(ActionEvent actionEvent) {
-    }
 
-    public void addFuerza(MouseEvent mouseEvent) {
-    }
+        String selectedWeapon = comboArmas.getValue().toString();
+        for (Weapon weapon : listaW) {
+            if (weapon.getNombre().equals(selectedWeapon)) {
+                // Restaurar los valores originales
+                labelFuerzaArma.setText(String.valueOf(weapon.getFuerza()));
+                labelDefensaArma.setText(String.valueOf(weapon.getDefensa()));
+                labelVidaArma.setText(String.valueOf(weapon.getVida()));
+                labelMagiaArma.setText(String.valueOf(weapon.getMagia()));
+                labelManaArma.setText(String.valueOf(weapon.getMana()));
 
-    public void addDefensa(MouseEvent mouseEvent) {
-    }
+                labelFuerzaFinal.setText(String.valueOf(Integer.parseInt(labelFuerzaFinal.getText()) + weapon.getFuerza()));
+                labelDefensaFinal.setText(String.valueOf(Integer.parseInt(labelDefensaFinal.getText()) + weapon.getDefensa()));
+                labelVidaFinal.setText(String.valueOf(Integer.parseInt(labelVidaFinal.getText()) + weapon.getVida()));
+                labelMagiaFinal.setText(String.valueOf(Integer.parseInt(labelMagiaFinal.getText()) + weapon.getMagia()));
+                labelManaFinal.setText(String.valueOf(Integer.parseInt(labelManaFinal.getText()) + weapon.getMana()));
 
-    public void addVida(MouseEvent mouseEvent) {
-    }
-
-    public void addMagia(MouseEvent mouseEvent) {
+                /*
+                int fuerzaConArma = fuerzaOriginal + weapon.getFuerza();
+                labelFuerzaArma.setText(String.valueOf(fuerzaConArma));
+                int defConArma = defensaOriginal + weapon.getDefensa();
+                labelDefensaArma.setText(String.valueOf(defConArma));
+                int vidaConArma = vidaOriginal + weapon.getVida();
+                labelVidaArma.setText(String.valueOf(vidaConArma));
+                int magiaConArma = magiaOriginal + weapon.getMagia();
+                labelMagiaArma.setText(String.valueOf(magiaConArma));
+                int manaConArma = manaOriginal + weapon.getMana();
+                labelManaArma.setText(String.valueOf(manaConArma));
+                break;
+                 */
+            }
+        }
     }
 
     public void addMana(MouseEvent mouseEvent) {
+        labelManaFinal.setText(String.valueOf(Integer.parseInt(labelManaFinal.getText()) + 1));
+    }
+    public void addMagia(MouseEvent mouseEvent) {
+        labelMagiaFinal.setText(String.valueOf(Integer.parseInt(labelMagiaFinal.getText()) + 1));
+    }
+    public void addVida(MouseEvent mouseEvent) {
+        labelVidaFinal.setText(String.valueOf(Integer.parseInt(labelVidaFinal.getText()) + 1));
+    }
+    public void addFuerza(MouseEvent mouseEvent) {
+        labelFuerzaFinal.setText(String.valueOf(Integer.parseInt(labelFuerzaFinal.getText()) + 1));
+    }
+    public void addDefensa(MouseEvent mouseEvent) {
+        labelDefensaFinal.setText(String.valueOf(Integer.parseInt(labelDefensaFinal.getText()) + 1));
     }
 
 
