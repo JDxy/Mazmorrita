@@ -47,7 +47,7 @@ public class CombatController {
     private String[] turnos;
 
     public void initialize(){
-        character= Character.character;
+        character = Character.character;
 
         Image pjAvatar = new Image("file:" + character.getAvatar());
         imagePJ.setImage(pjAvatar);
