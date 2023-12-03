@@ -61,9 +61,24 @@ public class Attack {
         return new Attack(nombre, potencia, tipo);
     }
 
-
-    public static void insertarPaloMadera(){
-
+    /**
+     * Método insertarPaloMadera
+     * este metodo inserta un arma por defecto en la tabla cuando creas el personaje
+     * @param nombrePersonaje
+     * @param id
+     */
+    public static void insertarPaloMadera(String nombrePersonaje, int id){
+        String[]values=new String[8];
+        values[0]="Palo de Madera";
+        values[1]=nombrePersonaje;
+        values[2]=String.valueOf(id);
+        values[3]="1";
+        values[4]="1";
+        values[5]="1";
+        values[6]="1";
+        values[7]="1";
+        String sql= "INSERT INTO armas (Nombre, NombrePersonaje, IdUsuario, Fuerza, Defensa, Vida, Magia, Mana) VALUES (?,?,?,?,?,?,?,?);";
+        LocalConnection.ExecuteChangesSql(sql,values);
     }
 
 }

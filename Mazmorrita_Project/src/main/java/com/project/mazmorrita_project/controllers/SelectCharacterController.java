@@ -151,7 +151,7 @@ public class SelectCharacterController {
         }
     }
     public void borrarPersonaje(MouseEvent mouseEvent) {
-        deleteCharacter(nameSelected);
+        deleteCharacter(nameSelected,LoginController.id);
         Scene scene= null;
         try {
             scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/selectcharacter-view.fxml")));

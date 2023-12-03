@@ -3,9 +3,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.mazmorrita_project.controllers.BattleWinViewController">
    <children>
-      <Label layoutX="242.0" layoutY="191.0" text="YUJUUUUUU Ganaste" />
+      <Label layoutX="226.0" layoutY="129.0" text="YUJUUUUUU Ganaste" />
+      <Label fx:id="botinRecibido" layoutX="99.0" layoutY="259.0" text="botin" />
+      <Label layoutX="67.0" layoutY="349.0" onMouseClicked="#volver" text="Volver Atrás" />
    </children>
 </AnchorPane>

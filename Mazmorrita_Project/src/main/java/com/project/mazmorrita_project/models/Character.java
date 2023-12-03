@@ -205,11 +205,11 @@ public class Character {
         return new Character(nombre, avatarPath, idUsuario, vida, fuerza, defensa, magia, mana, clase, piso, experiencia);
     }
 
-
-    public static void deleteCharacter(String name) {
+    public static void deleteCharacter(String name, String idUser) {
         String[] listValues = new String[1];
         listValues[0] = name;
-        LocalConnection.ExecuteChangesSql("DELETE FROM personajes WHERE nombre = ?", listValues);
+        listValues[1] = idUser;
+        LocalConnection.ExecuteChangesSql("DELETE FROM personajes WHERE nombre = ? and IdUsuario = ?;", listValues);
     }
 
     public static boolean findCharacter(String name) {
