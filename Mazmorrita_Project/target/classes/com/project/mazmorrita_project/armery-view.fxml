@@ -395,17 +395,17 @@
                         <Font name="Franklin Gothic Medium" size="24.0" />
                      </font>
                   </Label>
+                  <Label fx:id="labelVida" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="24.0" />
+                     </font>
+                  </Label>
                   <Label fx:id="labelMagia" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
                      <font>
                         <Font name="Franklin Gothic Medium" size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="labelMana" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
-                     <font>
-                        <Font name="Franklin Gothic Medium" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelVida" prefHeight="19.0" prefWidth="50.0" text="0" textFill="WHITE">
                      <font>
                         <Font name="Franklin Gothic Medium" size="24.0" />
                      </font>

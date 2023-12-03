@@ -42,12 +42,11 @@ public class CombatController {
     public Pane volverAtrasPane;
 
 
-    private Character character;
+    private final Character character = SelectCharacterController.characterSelected;
     private static Enemy enemy;
     private String[] turnos;
 
     public void initialize(){
-        character = Character.character;
 
         Image pjAvatar = new Image("file:" + character.getAvatar());
         imagePJ.setImage(pjAvatar);

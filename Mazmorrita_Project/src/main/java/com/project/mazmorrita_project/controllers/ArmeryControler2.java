@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.project.mazmorrita_project.models.Character.showCharacters;
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteChangesSql;
+
 public class ArmeryControler2 implements Initializable {
     public Label armeriaTitle;
     public ComboBox comboArmas;
@@ -44,15 +47,16 @@ public class ArmeryControler2 implements Initializable {
     private static int vidaOriginal;
     private static int magiaOriginal;
     private static int manaOriginal;
-    final private static ArrayList<Attack> listaAPJ = new ArrayList<>(Attack.showAttacks(SelectCharacterController.nameSelected, LoginController.id));
+    final private static ArrayList<AttackPj> listaAPJ = new ArrayList<>(AttackPj.mostrarAtaquesPersonajes(SelectCharacterController.nameSelected, LoginController.id));
     final private static ArrayList<Weapon> listaW = new ArrayList<>(Weapon.showWeapon(SelectCharacterController.nameSelected, LoginController.id));
     private static ArrayList<String> values= new ArrayList<>();
     private List<String> attackValues = new ArrayList<>();
-    private Character character;
+
+    private Character character = SelectCharacterController.characterSelected;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        character = Character.character;
 
         for (int i = 0; i < listaW.size(); i++) {
             values.add(String.valueOf(listaW.get(i).getNombre()));
@@ -66,7 +70,6 @@ public class ArmeryControler2 implements Initializable {
             attackValues.add(String.valueOf(listaAPJ.get(i).getNombre()));
 
         }
-        character.setAtaques(listaAPJ);
         comboAtaque1.getItems().addAll(attackValues);
         comboAtaque1.setValue(" ");
         comboAtaque2.getItems().addAll(attackValues);
@@ -114,6 +117,8 @@ public class ArmeryControler2 implements Initializable {
 
     public void guardarCambios(MouseEvent mouseEvent) {
 
+
+
         if(comboAtaque1.getValue().equals(comboAtaque2.getValue()) || comboAtaque1.getValue().equals(comboAtaque3.getValue()) ){
             Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
         }else if(comboAtaque2.getValue().equals(comboAtaque1.getValue()) || comboAtaque2.getValue().equals(comboAtaque3.getValue()) ){
@@ -121,8 +126,26 @@ public class ArmeryControler2 implements Initializable {
         } else if(comboAtaque3.getValue().equals(comboAtaque1.getValue()) || comboAtaque3.getValue().equals(comboAtaque2.getValue()) ){
             Alert.showAlert("Error","Debe seleccionar diferentes ataques para equiparse", javafx.scene.control.Alert.AlertType.ERROR);
         } else {
+            String[] listValues = new String[6];
+            listValues[0] = labelFuerza.getText();
+            listValues[1] = labelDefensa.getText();
+            listValues[2] = labelVida.getText();
+            listValues[3] = labelMagia.getText();
+            listValues[4] = labelMana.getText();
+            listValues[5] = SelectCharacterController.nameSelected;
+            ExecuteChangesSql("UPDATE personajes SET Fuerza = ?, Defensa = ?, Vida = ?, Magia = ?, Mana = ? WHERE Nombre = ?", listValues);
 
-            //Guardar cosas
+            List<Character> characters = showCharacters(SelectCharacterController.nameSelected, "Nombre");
+
+
+             character = characters.get(0);
+             character.setFuerza(Integer.parseInt(labelFuerza.getText()));
+             character.setDefensa(Integer.parseInt(labelDefensa.getText()));
+             character.setVida(Integer.parseInt(labelVida.getText()));
+             character.setMagia(Integer.parseInt(labelMagia.getText()));
+             character.setMana(Integer.parseInt(labelMana.getText()));
+
+
 
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
@@ -173,19 +196,19 @@ public class ArmeryControler2 implements Initializable {
     }
 
     public void addMana(MouseEvent mouseEvent) {
-        labelManaFinal.setText(String.valueOf(Integer.parseInt(labelManaFinal.getText()) + 1));
+        labelMana.setText(String.valueOf(Integer.parseInt(labelMana.getText()) + 1));
     }
     public void addMagia(MouseEvent mouseEvent) {
-        labelMagiaFinal.setText(String.valueOf(Integer.parseInt(labelMagiaFinal.getText()) + 1));
+        labelMagia.setText(String.valueOf(Integer.parseInt(labelMagia.getText()) + 1));
     }
     public void addVida(MouseEvent mouseEvent) {
-        labelVidaFinal.setText(String.valueOf(Integer.parseInt(labelVidaFinal.getText()) + 1));
+        labelVida.setText(String.valueOf(Integer.parseInt(labelVida.getText()) + 1));
     }
     public void addFuerza(MouseEvent mouseEvent) {
-        labelFuerzaFinal.setText(String.valueOf(Integer.parseInt(labelFuerzaFinal.getText()) + 1));
+        labelFuerza.setText(String.valueOf(Integer.parseInt(labelFuerza.getText()) + 1));
     }
     public void addDefensa(MouseEvent mouseEvent) {
-        labelDefensaFinal.setText(String.valueOf(Integer.parseInt(labelDefensaFinal.getText()) + 1));
+        labelDefensa.setText(String.valueOf(Integer.parseInt(labelDefensa.getText()) + 1));
     }
 
 
