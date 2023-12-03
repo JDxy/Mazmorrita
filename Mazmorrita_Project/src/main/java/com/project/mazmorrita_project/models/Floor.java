@@ -38,10 +38,10 @@ public class Floor {
 
         HashMap<String, String> piso= results.get( (int)(Math.random()*results.size()));
 
-        id= Integer.parseInt(piso.get("1"));
-        numero= Integer.parseInt(piso.get("2"));
-        numEnemigos= Integer.parseInt(piso.get("3"));
-        imagen= piso.get("4");
+        id= Integer.parseInt(piso.get("Id"));
+        numero= Integer.parseInt(piso.get("Numero"));
+        numEnemigos= Integer.parseInt(piso.get("NumeroEnemigos"));
+        imagen= piso.get("ImagenPiso");
         enemigos= new ArrayList<>();
 
         for (int i = 0; i < numEnemigos; i++) {

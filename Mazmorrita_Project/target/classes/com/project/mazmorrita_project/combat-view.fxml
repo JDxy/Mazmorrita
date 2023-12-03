@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -17,13 +18,7 @@
             <Image url="@../../../Images/Backgrounds/pisoFinal.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="42.0" layoutY="48.0" opacity="0.15" prefHeight="588.0" prefWidth="948.0" style="-fx-background-color: white;" />
-      <ImageView fx:id="avatarPjCombat" fitHeight="150.0" fitWidth="200.0" layoutX="149.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="733.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Images/Enemies/bruja3.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="imagePJ" fitHeight="150.0" fitWidth="200.0" layoutX="165.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="135.0" layoutY="655.0" text="Volver Atrás">
          <font>
             <Font name="Franklin Gothic Medium" size="30.0" />
@@ -76,7 +71,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ComboBox fx:id="elegirAtaque" layoutX="156.0" layoutY="400.0" prefHeight="25.0" prefWidth="232.0" />
+      <ComboBox fx:id="attackPj" layoutX="156.0" layoutY="400.0" opacity="0.85" prefHeight="25.0" prefWidth="232.0" />
       <Label layoutX="61.0" layoutY="398.0" text="Ataque">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
@@ -155,7 +150,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="733.0" layoutY="398.0" text="Vida">
+      <Label layoutX="733.0" layoutY="399.0" text="Vida">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
@@ -181,22 +176,22 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="257.0" layoutY="447.0" prefWidth="100.0" text="0" textFill="WHITE">
+      <Label fx:id="vidaActualPj" layoutX="149.0" layoutY="447.0" prefWidth="60.0" text="0" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="257.0" layoutY="491.0" prefWidth="100.0" text="0" textFill="WHITE">
+      <Label fx:id="manaActualPj" layoutX="149.0" layoutY="491.0" prefWidth="60.0" text="0" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="801.0" layoutY="399.0" prefWidth="100.0" text="0" textFill="WHITE">
+      <Label fx:id="vidaEnemy" layoutX="814.0" layoutY="399.0" prefWidth="60.0" text="0" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="462.0" layoutY="530.0" text="Luchar">
+      <Label layoutX="101.0" layoutY="554.0" text="Atacar">
          <font>
             <Font name="Franklin Gothic Medium" size="48.0" />
          </font>
@@ -228,16 +223,69 @@
          </image>
       </ImageView>
       <Pane layoutX="42.0" layoutY="652.0" onMouseClicked="#salir" prefHeight="42.0" prefWidth="253.0" />
-      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="602.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="239.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="420.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="56.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />
          </image>
       </ImageView>
-      <Pane layoutX="420.0" layoutY="530.0" onMouseClicked="#luchar" prefHeight="56.0" prefWidth="224.0" />
+      <Pane layoutX="57.0" layoutY="554.0" onMouseClicked="#luchar" prefHeight="56.0" prefWidth="224.0" />
+      <Label layoutX="221.0" layoutY="447.0" opacity="0.75" text="/" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="221.0" layoutY="491.0" opacity="0.75" text="/" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="manaMaxPJ" layoutX="287.0" layoutY="491.0" prefWidth="60.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="vidaMaxPJ" layoutX="287.0" layoutY="447.0" prefWidth="60.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="526.0" layoutY="489.0" opacity="0.85" prefHeight="224.0" prefWidth="514.0" style="-fx-background-color: black;" />
+      <TextArea fx:id="actionsTextArea" editable="false" layoutX="527.0" layoutY="524.0" opacity="0.85" prefHeight="190.0" prefWidth="514.0">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="530.0" layoutY="492.0" text="Resumen del combate:">
+         <font>
+            <Font name="Franklin Gothic Medium" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.8190476298332214" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fx:id="imageEnemy" fitHeight="150.0" fitWidth="200.0" layoutX="699.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

@@ -124,19 +124,15 @@ public class ArmeryController implements Initializable {
     }
     public void addMagia(MouseEvent mouseEvent) {
         labelMagia.setText(String.valueOf(Integer.parseInt(labelMagia.getText()) + 1));
-
     }
     public void addVida(MouseEvent mouseEvent) {
         labelVida.setText(String.valueOf(Integer.parseInt(labelVida.getText()) + 1));
-
     }
     public void addFuerza(MouseEvent mouseEvent) {
         labelFuerza.setText(String.valueOf(Integer.parseInt(labelFuerza.getText()) + 1));
-
     }
     public void addDefensa(MouseEvent mouseEvent) {
         labelDefensa.setText(String.valueOf(Integer.parseInt(labelDefensa.getText()) + 1));
-
     }
 
     //Cambia los valores de los label según el arma seleccionada y se los suma a los stacks de los pj

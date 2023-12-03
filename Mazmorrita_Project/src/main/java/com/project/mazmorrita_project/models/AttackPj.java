@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import static com.project.mazmorrita_project.models.LocalConnection.ExecuteSelectSql;
 
 public class AttackPj {
     private String nombre;
@@ -34,6 +39,7 @@ public class AttackPj {
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
+
     public static void generarNombresAttacksMago(String nombrePersonaje, int idUsuario) {
 
         File file = new File("Mazmorrita_Project/src/main/resources/Files/AttackMago.txt");
@@ -79,5 +85,26 @@ public class AttackPj {
             throw new RuntimeException("Error al leer el archivo de ataques", e);
         }
     }
+    public static List<AttackPj> mostrarAtaquesPersonajes(String namePj, String UserId) {
+        String[] listValues = new String[2];
+        listValues[0] = namePj;
+        listValues[1] = UserId;
+        String sql;
+        sql = "SELECT * FROM ataque_personaje WHERE NombrePersonaje = ? AND idUsuario = ?;";
+        List<HashMap<String, String>> sqlResult = ExecuteSelectSql(sql, listValues);
+        List<AttackPj> attacksPj = new ArrayList<>();
+        for (HashMap<String, String> row : sqlResult) {
+            AttackPj attackPj=generarAtaquesPersonajesParaConsulta(row);
+            attacksPj.add(attackPj);
+        }
+        return attacksPj;
+    }
+    private static AttackPj generarAtaquesPersonajesParaConsulta(HashMap<String, String> attacksPjData) {
+        String nombrePj = attacksPjData.get("NombreAtaque");
+        int idUsuario = Integer.parseInt(attacksPjData.get("IdUsuario"));
+        String nombreUsuario = attacksPjData.get("NombrePersonaje");
+        return new AttackPj(nombrePj,idUsuario,nombreUsuario);
+    }
+
 
 }
