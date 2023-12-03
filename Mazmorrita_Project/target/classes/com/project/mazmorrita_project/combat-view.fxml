@@ -222,7 +222,7 @@
             <Image url="@../../../Images/Icons/flecha.png" />
          </image>
       </ImageView>
-      <Pane layoutX="42.0" layoutY="652.0" onMouseClicked="#salir" prefHeight="42.0" prefWidth="253.0" />
+      <Pane fx:id="volverAtrasPane" layoutX="42.0" layoutY="652.0" onMouseClicked="#salir" prefHeight="42.0" prefWidth="253.0" />
       <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="239.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/Icons/espadas.png" />

@@ -57,15 +57,23 @@ public class ArmeryControler2 implements Initializable {
         }
         comboAtaque1.getItems().addAll(attackValues);
         comboAtaque1.setValue(" ");
-
         comboAtaque2.getItems().addAll(attackValues);
         comboAtaque2.setValue(" ");
-
         comboAtaque3.getItems().addAll(attackValues);
         comboAtaque3.setValue(" ");
 
-       Character.character.getFuerza();
-
+        //Cogemos los valores del personaje seleccionado
+        fuerzaOriginal= Character.character.getFuerza();
+        defensaOriginal=  Character.character.getDefensa();
+        vidaOriginal=  Character.character.getVida();
+        magiaOriginal= Character.character.getMagia();
+        manaOriginal=  Character.character.getMana();
+        //Asignamos los valores del personaje seleccionado a los label correlativos
+        labelFuerza.setText(String.valueOf(fuerzaOriginal));
+        labelDefensa.setText(String.valueOf(defensaOriginal));
+        labelVida.setText(String.valueOf(vidaOriginal));
+        labelMagia.setText(String.valueOf(magiaOriginal));
+        labelMana.setText(String.valueOf(manaOriginal));
     }
     public void volverAtras(MouseEvent mouseEvent) {
         try {

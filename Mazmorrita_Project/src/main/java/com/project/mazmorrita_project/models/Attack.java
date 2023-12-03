@@ -60,4 +60,10 @@ public class Attack {
         String tipo = attackData.get("Tipo");
         return new Attack(nombre, potencia, tipo);
     }
+
+
+    public static void insertarPaloMadera(){
+
+    }
+
 }

@@ -76,6 +76,7 @@ public class CreateCharacterController {
                     imageSelected = new Image("file:" + image);
                     Character character=new Character(nombre, image, idUser, vida, fuerza, defensa, magia, mana, clase, piso, exp);
                     Character.insertCharacter(character);
+                    //insertar palo
 
                     if (clase.equals("Mago")) {
                         AttackPj.generarNombresAttacksMago(nombre,idUser);
