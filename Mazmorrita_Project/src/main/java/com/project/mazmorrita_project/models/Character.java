@@ -8,6 +8,7 @@ import static com.project.mazmorrita_project.models.LocalConnection.*;
 
 public class Character {
 
+    public static Character character;
     private String nombre;
     private String avatar;
     private int idUsuario;

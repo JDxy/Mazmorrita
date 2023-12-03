@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class Floor {
 
+    public static Floor floor;
     private int id;
     private int numero;
     private int numEnemigos;
@@ -48,5 +49,13 @@ public class Floor {
         }
 
         jefe= new Enemy(id, true);
+    }
+
+    public ArrayList<Enemy> getEnemigos(){
+        return enemigos;
+    }
+
+    public Enemy getJefe() {
+        return jefe;
     }
 }

@@ -2,6 +2,7 @@ package com.project.mazmorrita_project.controllers;
 
 import com.project.mazmorrita_project.models.Alert;
 import com.project.mazmorrita_project.models.Character;
+import com.project.mazmorrita_project.models.Floor;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -168,6 +169,8 @@ public class SelectCharacterController {
         if (nameSelected != null) {
             System.out.println(nameSelected);
             characterSelected = showCharacters(nameSelected, "Nombre").get(0);
+            character= characterSelected;
+            Floor.floor= new Floor(character.getPiso());
 
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/com/project/mazmorrita_project/floor-view.fxml")));
