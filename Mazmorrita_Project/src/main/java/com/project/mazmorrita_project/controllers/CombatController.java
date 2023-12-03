@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,6 +38,8 @@ public class CombatController {
     public TextArea actionsTextArea;
     @FXML
     public Label vidaEnemy;
+    @FXML
+    public Pane volverAtrasPane;
 
 
     private Character character;
@@ -75,7 +78,7 @@ public class CombatController {
     }
 
     public void luchar(MouseEvent mouseEvent) {
-
+        volverAtrasPane.setDisable(true);
         for (String turn : turnos) {
             if (turn.equals("character")){
                 if (turnCharacter(attackPj.getValue().toString())){
@@ -95,7 +98,10 @@ public class CombatController {
 
         int damage= (int) ((enemy.getFuerza()*0.5) * (attack.getPotencia()*0.25) * (1/ character.getDefensa()));
 
-        
+        actionsTextArea.setText(actionsTextArea.getText()+
+                "\n"+enemy.getNombre()+" uso "+attack.getNombre()+" hizo: "+damage+" puntos de daño.");
+
+        vidaActualPj.setText(String.valueOf(character.getVida()));
 
         return character.restarVida(damage);
     }
@@ -110,6 +116,11 @@ public class CombatController {
         }
 
         int damage= (int) ((character.getFuerza()*0.5) * (ataque.getPotencia()*0.25)* (1/ enemy.getDefensa()));
+
+        actionsTextArea.setText(actionsTextArea.getText()+
+                "\nHaz usado "+attackName+", hizite: "+damage+" puntos de daño.");
+
+        vidaEnemy.setText(String.valueOf(enemy.getVidaActual()));
 
         return enemy.restarVida(damage);
     }
