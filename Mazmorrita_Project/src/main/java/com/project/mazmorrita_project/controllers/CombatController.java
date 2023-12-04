@@ -1,9 +1,7 @@
 package com.project.mazmorrita_project.controllers;
 
-import com.project.mazmorrita_project.models.Attack;
+import com.project.mazmorrita_project.models.*;
 import com.project.mazmorrita_project.models.Character;
-import com.project.mazmorrita_project.models.Enemy;
-import com.project.mazmorrita_project.models.Weapon;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -52,6 +50,9 @@ public class CombatController {
     public static String[] ataquesSeleccionados;
 
     public void initialize(){
+        Character.character.setVida(Character.character.getVidaMax());
+        Character.character.setMana(Character.character.getManaMax());
+
 
         Image pjAvatar = new Image("file:" + character.getAvatar());
         imagePJ.setImage(pjAvatar);
@@ -65,7 +66,7 @@ public class CombatController {
 
         vidaEnemy.setText(String.valueOf(enemy.getVidaMaxima()));
         vidaMaxPJ.setText(String.valueOf(character.getVidaMax()));
-        vidaActualPj.setText(String.valueOf(character.getVida()));
+        vidaActualPj.setText(String.valueOf(character.getVidaMax()));
         manaMaxPJ.setText(String.valueOf(character.getManaMax()));
         manaActualPj.setText(String.valueOf(character.getMana()));
 
@@ -82,21 +83,29 @@ public class CombatController {
         cambiarScene("/com/project/mazmorrita_project/floor-view.fxml", "Floor");
     }
     public void luchar(MouseEvent mouseEvent) {
-        volverAtrasPane.setDisable(true);
-        for (String turn : turnos) {
-            if (turn.equals("character")){
-                if (turnCharacter(attackPj.getValue().toString(), armaSeleccionada)){
-                    BattleWinViewController.exp= enemy.devolverBotin();
-                    FloorController.enemigosDerrotados.add(numEnemigo);
-                    cambiarScene("/com/project/mazmorrita_project/battleWin-view.fxml", "Victory!!!");
+
+            volverAtrasPane.setDisable(true);
+            for (String turn : turnos) {
+                if (turn.equals("character")){
+                    if (turnCharacter(attackPj.getValue().toString(), armaSeleccionada)){
+                        BattleWinViewController.exp= enemy.devolverBotin();
+                        FloorController.enemigosDerrotados.add(numEnemigo);
+                        if (enemy.isJefe()){
+                            Alert.showAlert("Victoria!", "Has salido de la mazmorra y tus logros seran recordados por todos los aventureros", javafx.scene.control.Alert.AlertType.INFORMATION);
+                            cambiarScene("/com/project/mazmorrita_project/main-view.fxml", "Login");
+                        }else {
+                            cambiarScene("/com/project/mazmorrita_project/battleWin-view.fxml", "Victory!!!");
+                        }
+
+                    }
+                }
+                else {
+                    if (turnEnemyAttack()){
+                        cambiarScene("/com/project/mazmorrita_project/gameover-view.fxml", "Game Over");
+                    }
                 }
             }
-            else {
-                if (turnEnemyAttack()){
-                    cambiarScene("/com/project/mazmorrita_project/gameover-view.fxml", "Game Over");
-                }
-            }
-        }
+
     }
     private boolean turnEnemyAttack(){
         Attack attack= enemy.getAtaques().get((int) (Math.random()*enemy.getAtaques().size()));

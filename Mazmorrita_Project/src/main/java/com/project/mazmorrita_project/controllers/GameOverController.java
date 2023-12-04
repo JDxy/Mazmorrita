@@ -47,5 +47,13 @@ public class GameOverController implements Initializable {
         Attack.deleteAttacksTable(Character.character.getNombre(), LoginController.id);
         Weapon.deleteWeaponTable(Character.character.getNombre(), LoginController.id);
         deleteCharacter(Character.character.getNombre(), LoginController.id);
+
+        CombatController.armaSeleccionada= null;
+        CombatController.ataquesSeleccionados= null;
+        CombatController.numEnemigo= 0;
+
+        FloorController.enemigosDerrotados= null;
+
+
     }
 }

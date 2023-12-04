@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class FloorController {
     @FXML
@@ -30,7 +31,7 @@ public class FloorController {
 
     public static Image imageAvatar = null;
 
-    public static ArrayList<Integer> enemigosDerrotados= new ArrayList<>();
+    public static TreeSet<Integer> enemigosDerrotados= new TreeSet<>();
 
     public void initialize() {
         if (SelectCharacterController.imageSelected != null){

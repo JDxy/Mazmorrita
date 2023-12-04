@@ -1,5 +1,6 @@
 package com.project.mazmorrita_project.controllers;
 
+import com.project.mazmorrita_project.models.Character;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +21,9 @@ public class BattleWinViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         botinRecibido.setText(String.valueOf(exp));
+
+        Character.character.setVida(Character.character.getVidaMax());
+        Character.character.setMana(Character.character.getManaMax());
     }
 
     public void volver(MouseEvent mouseEvent) {
