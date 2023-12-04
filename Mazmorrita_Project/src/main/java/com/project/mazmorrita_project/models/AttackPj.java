@@ -14,13 +14,11 @@ public class AttackPj {
     private String nombre;
     private int idUsuario;
     private String nombreUsuario;
-
     public AttackPj(String nombre,int idUsuario, String nombreUsuario) {
         this.nombre = nombre;
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
     }
-
     public String getNombre() {
         return nombre;
     }
@@ -41,9 +39,7 @@ public class AttackPj {
     }
 
     public static void generarNombresAttacksMago(String nombrePersonaje, int idUsuario) {
-
         File file = new File("Mazmorrita_Project/src/main/resources/Files/AttackMago.txt");
-
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String line;
             String[] values;
@@ -56,9 +52,7 @@ public class AttackPj {
         }
     }
     public static void generarNombresAttacksPicaro(String nombrePersonaje, int idUsuario) {
-
         File file = new File("Mazmorrita_Project/src/main/resources/Files/AttackPicara.txt");
-
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String line;
             String[] values;
@@ -71,9 +65,7 @@ public class AttackPj {
         }
     }
     public static void generarNombresAttacksBarbaro(String nombrePersonaje, int idUsuario) {
-
         File file = new File("Mazmorrita_Project/src/main/resources/Files/AttackBarbaro.txt");
-
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String line;
             String[] values;
@@ -105,6 +97,4 @@ public class AttackPj {
         String nombreUsuario = attacksPjData.get("NombrePersonaje");
         return new AttackPj(nombrePj,idUsuario,nombreUsuario);
     }
-
-
 }

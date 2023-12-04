@@ -18,7 +18,6 @@ public class Floor {
     private ArrayList<Enemy> enemigos;
     private Enemy jefe;
     private String imagen;
-
     public Floor(int idPiso) {
         actualizarPiso(idPiso);
     }
@@ -35,9 +34,7 @@ public class Floor {
         String sqlSentence= "SELECT Pisos.Id, Pisos.Numero, Pisos.NumeroEnemigos, Pisos.ImagenPiso FROM Pisos where Pisos.Id= ?;";
         String[] values= {""+id};
         List<HashMap<String, String>> results= LocalConnection.ExecuteSelectSql(sqlSentence, values);
-
         HashMap<String, String> piso= results.get( (int)(Math.random()*results.size()));
-
         id= Integer.parseInt(piso.get("Id"));
         numero= Integer.parseInt(piso.get("Numero"));
         numEnemigos= Integer.parseInt(piso.get("NumeroEnemigos"));
@@ -47,10 +44,8 @@ public class Floor {
         for (int i = 0; i < numEnemigos; i++) {
             enemigos.add(new Enemy(id, false));
         }
-
         jefe= new Enemy(id, true);
     }
-
     public ArrayList<Enemy> getEnemigos(){
         return enemigos;
     }

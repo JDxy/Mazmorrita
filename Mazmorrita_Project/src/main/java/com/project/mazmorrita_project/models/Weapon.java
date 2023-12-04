@@ -124,7 +124,6 @@ public class Weapon {
         int mana = Integer.parseInt(weaponData.get("Mana"));
         return new Weapon(nombre, fuerza, vida, defensa, magia, mana);
     }
-
     public static void deleteWeaponTable(String nameChar, String idUser){
         String sqlSentence= "DELETE FROM armas where NombrePersonaje = (SELECT Nombre FROM personajes WHERE Nombre = ? and IdUsuario = ?);";
         String[] values = new String[2];
@@ -132,7 +131,6 @@ public class Weapon {
         values[1]= idUser;
         LocalConnection.ExecuteChangesSql(sqlSentence, values);
     }
-
     /**
      * Método insertarPaloMadera
      * este metodo inserta un arma por defecto en la tabla cuando creas el personaje

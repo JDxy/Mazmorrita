@@ -1,11 +1,5 @@
 package com.project.mazmorrita_project.models;
 
-import javafx.fxml.FXML;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,16 +12,10 @@ public class Attack {
     private  String nombre;
     private int potencia;
     private String tipo;
-
     public Attack(String nombre,int potencia, String tipo) {
         this.nombre = nombre;
         this.potencia = potencia;
         this.tipo = tipo;
-    }
-    public Attack(String nombre) {
-        this.nombre = nombre;
-        this.potencia = 0;
-        this.tipo = null;
     }
     public String getNombre() {
         return nombre;
@@ -38,8 +26,6 @@ public class Attack {
     public String getTipo() {
         return tipo;
     }
-
-
     public static List<Attack> showAttacks(String namePj, String UserId) {
         String[] listValues = new String[2];
         listValues[0] = namePj;
@@ -60,8 +46,6 @@ public class Attack {
         String tipo = attackData.get("Tipo");
         return new Attack(nombre, potencia, tipo);
     }
-
-
     public static void deleteAttacksTable(String nombreUsuario, String idUsuario){
         String sqlSentence= "DELETE FROM Ataque_personaje WHERE IdUsuario= ? AND NombrePersonaje= ?;";
         String[] values= new String[2];
@@ -69,7 +53,4 @@ public class Attack {
         values[1]= nombreUsuario;
         LocalConnection.ExecuteChangesSql(sqlSentence, values);
     }
-
-
-
 }

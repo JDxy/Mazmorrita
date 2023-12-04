@@ -75,15 +75,12 @@ public class CombatController {
             turnos= new String[]{"enemy", "character"};
         }
     }
-
     public static void setEnemy(Enemy enemy) {
         CombatController.enemy = enemy;
     }
-
     public void salir(MouseEvent mouseEvent) {
         cambiarScene("/com/project/mazmorrita_project/floor-view.fxml", "Floor");
     }
-
     public void luchar(MouseEvent mouseEvent) {
         volverAtrasPane.setDisable(true);
         for (String turn : turnos) {
@@ -101,38 +98,28 @@ public class CombatController {
             }
         }
     }
-
     private boolean turnEnemyAttack(){
         Attack attack= enemy.getAtaques().get((int) (Math.random()*enemy.getAtaques().size()));
-
         int damage= (int) (enemy.getFuerza()) + (attack.getPotencia()) ;
-
         actionsTextArea.setText(actionsTextArea.getText()+
                 "\n"+enemy.getNombre()+" uso "+attack.getNombre()+" hizo: "+damage+" puntos de daño.");
-
         vidaActualPj.setText(String.valueOf(character.getVida()));
-
         return character.restarVida(damage);
     }
-
     private boolean turnCharacter(String attackName, String armaName){
         Attack ataque= null;
         Weapon arma= null;
-
         for (Attack attack : character.getAtaques()) {
             if (attack.getNombre().equals(attackName)){
                 ataque= attack;
             }
         }
-
         for (Weapon weapon: character.getArmas()){
             if (weapon.getNombre().equals(armaName)){
                 arma= weapon;
             }
         }
-
         //int damage= (int) ((character.getFuerza()) * (ataque.getPotencia())* (1/ enemy.getDefensa()) *0.5);
-
         int damage= 0;
 
         if (ataque.getTipo().equals("Magico") && (ataque.getPotencia()*0.25) < character.getMana()){
@@ -140,7 +127,6 @@ public class CombatController {
                     "\nNo tienes mana suficiente.");
             return false;
         }
-
         if (ataque.getTipo().equals("Magico")){
             damage= (int) (character.getMagia() + (ataque.getPotencia()));
             int manaActual= character.getMana();
@@ -150,14 +136,11 @@ public class CombatController {
         } else {
             damage= (int) (character.getFuerza() + (ataque.getPotencia()));
         }
-
         actionsTextArea.setText(actionsTextArea.getText()+
                 "\nHaz usado "+attackName+", hizite: "+damage+" puntos de daño.");
-
         vidaEnemy.setText(String.valueOf(enemy.getVidaActual()));
         return enemy.restarVida(damage);
     }
-
     private void cambiarScene(String ruta, String tittle){
         Scene scene = null;
         try {

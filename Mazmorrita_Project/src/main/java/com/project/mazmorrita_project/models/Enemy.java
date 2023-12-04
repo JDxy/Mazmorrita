@@ -39,7 +39,6 @@ public class Enemy {
         defensa= defensaBase;
         jefe= !singleEnemy.get("Jefe").equals("0");
         botin= Integer.parseInt(singleEnemy.get("Botin"));
-
         ataques= conseguirAtaques(nombre);
     }
 
@@ -47,44 +46,34 @@ public class Enemy {
         String sqlSentence= "SELECT Nombre, Potencia, Tipo FROM Ataques WHERE Nombre IN (SELECT NombreAtaque FROM Ataque_enemigo WHERE NombreEnemigo= ?);";
         String[] values= {nombre};
         ArrayList<Attack> ataques2= new ArrayList<>();
-
         List<HashMap<String, String>> allAtacks= LocalConnection.ExecuteSelectSql(sqlSentence, values);
-
         for (HashMap<String, String> ataque : allAtacks) {
             ataques2.add(new Attack(ataque.get("Nombre"), Integer.parseInt(ataque.get("Potencia")), ataque.get("Tipo")));
         }
-
         return ataques2;
     }
 
     public String getAvatar() {
         return avatar;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public int getVidaMaxima() {
         return vidaMaxima;
     }
-
     public int getVidaActual() {
         return vidaActual;
     }
-
     public int getFuerza() {
         return fuerza;
     }
-
     public int getDefensa() {
         return defensa;
     }
-
     public ArrayList<Attack> getAtaques() {
         return ataques;
     }
-
     public boolean isJefe() {
         return jefe;
     }

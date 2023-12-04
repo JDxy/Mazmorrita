@@ -30,123 +30,93 @@ public class Character {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public String getAvatar() {
         return avatar;
     }
-
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
     public int getIdUsuario() {
         return idUsuario;
     }
-
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
-
     public int getVida() {
         return vida;
     }
-
     public void setVida(int vida) {
         this.vida = vida;
     }
-
     public int getFuerza() {
         return fuerza;
     }
-
     public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
     }
-
     public int getDefensa() {
         return defensa;
     }
-
     public void setDefensa(int defensa) {
         this.defensa = defensa;
     }
-
     public int getMagia() {
         return magia;
     }
-
     public void setMagia(int magia) {
         this.magia = magia;
     }
-
     public int getMana() {
         return mana;
     }
-
     public void setMana(int mana) {
         this.mana = mana;
     }
-
     public String getClase() {
         return clase;
     }
-
     public void setClase(String clase) {
         this.clase = clase;
     }
-
     public int getPiso() {
         return piso;
     }
-
     public void setPiso(int piso) {
         this.piso = piso;
     }
-
     public int getExperiencia() {
         return experiencia;
     }
-
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
     }
-
     public ArrayList<Weapon> getArmas() {
         return armas;
     }
-
     public void setArmas(ArrayList<Weapon> armas) {
         this.armas = armas;
     }
-
     public ArrayList<Attack> getAtaques() {
         return ataques;
     }
-
     public void setAtaques(ArrayList<Attack> ataques) {
         this.ataques = ataques;
     }
-
     public int getNivel() {
         return nivel;
     }
-
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-
     public int getVidaMax() {
         return vidaMax;
     }
-
     public void setVidaMax(int vidaMax) {
         this.vidaMax = vidaMax;
     }
-
     public void setManaMax(int manaMax) {
         this.manaMax = manaMax;
     }
-
     public int getManaMax() {
         return manaMax;
     }
