@@ -110,9 +110,9 @@ public class CreateCharacterController {
         clase="Mago";
     }
     public void claseBarbaro(MouseEvent mouseEvent) {
-        labelFuerza.setText("150");
+        labelFuerza.setText("100");
         labelDefensa.setText("25");
-        labelVida.setText("3000");
+        labelVida.setText("400");
         labelMagia.setText("20");
         labelMana.setText("20");
         clase="Barbaro";
